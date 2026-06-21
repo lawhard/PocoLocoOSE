@@ -633,6 +633,61 @@
       ]
     },
     {
+      "id": "menucovers",
+      "cat": "welcome",
+      "name": "Hard Embossed Menu Covers",
+      "tag": "Rigid \u00b7 foil-stamped",
+      "reference": "Like your Badrutt's 'In-Room Dining' and 'Le Restaurant' menus \u2014 permanent rigid hardcovers, foil-stamped or blind-debossed. Use for an in-room dining menu, welcome book, guest directory, or wine list.",
+      "note": "Supplier foil-stamps/embosses these (not an in-house job). Burgundy + gold foil matches the 'In-Room Dining' look; a sage/tan linen with blind deboss + gold matches 'Le Restaurant.' For a refreshable wine list, choose a screw-post or ring version. Bespoke tier: Hartnack & Co (UK); true bookbindery: Monastery Hill.",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Standard Hardcover Menu Cover (casebound)",
+          "supplier": "Menu Cover Depot",
+          "url": "https://www.menucoverdepot.com/formal-menu-covers/standard-hardcover-menu-covers.html",
+          "price": "\u2248 $57",
+          "unit": "/ cover",
+          "terms": "+$90 foil die \u00b7 ~$1,000 for 15",
+          "min": "min 15",
+          "specs": "True casebound \u2014 book cloth over rigid board \u00b7 burgundy/black/brown/green \u00b7 slip-in corners",
+          "brand": "Supplier gold/silver foil or blind deboss",
+          "why": "The closest match to your burgundy gold-foil 'In-Room Dining' menu \u2014 genuinely rigid, a real foil die, burgundy in stock, the lowest verified hardback minimum (15).",
+          "img": "assets/img/menucover-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Summit Linen Hardback Menu Cover",
+          "supplier": "Menu Cover Central",
+          "url": "https://menucovercentral.com/menu-covers-with-diploma-corners/summit-linen-menu-covers/",
+          "price": "$14.95+",
+          "unit": "/ cover",
+          "terms": "foil/deboss die by quote \u00b7 sub-25 min",
+          "min": "min ~10",
+          "specs": "True hardback casebound \u00b7 textured LINEN cloth \u00b7 many sizes \u00b7 corner/bar inserts",
+          "brand": "Supplier foil-stamp or blind deboss",
+          "why": "The actual linen/cloth hardcover at the lowest per-unit and most flexible quantity \u2014 best for a sage/tan linen welcome book with a blind-deboss + gold crest.",
+          "img": "assets/img/menucover-alt1.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Casebound Leatherette Menu Cover",
+          "supplier": "Menu Shoppe",
+          "url": "https://www.menushoppe.com/leatherette-menu-covers",
+          "price": "quote",
+          "unit": "/ cover",
+          "terms": "foil/deboss included \u00b7 die fee by quote",
+          "min": "quote",
+          "specs": "Rigid bookbinder's cloth over board \u00b7 14 colors \u00b7 screw-post & ring versions",
+          "brand": "Supplier foil-stamp or blind deboss",
+          "why": "Widest format range \u2014 including screw-post/ring casebound for an easily refreshable wine list \u2014 while still a true rigid hardcover with supplier foil.",
+          "img": "assets/img/menucover-alt2.png"
+        }
+      ]
+    },
+    {
       "id": "mat",
       "cat": "outdoor",
       "name": "Thick Branded Outdoor Rubber Mat",
