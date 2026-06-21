@@ -1,132 +1,841 @@
 {
-  "dashboard": {
+  "meta": {
     "property": "Poco Loco Ranch",
-    "location": "802 FM 474, Boerne, TX 78006",
-    "purpose": "Low-volume, brandable, luxury-feel OS&E guest supplies",
-    "branding_method": "In-house (laser engraving for this item; embroidery / UVDTF for future items)",
-    "inspiration": "Badrutt's Palace, St. Moritz",
-    "prepared": "2026-06-21",
-    "price_note": "Prices and minimums pulled from supplier product pages on 2026-06-21; confirm at checkout."
+    "location": "Boerne, Texas",
+    "prepared": "June 21, 2026",
+    "branding": "In-house: laser engraving, embroidery & UVDTF",
+    "inspiration": "Badrutt's Palace, St. Moritz"
   },
+  "categories": [
+    {
+      "id": "closet",
+      "name": "Closet & Dressing",
+      "blurb": "Heavy, brandable pieces that stay put and feel hotel-grade."
+    },
+    {
+      "id": "bath",
+      "name": "Bath",
+      "blurb": "Refillable, premium fixtures that replace single-use plastic."
+    },
+    {
+      "id": "bar",
+      "name": "Bar & Table",
+      "blurb": "Durable bar tools and real linen for the table."
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom & Comfort",
+      "blurb": "Soft goods guests touch \u2014 embroiderable and warm."
+    },
+    {
+      "id": "welcome",
+      "name": "Welcome & Desk",
+      "blurb": "Take-home and everyday-carry pieces, easy to brand in bulk."
+    },
+    {
+      "id": "outdoor",
+      "name": "Entry & Outdoor",
+      "blurb": "Big statement pieces for the porch, entry and yard."
+    }
+  ],
   "items": [
     {
       "id": "hanger",
-      "name": "Thick, engraveable wood hanger",
-      "category": "Closet",
-      "status": "complete",
-      "constraints": {
-        "brandable": "Smooth wood shoulder face for in-house laser engraving",
-        "low_volume": "Minimum order 1-25 units, US in-stock (no overseas MOQ)",
-        "price": "Low cost preferred; quality is the floor. No hard cap given.",
-        "must_be": "Heavy / thick / bulky so it is unlikely to be taken; currently available"
-      },
+      "cat": "closet",
+      "name": "Thick Engraveable Wood Hanger",
+      "tag": "Anti-theft heft",
+      "reference": "Your Badrutt's Palace reference: warm wood, brass hook, an understated engraved crest on the flat shoulder. These chase that heft + engraveable face in Hill-Country tones.",
+      "note": "Engraving tip: natural/light wood gives the crispest logo contrast; warm walnut gives the subtle, elegant burn of the Badrutt's crest. Engrave the flat shoulder face.",
       "options": [
         {
           "tier": "recommended",
-          "product": "Contoured Deluxe Wood Suit Hanger w/ Non-Slip Bar - Walnut",
+          "badge": "\u2605 Recommended",
+          "name": "Contoured Deluxe Suit Hanger \u2014 Walnut",
           "supplier": "OnlyHangers",
           "url": "https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar",
-          "price_per_unit_usd": 12.98,
-          "pricing_terms": "$38.95 per pack of 3",
-          "min_order": 3,
-          "wood": "Beech hardwood, walnut lacquer finish",
-          "size": "18 in wide, thick 'deluxe' contoured profile",
-          "hook": "Chrome swivel",
-          "trouser_bar": "Non-slip vinyl sleeve",
-          "rating": "4.6/5",
-          "engraving": "Beech engraves cleanly; walnut tone gives an understated tonal burn (matches Badrutt's crest look).",
-          "why": "Best balance: genuinely thick/heavy, warm walnut suits the ranch, 3-pack MOQ ideal for testing in-house laser.",
-          "image": "assets/img/hanger-primary-walnut.jpg"
+          "price": "\u2248 $12.98",
+          "unit": "/ hanger",
+          "terms": "$38.95 / 3-pack",
+          "min": "min 3",
+          "specs": "Beech, walnut finish \u00b7 thick 18\u2033 contour \u00b7 chrome hook \u00b7 non-slip bar",
+          "brand": "In-house laser engrave",
+          "why": "Genuinely thick & heavy, warm walnut suits the ranch, and a 3-pack lets you test your laser before scaling.",
+          "img": "assets/img/hanger-primary-walnut.jpg"
         },
         {
           "tier": "premium",
-          "product": "Tailor Made® Coat Hanger - Deep Butterscotch + Brass",
-          "supplier": "Butler Luxury (USA)",
+          "badge": "Premium",
+          "name": "Tailor Made\u00ae Coat Hanger \u2014 Butterscotch + Brass",
+          "supplier": "Butler Luxury",
           "url": "https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger",
-          "price_per_unit_usd": 38.00,
-          "pricing_terms": "Sold individually; standard Butler 'Coat Hanger' from $27 ea",
-          "min_order": 1,
-          "wood": "Grade-A German beech",
-          "size": "16.5 in or 18 in; 2-5/8 in sculpted shoulder",
-          "hook": "Solid brass (also walnut-espresso + matte chrome option)",
-          "trouser_bar": "Two trouser bars",
-          "engraving": "Smooth German beech is a premium laser substrate; butterscotch gives refined medium-contrast.",
-          "why": "Closest match to the Badrutt's hanger - heirloom weight, brass hook, warm wood. Buy one to prototype.",
-          "image": "assets/img/hanger-premium-butler.jpg"
+          "price": "$38.00",
+          "unit": "/ hanger",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Grade-A German beech \u00b7 2\u215d\u2033 sculpted shoulder \u00b7 solid brass hook",
+          "brand": "In-house laser engrave",
+          "why": "Closest to Badrutt's \u2014 heirloom weight, brass hook, warm wood. Buy one to prototype.",
+          "img": "assets/img/hanger-premium-butler.jpg"
         },
         {
           "tier": "value",
-          "product": "Contoured Suit Hanger w/ Locking Bar - Natural",
+          "badge": "Value",
+          "name": "Contoured Suit Hanger w/ Locking Bar \u2014 Natural",
           "supplier": "OnlyHangers",
           "url": "https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural",
-          "price_per_unit_usd": 2.44,
-          "pricing_terms": "$60.95 per box of 25 (also 50 / 100)",
-          "min_order": 25,
-          "wood": "Natural hardwood, clear lacquer",
-          "size": "17 in; 1/2 in thick (slimmer than the Deluxe)",
-          "hook": "Chrome swivel",
-          "trouser_bar": "Wooden locking bar",
-          "engraving": "Light natural wood = highest logo contrast (crisp dark burn).",
-          "why": "Lowest cost per unit and sharpest engraving; trade-off is a slimmer profile.",
-          "image": "assets/img/hanger-value-natural.jpg"
+          "price": "\u2248 $2.44",
+          "unit": "/ hanger",
+          "terms": "$60.95 / box of 25",
+          "min": "min 25",
+          "specs": "Natural hardwood, clear lacquer \u00b7 17\u2033 \u00b7 wooden locking bar",
+          "brand": "In-house laser engrave",
+          "why": "Lowest cost per unit and the crispest engraving contrast; trade-off is a slimmer profile.",
+          "img": "assets/img/hanger-value-natural.jpg"
         }
-      ],
-      "runner_ups": [
+      ]
+    },
+    {
+      "id": "shoehorn",
+      "cat": "closet",
+      "name": "Long-Handled Shoehorn",
+      "tag": "Entry valet",
+      "options": [
         {
-          "product": "Luxury Wooden Suit Hanger",
-          "supplier": "KirbyAllison",
-          "url": "https://kirbyallison.com/products/wooden-suit-hangers",
-          "price_per_unit_usd": 34.95,
-          "min_order": 1,
-          "notes": "2.5 in shoulder flare, finishes incl. Natural, felted trouser bar; premium, sold singly.",
-          "image": "assets/img/hanger-alt-kirbyallison.jpg"
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Hanger Project Walnut Long-Handle Shoe Horn",
+          "supplier": "Kirby Allison",
+          "url": "https://kirbyallison.com/products/hanger-project-walnut-long-handle-shoe-horn",
+          "price": "$210",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Solid walnut, ~24\u2033+, deerskin strap \u00b7 handcrafted in Dallas, TX",
+          "brand": "In-house laser engrave handle",
+          "why": "Heirloom US-made walnut from the same house as the hanger pick \u2014 premium and on-brand.",
+          "img": "assets/img/shoehorn-rec.jpg"
         },
         {
-          "product": "Natural Royal Heirloom Wooden Suit Hanger",
-          "supplier": "Royal Hangers",
-          "url": "https://royalhangers.com/products/natural-royal-heirloom-wooden-suit-hangers",
-          "price_per_unit_usd": 1.92,
-          "pricing_terms": "$48 per quarter-box of 25",
-          "min_order": 25,
-          "notes": "Solid maple, smooth multi-coat lacquer, non-slip pant bar; lowest price, smooth face, slim 7/16 in.",
-          "image": "assets/img/hanger-alt-royal.png"
+          "tier": "value",
+          "badge": "Value",
+          "name": "Personalized Engraved 7\u2033 Natural Wood Shoe Horn",
+          "supplier": "Teals Prairie & Co.",
+          "url": "https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/",
+          "price": "$29.99",
+          "unit": "/ ea",
+          "terms": "single \u00b7 5% off 5+",
+          "min": "min 1",
+          "specs": "Natural wood 7\u2033 \u00b7 handheld \u00b7 smooth engraving face",
+          "brand": "Supplier-engraved (turnkey)",
+          "why": "The only turnkey option where the supplier laser-engraves your seal for you \u2014 no equipment needed.",
+          "img": "assets/img/shoehorn-alt1.jpg"
         },
         {
-          "product": "Contoured Suit Hanger w/ Non-Slip Bar - Natural",
-          "supplier": "Everything Hangers",
-          "url": "https://www.everythinghangers.com/16-natural-wood-hanger-collection",
-          "price_per_unit_usd": 22.95,
-          "min_order": 3,
-          "notes": "Same thick 18 in / 2 in deluxe profile as the primary pick but pricier per unit; good if you want just one or two."
-        },
-        {
-          "product": "Coat Hanger (standard)",
-          "supplier": "Butler Luxury",
-          "url": "https://www.butlerluxury.com/collections/mens-coat-hangers",
-          "price_per_unit_usd": 27.00,
-          "min_order": 1,
-          "notes": "German beech, 4 widths; lower-cost entry to Butler heirloom quality."
+          "tier": "value",
+          "badge": "Value",
+          "name": "Long Wooden Shoehorn",
+          "supplier": "MUJI",
+          "url": "https://www.muji.us/products/wooden-shoehorn-long-23aw",
+          "price": "$8.90",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Birch, 22\u2033 \u00b7 hangs by cord loop",
+          "brand": "In-house UVDTF / engrave",
+          "why": "Rock-bottom price for a real long wood shoehorn; brand the handle in-house. The everyday workhorse.",
+          "img": "assets/img/shoehorn-alt2.jpg"
         }
-      ],
-      "engraving_guidance": [
-        "Highest contrast: natural / clear-finish maple, beech or birch (crisp dark burn on light wood).",
-        "Badrutt's look: medium/warm tones (walnut, butterscotch) give an understated tonal burn.",
-        "Avoid heavy gloss-poly or painted coatings; satin lacquer or natural is ideal (all picks qualify).",
-        "Placement: flat front shoulder face, ~1.5-2 in logo (where Badrutt's sets its crest).",
-        "Prototype on the 3-pack to lock laser power/speed before a full run."
-      ],
-      "suggested_test_order": {
-        "lines": [
-          "1 x OnlyHangers Deluxe Walnut 3-pack ($38.95)",
-          "1 x Butler Luxury single (~$27-38) to compare heirloom weight"
-        ],
-        "estimated_total_usd": "66-77"
-      }
+      ]
+    },
+    {
+      "id": "shoehornstand",
+      "cat": "closet",
+      "name": "Standing Shoehorn / Valet Block",
+      "tag": "Niche category",
+      "note": "Honest note: a long shoehorn seated in its own wooden base block is a genuinely scarce category \u2014 only two US-buyable pieces verified. The third is the closest verified low-cost engravable wood shoehorn (handheld). Or pair a Shoehorn pick above with an in-house-engraved walnut block.",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Standing Shoehorn (Kime, by Mikiya Kobayashi)",
+          "supplier": "Nalata Nalata (NYC)",
+          "url": "https://shop.nalatanalata.com/products/standing-shoehorn-1",
+          "price": "$210",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Walnut horn 28\u2033 + walnut base block 4.7\u2033 \u00b7 leather loop \u00b7 Asahikawa craft",
+          "brand": "In-house laser-engrave the base block",
+          "why": "Best-in-class: a true standing shoehorn in a substantial walnut block \u2014 a flat face made for your seal.",
+          "img": "assets/img/shoehornstand-rec.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Kime Shoehorn with Wooden Stand",
+          "supplier": "Amazon (ships from Amazon)",
+          "url": "https://www.amazon.com/Shoehorn-Stand-Handle-Wooden-Walnut/dp/B0D9LPXZNJ",
+          "price": "$119",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Solid walnut 27.5\u2033 + matching wooden stand \u00b7 made in Japan",
+          "brand": "In-house laser-engrave the base",
+          "why": "Nearly the same concept at ~half the price, with frictionless Amazon stock and US shipping.",
+          "img": "assets/img/shoehornstand-alt1.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Personalized Engraved Wood Shoe Horn (closest verified)",
+          "supplier": "Teals Prairie & Co.",
+          "url": "https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/",
+          "price": "$29.99",
+          "unit": "/ ea",
+          "terms": "single \u00b7 5% off 5+",
+          "min": "min 1",
+          "specs": "Natural wood 7\u2033 \u00b7 handheld (does not stand) \u00b7 supplier-engraved",
+          "brand": "Supplier-engraved (turnkey)",
+          "why": "Flagged honestly: handheld, not standing \u2014 the closest verified low-cost engravable wood piece if the standing form isn't essential.",
+          "img": "assets/img/shoehornstand-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "shower",
+      "cat": "bath",
+      "name": "Shower-Mounted Refillable Bottles",
+      "tag": "Replaces single-use",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Triple Wall Mount + Signature Amber Glass Dispensers",
+          "supplier": "The Polished Jar",
+          "url": "https://thepolishedjar.com/products/triple-wall-mount-for-soap-dispensers",
+          "price": "\u2248 $177",
+          "unit": "/ station",
+          "terms": "$108 bracket + $23/bottle",
+          "min": "min 1",
+          "specs": "Matte-black or brass triple bracket + 16oz amber glass pumps",
+          "brand": "In-house laser/UVDTF on glass, or supplier-engraved",
+          "why": "Amber glass + matte-black/brass reads premium-rustic, and the smooth glass is the only option you can truly brand in-house.",
+          "img": "assets/img/shower-rec.png"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Hotel-at-Home Triple Wall-Mounted Set \u2014 Amber",
+          "supplier": "MaisonOvo",
+          "url": "https://www.maisonovo.com/products/wall-mounted-soap-dispenser-amber-bronze",
+          "price": "$45",
+          "unit": "/ set",
+          "terms": "3 bottles + mounts + labels",
+          "min": "min 1",
+          "specs": "Shatter-safe amber PET \u00d73 \u00b7 no-drill adhesive mounts \u00b7 funnel",
+          "brand": "In-house UVDTF labels",
+          "why": "Cheapest turnkey amber system, shatter-safe for a rental shower \u2014 buy one, UVDTF a label, done.",
+          "img": "assets/img/shower-alt1.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Wall Mount Pump \u2014 Triple (or Single $50)",
+          "supplier": "simplehuman",
+          "url": "https://www.simplehuman.com/products/wall-mount-pump-triple",
+          "price": "$100",
+          "unit": "/ triple",
+          "terms": "sealed refillable chambers",
+          "min": "min 1",
+          "specs": "Brushed stainless, rust-proof, 15oz/chamber \u00b7 5-yr warranty",
+          "brand": "In-house laser/label",
+          "why": "The genuine hotel-grade fixture \u2014 bulletproof sealed metal, no glass to break. Modern-luxe lean.",
+          "img": "assets/img/shower-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "opener",
+      "cat": "bar",
+      "name": "Bottle Opener",
+      "tag": "Stays on the bar",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Wooden Bottle Opener \u2014 Walnut/Cherry + Stainless",
+          "supplier": "BirchBarn Designs (USA)",
+          "url": "https://birchbarndesigns.com/product/wood-bottle-opener/",
+          "price": "$20",
+          "unit": "/ ea",
+          "terms": "free engraving included",
+          "min": "min 1",
+          "specs": "Stainless speed-opener faced with real hardwood \u00b7 made in USA",
+          "brand": "Supplier engraves free \u2014 or in-house on the wood face",
+          "why": "Real walnut + solid stainless reads exactly 'Hill Country bar,' buyable as one, and the only pick that supports both supplier and in-house branding.",
+          "img": "assets/img/opener-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Stainless + Leather Bottle Opener (8-pack blanks)",
+          "supplier": "PYD Life",
+          "url": "https://shop.pydlife.com/products/craft-blanks-stainless-steel-bottle-opener-with-leather-cover-for-custom-laser-engraving-card-shape-5-color-options-8-pack",
+          "price": "$2.75",
+          "unit": "/ ea",
+          "terms": "$21.99 / 8-pack",
+          "min": "min 8",
+          "specs": "Stainless + genuine leather face \u00b7 brown tones",
+          "brand": "In-house laser-engrave the leather",
+          "why": "Crushes the price target, leather-on-steel matches the palette, and it's purpose-built as a laser blank.",
+          "img": "assets/img/opener-alt1.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Rustic Cast Iron Wall-Mounted Opener",
+          "supplier": "BarnwoodUSA",
+          "url": "https://barnwoodusa.com/products/rustic-cast-iron-wall-mounted-bottle-opener",
+          "price": "$9.99",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Solid cast iron, antique-brown, wall-mount fixture",
+          "brand": "Mount on an in-house engraved wood backer",
+          "why": "The most 'ranch fixture' look at under $10; brand it via a laser-engraved wood backer board.",
+          "img": "assets/img/opener-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "napkins",
+      "cat": "bar",
+      "name": "Linen Cocktail Napkins",
+      "tag": "Real linen",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Ecru Hemstitched Linen Cocktail Napkins (dozen)",
+          "supplier": "Bumblebee Linens",
+          "url": "https://bumblebeelinens.com/dozen-ecru-hemstitched-linen-cocktail-napkins-p-201.html",
+          "price": "\u2248 $1.58",
+          "unit": "/ napkin",
+          "terms": "$18.99 / dozen",
+          "min": "min 12",
+          "specs": "100% linen, ecru \u00b7 6\u00d76\u2033 \u00b7 ladder hemstitch",
+          "brand": "In-house corner embroidery",
+          "why": "Genuine pure linen in an earthy ecru, true cocktail size, by the dozen, purpose-made as an embroidery blank.",
+          "img": "assets/img/napkin-rec.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Cocktail Napkins \u2014 100% Pure Linen (Beige)",
+          "supplier": "All Cotton and Linen",
+          "url": "https://www.allcottonandlinen.com/products/cocktail-napkins",
+          "price": "\u2248 $6.25",
+          "unit": "/ napkin",
+          "terms": "$24.99 / set of 4",
+          "min": "min 4",
+          "specs": "100% linen, beige \u00b7 12\u00d712\u2033 \u00b7 wide hem",
+          "brand": "In-house embroidery / UVDTF",
+          "why": "Premium pure linen at the lowest minimum (just 4) in an on-brand beige.",
+          "img": "assets/img/napkin-alt1.webp"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Saro Hemstitched Cocktail Napkins (set of 6)",
+          "supplier": "Tres Belle Fete",
+          "url": "https://tresbellefete.com/products/hemstitched-cocktail-napkins",
+          "price": "\u2248 $3.75",
+          "unit": "/ napkin",
+          "terms": "$22.50 / set of 6",
+          "min": "min 6",
+          "specs": "55% linen / 45% cotton \u00b7 6\u00d76\u2033 \u00b7 hemstitched \u00b7 white",
+          "brand": "In-house embroidery",
+          "why": "Durable linen-cotton blend that launders and embroiders easily for heavy rental turnover.",
+          "img": "assets/img/napkin-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "blankets",
+      "cat": "bedroom",
+      "name": "Small Individual Blankets",
+      "tag": "Embroiderable",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Yakima Camp Throw (54\u00d766\u2033)",
+          "supplier": "Pendleton",
+          "url": "https://www.pendleton-usa.com/product/yakima-camp-throw/72266.html",
+          "price": "$188",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "Virgin wool/cotton, camp stripe \u00b7 earthy colorways \u00b7 USA mills",
+          "brand": "In-house corner embroidery",
+          "why": "The genuine Pendleton-style southwestern throw \u2014 made-in-USA wool, earthy tones, embroiderable, buyable one at a time.",
+          "img": "assets/img/blanket-rec.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Frontier Wool Throw (50\u00d772\u2033)",
+          "supplier": "Faribault Mill",
+          "url": "https://www.faribaultmill.com/products/frontier-throw",
+          "price": "$195",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "100% US wool, natural/gray \u00b7 heritage MN mill since 1865",
+          "brand": "In-house embroidery",
+          "why": "A quieter solid-tone American wool throw for a more understated, modern-rustic look.",
+          "img": "assets/img/blanket-alt1.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Core Fleece Blanket BP60 (50\u00d760\u2033)",
+          "supplier": "Port Authority / Full Source",
+          "url": "https://www.fullsource.com/port-authority-1013143/",
+          "price": "$7.68",
+          "unit": "/ ea",
+          "terms": "sold individually (blank)",
+          "min": "min 1",
+          "specs": "9oz anti-pill fleece \u00b7 neutral tones \u00b7 exact 50\u00d760\u2033",
+          "brand": "In-house embroidery or UVDTF",
+          "why": "The value play and the only exact 50\u00d760 spec \u2014 outfit every bed cheaply and brand in-house.",
+          "img": "assets/img/blanket-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sewing",
+      "cat": "bedroom",
+      "name": "Sewing Kit",
+      "tag": "Guest amenity",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "#8205 Hard-Case Travel Sewing Kit (28-pc)",
+          "supplier": "Coghlan's",
+          "url": "https://www.coghlans.com/sewing-kit-8205",
+          "price": "$2.99",
+          "unit": "/ ea",
+          "terms": "no minimum",
+          "min": "min 1",
+          "specs": "Hard clamshell case 3.3\u00d72.3\u2033 \u00b7 rugged outdoor brand",
+          "brand": "In-house UVDTF on the lid",
+          "why": "Only option with a true minimum of 1 and a smooth hard lid purpose-built for your UVDTF seal.",
+          "img": "assets/img/sewing-rec.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Compact Zippered Sewing Kit",
+          "supplier": "4imprint",
+          "url": "https://www.4imprint.com/product/120055/Compact-Zippered-Sewing-Kit",
+          "price": "$2.99",
+          "unit": "/ ea",
+          "terms": "min 100 + $40 setup",
+          "min": "min 100",
+          "specs": "Soft vinyl zip case \u00b7 black \u00b7 10 threads, scissors, tape",
+          "brand": "Supplier-printed",
+          "why": "Closest to a turnkey pre-branded hotel amenity if you'd rather not UVDTF them yourself.",
+          "img": "assets/img/sewing-alt1.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "In a Pinch 15-Piece Essentials Kit",
+          "supplier": "4imprint",
+          "url": "https://www.4imprint.com/product/169888/In-a-Pinch-15-Piece-Essentials-Kit",
+          "price": "$7.75",
+          "unit": "/ ea",
+          "terms": "min 50 + $55 setup",
+          "min": "min 50",
+          "specs": "Recycled-poly pouch \u00b7 sewing + grooming multi-amenity",
+          "brand": "Supplier-printed",
+          "why": "An elevated all-in-one guest essentials pouch with the lowest branded MOQ (50).",
+          "img": "assets/img/sewing-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "pens",
+      "cat": "welcome",
+      "name": "Nice Thick Pens",
+      "tag": "\u2264 $5 target",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Venetian Metal Pen \u2014 Laser Engraved",
+          "supplier": "4imprint",
+          "url": "https://www.4imprint.com/product/105100-L/Venetian-Metal-Pen-Laser-Engraved",
+          "price": "$1.99",
+          "unit": "/ pen",
+          "terms": "min 75 + $30 setup \u00b7 ~$1.45@250",
+          "min": "min 75",
+          "specs": "Solid aluminum barrel, chrome accents \u00b7 black/green",
+          "brand": "Supplier laser-engraved",
+          "why": "Hits the target dead-on: well under $5, real metal, engraved-for-you, in stock. Pick black or green for the palette.",
+          "img": "assets/img/pen-alt1.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Parker IM Metal Pen \u2014 Laser Engraved",
+          "supplier": "4imprint",
+          "url": "https://www.4imprint.com/product/146783-L/Parker-IM-Metal-Pen-Laser-Engraved",
+          "price": "$31.25",
+          "unit": "/ pen",
+          "terms": "min 15 + $20 setup",
+          "min": "min 15",
+          "specs": "Genuine Parker \u00b7 solid brass barrel \u00b7 substantial weight",
+          "brand": "Supplier laser-engraved",
+          "why": "The showpiece: real Parker brand, heavy brass barrel \u2014 rugged-luxury weight in a guest's hand. Lowest MOQ (15).",
+          "img": "assets/img/pen-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Soft Touch Metal Pens (50-pack blanks)",
+          "supplier": "BulkLaser",
+          "url": "https://bulklaser.com/products/bulk-soft-touch-metal-pens",
+          "price": "$0.46",
+          "unit": "/ pen",
+          "terms": "$23 / 50-pack \u00b7 no setup",
+          "min": "min 50",
+          "specs": "Aluminum, soft-touch coating \u00b7 15 colors \u00b7 stylus tip",
+          "brand": "In-house laser-engrave",
+          "why": "Cheapest path to a custom metal pen if you engrave in-house \u2014 $0.46 each, no setup, full control.",
+          "img": "assets/img/pen-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "totes",
+      "cat": "welcome",
+      "name": "Canvas Tote Bags",
+      "tag": "Embroider / UVDTF",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Bayside 12oz USA Cotton Canvas Tote \u2014 Natural",
+          "supplier": "BagzDepot",
+          "url": "https://www.bagzdepot.com/products/made-in-usa-tote-bags-ba750",
+          "price": "$19.35",
+          "unit": "/ ea",
+          "terms": "qty breaks at 6/50/250",
+          "min": "min 1",
+          "specs": "12oz cotton canvas, MADE IN USA \u00b7 gusset \u00b7 natural",
+          "brand": "In-house embroidery / UVDTF",
+          "why": "Blank natural heavy canvas, made in USA, buyable as singles \u2014 substantial enough to feel premium, cheap enough to brand a stack.",
+          "img": "assets/img/tote-rec.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Day Tote in Waxed Canvas (No. 103)",
+          "supplier": "ARTIFACT Bags (USA)",
+          "url": "https://artifactbags.com/products/day-tote-in-waxed-canvas",
+          "price": "$140",
+          "unit": "/ ea",
+          "terms": "sold individually",
+          "min": "min 1",
+          "specs": "14oz waxed canvas \u00b7 full-grain leather straps \u00b7 solid brass \u00b7 handmade Omaha",
+          "brand": "In-house UVDTF / maker monogram",
+          "why": "The true luxury-rustic piece \u2014 waxed canvas, leather, brass, made by hand. A flagship welcome gift.",
+          "img": "assets/img/tote-alt1.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Heavy Duty 13oz Canvas Tote \u2014 Natural",
+          "supplier": "BagzDepot",
+          "url": "https://www.bagzdepot.com/products/canvas-tote-bags-bs148",
+          "price": "$7.25",
+          "unit": "/ ea",
+          "terms": "qty breaks at 24/250",
+          "min": "min 1",
+          "specs": "13oz cotton canvas, natural \u00b7 gusset",
+          "brand": "In-house embroidery / UVDTF",
+          "why": "Heaviest fabric (13oz) at the lowest price \u2014 best dollar-for-quality if you're branding a quantity in-house.",
+          "img": "assets/img/tote-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bandana",
+      "cat": "welcome",
+      "name": "Bandana",
+      "tag": "Print or blank",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Port Authority C960 Cotton Bandana",
+          "supplier": "DTLA Print",
+          "url": "https://www.dtlaprint.com/products/port-authority-cotton-bandana-c960/",
+          "price": "$3.40",
+          "unit": "/ ea",
+          "terms": "blank min 1 \u00b7 printed no-min (DTG)",
+          "min": "min 1",
+          "specs": "100% cotton, 21.5\u00d721.5\u2033 \u00b7 serged seams \u00b7 many colors",
+          "brand": "In-house UVDTF/embroidery, or supplier print",
+          "why": "The only option that's both buyable at qty 1 AND printable with no minimum \u2014 brand in-house or have them print it.",
+          "img": "assets/img/bandana-rec.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Custom Printed Bandana (C960 base)",
+          "supplier": "Broken Arrow Wear",
+          "url": "https://www.brokenarrowwear.com/catalog/accessories/bandanas.html",
+          "price": "quote",
+          "unit": "/ ea",
+          "terms": "screen min 6 \u00b7 DTG no-min",
+          "min": "min 6",
+          "specs": "100% cotton \u00b7 full-color DTG or 1-color screen",
+          "brand": "Supplier-printed",
+          "why": "Best dedicated low-MOQ custom-printed route \u2014 your seal printed on the same premium cotton.",
+          "img": "assets/img/bandana-alt1.webp"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Border 50 Custom Screen-Printed Bandana",
+          "supplier": "WholesaleForEveryone",
+          "url": "https://custom.wholesaleforeveryone.com/product/border-50-custom-printed-bandanas-design-your-own-screen-printed/",
+          "price": "$25",
+          "unit": "/ ea",
+          "terms": "at 12 pcs \u00b7 scales down with volume",
+          "min": "min 12",
+          "specs": "100% cotton 22\u00d722\u2033 \u00b7 earth-tone base colors (khaki/rust/brown)",
+          "brand": "Supplier screen-print",
+          "why": "The only custom option with true earth-tone base fabric to match the ranch palette.",
+          "img": "assets/img/bandana-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mat",
+      "cat": "outdoor",
+      "name": "Thick Branded Outdoor Rubber Mat",
+      "tag": "Logo molded-in",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "SuperScrape Impressions Custom Logo Mat",
+          "supplier": "FloorMatShop (USA)",
+          "url": "https://www.floormatshop.com/Superscrape-Impressions-Logo-Mat.aspx",
+          "price": "$147.98",
+          "unit": "/ mat",
+          "terms": "2.5\u00d73\u2032 ($151.81 for 3\u00d74\u2032)",
+          "min": "min 1",
+          "specs": "100% nitrile rubber, 3/16\u2033 thick \u00b7 up to 6\u00d78\u2032 \u00b7 logo molded in",
+          "brand": "Supplier-molded full-color logo",
+          "why": "A genuinely thick, heavy all-rubber scraper with the seal permanently molded in \u2014 survives Hill-Country sun, rain and boots.",
+          "img": "assets/img/mat-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Rubber Logo Scraper Mat (Custom)",
+          "supplier": "Custom-Mats.com",
+          "url": "https://custom-mats.com/collections/outdoor-logo-mats/products/rubber-logo-scraper-mat",
+          "price": "$95.16",
+          "unit": "/ mat",
+          "terms": "2\u00d73\u2032 on sale",
+          "min": "min 1",
+          "specs": "All-rubber scraper cleats \u00b7 HD 4-color print + PMS match",
+          "brand": "Supplier-printed",
+          "why": "Same all-rubber outdoor concept ~$50 cheaper at the small size, still qty 1.",
+          "img": "assets/img/mat-alt1.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Completely Custom Coir Doormat",
+          "supplier": "Nickel Designs (USA)",
+          "url": "https://nickel-designs.com/products/completely-custom-personalized-doormat",
+          "price": "$74.99",
+          "unit": "/ mat",
+          "terms": "18\u00d730\u2033 standard",
+          "min": "min 1",
+          "specs": "Natural coir on thick vinyl base \u00b7 UV-printed \u00b7 made in USA",
+          "brand": "Supplier UV-print (or blank for in-house)",
+          "why": "Warmest 'ranch-porch' look \u2014 natural coir, US small-shop made, the cheapest of the three. Confirm made-to-order stock.",
+          "img": "assets/img/mat-alt2.png"
+        }
+      ]
+    },
+    {
+      "id": "umbrellaholder",
+      "cat": "outdoor",
+      "name": "Umbrella Holder / Stand",
+      "tag": "Entry fixture",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Scroll Forged Wrought Iron Umbrella Stand",
+          "supplier": "Iron Accents (USA)",
+          "url": "https://www.ironaccents.com/products/scroll-umbrella-stand",
+          "price": "$315",
+          "unit": "/ ea",
+          "terms": "made-to-order",
+          "min": "min 1",
+          "specs": "Hand-forged iron, 25\u2033H, 13 lbs \u00b7 aged-patina finishes \u00b7 US-made",
+          "brand": "In-house laser-engrave / UVDTF",
+          "why": "Hand-forged American iron reads rugged Hill Country, and solid iron is the cleanest engraving substrate. Order early (multi-week build).",
+          "img": "assets/img/umbrellaholder-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Galvanized Metal Umbrella Stand, 28\u2033",
+          "supplier": "Globedecor",
+          "url": "https://globedecor.com/product/metal-umbrella-stand-galvanized-gray-28/",
+          "price": "$109.99",
+          "unit": "/ ea",
+          "terms": "in stock now",
+          "min": "min 1",
+          "specs": "Galvanized steel barrel + brass-tone footed base \u00b7 28\u2033H",
+          "brand": "In-house engrave / UVDTF the barrel",
+          "why": "The galvanized-bucket look the brief asked for, in stock, at a third of the premium price.",
+          "img": "assets/img/umbrellaholder-alt1.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Country Stump Vintage Umbrella Stand",
+          "supplier": "Bushy Box",
+          "url": "https://www.bushybox.com/products/country-stump-vintage-farmhouse-umbrella-stand-unique-indoor-outdoor-walking-stick-umbrella-holder-rustic-home-entryway-log-bin",
+          "price": "$159",
+          "unit": "/ ea",
+          "terms": "in stock",
+          "min": "min 1",
+          "specs": "Cement composite faux tree-stump \u00b7 32\u2033H \u00b7 weatherproof",
+          "brand": "In-house UVDTF or engraved medallion",
+          "why": "A memorable rustic statement piece; brand via UVDTF or an applied engraved tag (textured surface).",
+          "img": "assets/img/umbrellaholder-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "umbrellas",
+      "cat": "outdoor",
+      "name": "Long Umbrellas",
+      "tag": "Print or blank",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "The Selva Auto-Open Bamboo Stick Umbrella (48\u2033)",
+          "supplier": "4imprint",
+          "url": "https://www.4imprint.com/product/156465/The-Selva-Auto-Open-Stick-Umbrella-48-Arc",
+          "price": "$20.99",
+          "unit": "/ ea",
+          "terms": "min 25 \u00b7 print included, no setup",
+          "min": "min 25",
+          "specs": "Bamboo shaft + handle \u00b7 vented RPET canopy \u00b7 auto-open",
+          "brand": "Supplier 4-color print included",
+          "why": "Natural bamboo = the warm wood/canvas look, vented = windproof, and a full multi-color logo print is included with zero setup fee.",
+          "img": "assets/img/umbrella-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Aluminum Stick Umbrella with Wood Handle (48\u2033)",
+          "supplier": "Umbrellas & Beyond",
+          "url": "https://umbrellasandbeyond.com/products/ht-4020-wood-handle-stick-umbrella-48",
+          "price": "$12.23",
+          "unit": "/ ea",
+          "terms": "blank, qty 1",
+          "min": "min 1",
+          "specs": "Aluminum shaft \u00b7 wood grip \u00b7 nylon canopy \u00b7 khaki \u00b7 auto-open",
+          "brand": "In-house UVDTF / engrave the handle",
+          "why": "The qty-1, lowest-cost, brand-it-yourself play \u2014 khaki + wood handle nails the neutral palette.",
+          "img": "assets/img/umbrella-alt1.jpg"
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "Classic Curved-Handle Umbrella (54\u2033)",
+          "supplier": "4AllPromos",
+          "url": "https://www.4allpromos.com/product/classic-curved-handle-umbrella",
+          "price": "$18.05",
+          "unit": "/ ea",
+          "terms": "min 36 + $50/color",
+          "min": "min 36",
+          "specs": "54\u2033 arc \u00b7 dark wood crook handle with brass accents \u00b7 auto-open",
+          "brand": "Supplier screen-print",
+          "why": "The dressiest silhouette \u2014 full walking-stick with real wood crook + brass. Wood + brass = the Poco Loco material story.",
+          "img": "assets/img/umbrella-alt2.jpg"
+        }
+      ]
+    },
+    {
+      "id": "cornhole",
+      "cat": "outdoor",
+      "name": "Poco Loco Cornhole",
+      "tag": "Custom printed",
+      "options": [
+        {
+          "tier": "recommended",
+          "badge": "\u2605 Recommended",
+          "name": "Custom Tournament Series Set + Pro Bags",
+          "supplier": "Cornhole Solutions (USA)",
+          "url": "https://cornholesolutions.com/products/custom-cornhole-set-direct-printed-regulation-2-by-4-tournament-set",
+          "price": "\u2248 $440",
+          "unit": "/ set",
+          "terms": "$379.99 boards + $59.99 bags",
+          "min": "min 1 set",
+          "specs": "Regulation 2\u00d74\u2032 \u00b7 3/4\u2033 Baltic birch \u00b7 edge-to-edge UV print \u00b7 folding legs",
+          "brand": "Supplier-printed full color",
+          "why": "Premium 3/4\u2033 Baltic birch with edge-to-edge logo printing, orderable as one set, fast turnaround. The natural birch suits the ranch.",
+          "img": "assets/img/cornhole-rec.jpg"
+        },
+        {
+          "tier": "value",
+          "badge": "Value",
+          "name": "Business Design #28 Custom Birch Boards",
+          "supplier": "Cornhole Pro LLC (USA)",
+          "url": "https://cornholepromn.com/business-design-28-custom-with-your-business-logo-regulation-size-cornhole-boards-baltic-birch-cornhole-boards-custom-cornhole-boards/",
+          "price": "$265",
+          "unit": "/ set",
+          "terms": "boards only (bags extra)",
+          "min": "min 1 set",
+          "specs": "Regulation 2\u00d74\u2032 \u00b7 Baltic birch (1/2\u2033 or 3/4\u2033 Pro) \u00b7 full UV print",
+          "brand": "Supplier-printed full color",
+          "why": "Same premium birch + full-color print ~$115 cheaper at the board level; add the 3/4\u2033 Pro tier for max heft.",
+          "img": "assets/img/cornhole-alt1.jpg"
+        },
+        {
+          "tier": "alt",
+          "badge": "Alternative",
+          "name": "Lightweight Regulation Set + 8 Bags + Case (blank)",
+          "supplier": "Tailgating Pros (USA)",
+          "url": "https://www.tailgatingpros.com/4x2-lightweight-regulation-cornhole-boards/",
+          "price": "$129.85",
+          "unit": "/ set",
+          "terms": "includes bags + carry case",
+          "min": "min 1 set",
+          "specs": "Solid-wood frame, 1/2\u2033 ply top \u00b7 8 bags + case",
+          "brand": "In-house UVDTF or laser-engrave",
+          "why": "The budget/control route \u2014 a complete set for ~a third the price; laser-engrave or UVDTF the seal yourself.",
+          "img": "assets/img/cornhole-alt2.jpg"
+        }
+      ]
     }
-  ],
-  "roadmap": [
-    {"item": "Engraveable wood hanger", "status": "complete"},
-    {"item": "Branded pen", "status": "next", "target": "Well under $5/ea, laser or UVDTF, low MOQ"},
-    {"item": "Bottle opener", "status": "queued", "target": "Up to $10/ea, durable, engraveable"}
   ]
 }

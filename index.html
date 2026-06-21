@@ -1,431 +1,608 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Poco Loco Ranch — OS&amp;E Sourcing Dashboard</title>
-<style>
-  :root{
-    --cream:#f8f2e6;
-    --parchment:#fffdf7;
-    --espresso:#3b2a1d;
-    --bark:#4f3a28;
-    --rust:#b5532a;
-    --rust-soft:#c87a4f;
-    --sage:#7c7f4e;
-    --brass:#b0894f;
-    --ink:#2c211a;
-    --muted:#7a6a59;
-    --line:#e6dcc8;
-    --good:#3f7d4f;
-    --shadow:0 6px 24px rgba(59,42,29,.10);
-    --shadow-lg:0 14px 40px rgba(59,42,29,.16);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(1200px 600px at 80% -10%, #f3e8d4 0%, transparent 60%),
-      var(--cream);
-    line-height:1.55;
-  }
-  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
-  a{color:var(--rust);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-
-  /* Header */
-  header.top{
-    background:linear-gradient(135deg,var(--espresso),var(--bark));
-    color:#f6ecdc;
-    padding:34px 0 30px;
-    border-bottom:4px solid var(--brass);
-  }
-  .brandrow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .seal{
-    width:62px;height:62px;border-radius:50%;flex:0 0 auto;
-    border:2px solid var(--brass);
-    display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(circle at 50% 35%,#5a4430,#33241a);
-    color:var(--brass);font-family:Georgia,serif;font-weight:bold;font-size:13px;
-    text-align:center;line-height:1.05;letter-spacing:.5px;
-  }
-  header.top h1{margin:0;font-size:30px;letter-spacing:.3px}
-  header.top .sub{margin:2px 0 0;color:#d9c7ac;font-size:15px}
-  .meta{margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:#e9dcc6}
-  .meta b{color:#fff}
-
-  /* Stat strip */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 4px}
-  .stat{background:var(--parchment);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
-  .stat .n{font-family:Georgia,serif;font-size:26px;color:var(--bark);line-height:1}
-  .stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.6px}
-
-  /* Section */
-  section{padding:30px 0}
-  .eyebrow{display:inline-block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rust);font-weight:700;margin-bottom:6px}
-  .sec-h{font-size:25px;margin:0 0 4px;color:var(--espresso)}
-  .sec-sub{color:var(--muted);margin:0 0 8px;max-width:760px}
-
-  /* Reference callout */
-  .ref{
-    display:flex;gap:16px;align-items:flex-start;background:#fff6e9;border:1px solid #ecdcc0;
-    border-left:4px solid var(--brass);border-radius:12px;padding:16px 18px;margin:14px 0 26px;
-  }
-  .ref .tag{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--brass);white-space:nowrap}
-  .ref p{margin:0;font-size:14.5px;color:#5a4836}
-
-  /* Cards */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-  .card{
-    background:var(--parchment);border:1px solid var(--line);border-radius:18px;overflow:hidden;
-    box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease;position:relative;
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-  .card.rec{border:2px solid var(--good)}
-  .ribbon{position:absolute;top:14px;left:0;z-index:2;color:#fff;font-size:11px;font-weight:800;letter-spacing:.7px;
-    text-transform:uppercase;padding:5px 12px 5px 14px;border-radius:0 16px 16px 0;box-shadow:var(--shadow)}
-  .ribbon.r-rec{background:var(--good)}
-  .ribbon.r-prem{background:var(--brass)}
-  .ribbon.r-val{background:var(--sage)}
-  .imgbox{background:#fff;height:230px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);padding:14px}
-  .imgbox img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
-  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
-  .supplier{font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700}
-  .pname{font-size:18px;margin:4px 0 8px;color:var(--espresso);line-height:1.25}
-  .price{display:flex;align-items:baseline;gap:8px;margin:2px 0 2px}
-  .price .big{font-family:Georgia,serif;font-size:27px;color:var(--rust)}
-  .price .per{font-size:13px;color:var(--muted)}
-  .terms{font-size:13px;color:#6a5848;margin:0 0 12px}
-  .terms b{color:var(--bark)}
-  .specs{list-style:none;padding:0;margin:0 0 12px;border-top:1px dashed var(--line)}
-  .specs li{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
-  .specs li span:first-child{color:var(--muted)}
-  .specs li span:last-child{color:var(--ink);text-align:right;font-weight:600}
-  .why{font-size:13.5px;background:#f5efe2;border-radius:10px;padding:10px 12px;color:#5a4836;margin:0 0 14px}
-  .why b{color:var(--bark)}
-  .engrave{font-size:12.5px;color:var(--sage);font-weight:700;margin:0 0 14px;display:flex;gap:7px;align-items:flex-start}
-  .engrave svg{flex:0 0 auto;margin-top:2px}
-  .btn{margin-top:auto;display:inline-block;text-align:center;background:var(--espresso);color:#fff;
-    padding:11px 14px;border-radius:10px;font-weight:700;font-size:14px;letter-spacing:.3px}
-  .btn:hover{background:var(--rust);text-decoration:none}
-
-  /* Comparison table */
-  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--parchment)}
-  table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
-  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
-  thead th{background:#efe6d3;color:var(--espresso);font-family:Georgia,serif;font-size:13.5px;position:sticky;top:0}
-  tbody tr:hover{background:#fbf6ec}
-  td.unit{font-weight:700;color:var(--rust)}
-  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.4px}
-  .pill.rec{background:#e3f0e6;color:var(--good)}
-  .pill.prem{background:#f4ead5;color:var(--brass)}
-  .pill.val{background:#eef0df;color:var(--sage)}
-  .pill.ru{background:#efe7da;color:var(--muted)}
-
-  /* Notes / two-up */
-  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .panel{background:var(--parchment);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
-  .panel h3{margin:0 0 10px;color:var(--espresso);font-size:18px}
-  .panel ul{margin:0;padding-left:18px}
-  .panel li{margin:7px 0;font-size:14px}
-  .panel li b{color:var(--bark)}
-  .starter{background:linear-gradient(135deg,#5a4430,#3b2a1d);color:#f3e7d3;border:none}
-  .starter h3{color:#fff}
-  .starter li{color:#ecdcc4}
-  .starter b{color:#fff}
-  .starter .total{margin-top:12px;font-family:Georgia,serif;font-size:20px;color:var(--brass)}
-
-  /* Roadmap */
-  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .rcard{border:1.5px dashed var(--line);border-radius:14px;padding:18px;background:#fbf7ee}
-  .rcard.done{border-style:solid;border-color:var(--good);background:#f4faf4}
-  .rcard .st{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
-  .rcard.done .st{color:var(--good)}
-  .rcard .st.next{color:var(--rust)}
-  .rcard .st.queue{color:var(--muted)}
-  .rcard h4{margin:8px 0 4px;font-family:Georgia,serif;font-size:17px;color:var(--espresso)}
-  .rcard p{margin:0;font-size:13px;color:var(--muted)}
-
-  footer{background:var(--espresso);color:#d9c7ac;padding:26px 0 34px;margin-top:24px;border-top:4px solid var(--brass)}
-  footer .wrap{font-size:13px}
-  footer b{color:#fff}
-  footer a{color:var(--rust-soft)}
-
-  @media(max-width:900px){
-    .grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:repeat(2,1fr)}
-    .twocol{grid-template-columns:1fr}
-    .road{grid-template-columns:1fr}
-  }
-  @media print{
-    body{background:#fff}
-    .card:hover{transform:none;box-shadow:var(--shadow)}
-    .btn{display:none}
-    header.top{background:var(--espresso) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  }
-</style>
-</head>
-<body>
-
-<header class="top">
-  <div class="wrap">
-    <div class="brandrow">
-      <div class="seal">POCO<br>LOCO<br>RANCH</div>
-      <div>
-        <h1>OS&amp;E Sourcing Dashboard</h1>
-        <p class="sub">Low-volume, brandable, luxury-feel guest supplies &mdash; vetted for the Poco Loco Ranch, Boerne&nbsp;TX</p>
-      </div>
-    </div>
-    <div class="meta">
-      <div>Prepared <b>June&nbsp;21, 2026</b></div>
-      <div>Inspiration <b>Badrutt&rsquo;s Palace, St.&nbsp;Moritz</b></div>
-      <div>Branding <b>In-house: laser engraving</b></div>
-      <div>Status <b>Item&nbsp;1 of&nbsp;3 complete</b></div>
-    </div>
-  </div>
-</header>
-
-<div class="wrap">
-  <div class="stats">
-    <div class="stat"><div class="n">1</div><div class="l">Item sourced</div></div>
-    <div class="stat"><div class="n">7</div><div class="l">Options vetted</div></div>
-    <div class="stat"><div class="n">$1.92&ndash;$38</div><div class="l">Per-unit range</div></div>
-    <div class="stat"><div class="n">1&ndash;3</div><div class="l">Lowest min. order</div></div>
-  </div>
-</div>
-
-<!-- ITEM 1 -->
-<section id="hanger">
-  <div class="wrap">
-    <span class="eyebrow">Item 01 &middot; Closet</span>
-    <h2 class="sec-h">Thick, Engraveable Wood Hanger</h2>
-    <p class="sec-sub">A substantial, heavy hanger that feels luxurious, resists walking off with guests, and gives a smooth wood face for your in-house laser engraving &mdash; the same logic as the Badrutt&rsquo;s example.</p>
-
-    <div class="ref">
-      <span class="tag">Your<br>Reference</span>
-      <p><b>Badrutt&rsquo;s Palace hanger:</b> warm medium-brown hardwood, solid brass hook, an understated laser-engraved crest on the flat shoulder face, and a dusty-rose velvet trouser bar. The picks below match its defining traits &mdash; <b>heft, warm wood, and an engraveable flat shoulder</b> &mdash; while leaning into the ranch&rsquo;s earthy Hill-Country palette rather than alpine pink.</p>
-    </div>
-
-    <div class="grid">
-
-      <!-- RECOMMENDED -->
-      <article class="card rec">
-        <div class="ribbon r-rec">★ Recommended</div>
-        <div class="imgbox"><img src="assets/img/hanger-primary-walnut.jpg" alt="Contoured Deluxe Walnut wood suit hanger with non-slip bar"></div>
-        <div class="body">
-          <div class="supplier">OnlyHangers</div>
-          <h3 class="pname">Contoured Deluxe Suit Hanger w/ Non-Slip Bar &mdash; Walnut</h3>
-          <div class="price"><span class="big">≈ $12.98</span><span class="per">/ hanger</span></div>
-          <p class="terms"><b>$38.95</b> per pack of 3 &middot; <b>Min. order: 3</b> &middot; ships from US stock</p>
-          <ul class="specs">
-            <li><span>Wood</span><span>Beech hardwood, walnut finish</span></li>
-            <li><span>Profile</span><span>Thick &ldquo;deluxe&rdquo; contour, 18&Prime;</span></li>
-            <li><span>Hook</span><span>Chrome swivel</span></li>
-            <li><span>Trouser bar</span><span>Non-slip vinyl sleeve</span></li>
-            <li><span>Reviews</span><span>4.6 / 5</span></li>
-          </ul>
-          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Engraves to an elegant subtle burn &mdash; the same understated look as your Badrutt&rsquo;s crest.</span></p>
-          <p class="why"><b>Why it wins:</b> genuinely thick &amp; heavy (won&rsquo;t walk off), warm walnut suits the ranch, and a 3-pack minimum lets you dial in your laser before scaling.</p>
-          <a class="btn" href="https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar" target="_blank" rel="noopener">View &amp; buy at OnlyHangers →</a>
-        </div>
-      </article>
-
-      <!-- PREMIUM -->
-      <article class="card">
-        <div class="ribbon r-prem">Premium &middot; Heirloom</div>
-        <div class="imgbox"><img src="assets/img/hanger-premium-butler.jpg" alt="Butler Luxury Tailor Made wood hanger with brass hook"></div>
-        <div class="body">
-          <div class="supplier">Butler Luxury (USA)</div>
-          <h3 class="pname">Tailor Made® Coat Hanger &mdash; Butterscotch + Brass</h3>
-          <div class="price"><span class="big">$38.00</span><span class="per">/ hanger</span></div>
-          <p class="terms"><b>Min. order: 1</b> &middot; standard Coat Hanger from <b>$27</b> ea</p>
-          <ul class="specs">
-            <li><span>Wood</span><span>Grade-A German beech</span></li>
-            <li><span>Shoulder</span><span>2&#8540;&Prime; sculpted, 16.5/18&Prime;</span></li>
-            <li><span>Hook</span><span>Solid brass (matches Badrutt&rsquo;s)</span></li>
-            <li><span>Trouser bars</span><span>Two bars</span></li>
-            <li><span>Made</span><span>Heirloom, lifetime build</span></li>
-          </ul>
-          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Smooth German beech is a premium laser substrate; butterscotch gives a refined medium-contrast mark.</span></p>
-          <p class="why"><b>Closest to Badrutt&rsquo;s:</b> heirloom weight, brass hook, warm wood. Buy a single to prototype before committing.</p>
-          <a class="btn" href="https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger" target="_blank" rel="noopener">View &amp; buy at Butler Luxury →</a>
-        </div>
-      </article>
-
-      <!-- VALUE -->
-      <article class="card">
-        <div class="ribbon r-val">Value &middot; Crispest engraving</div>
-        <div class="imgbox"><img src="assets/img/hanger-value-natural.jpg" alt="Natural contoured wood suit hanger with locking bar"></div>
-        <div class="body">
-          <div class="supplier">OnlyHangers</div>
-          <h3 class="pname">Contoured Suit Hanger w/ Locking Bar &mdash; Natural</h3>
-          <div class="price"><span class="big">≈ $2.44</span><span class="per">/ hanger</span></div>
-          <p class="terms"><b>$60.95</b> per box of 25 &middot; <b>Min. order: 25</b> &middot; 50/100 boxes too</p>
-          <ul class="specs">
-            <li><span>Wood</span><span>Natural hardwood, clear lacquer</span></li>
-            <li><span>Profile</span><span>Contoured, 17&Prime;, 1⁄2&Prime; thick</span></li>
-            <li><span>Hook</span><span>Chrome swivel</span></li>
-            <li><span>Trouser bar</span><span>Wooden locking bar</span></li>
-            <li><span>Tone</span><span>Light &mdash; max logo contrast</span></li>
-          </ul>
-          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Light natural wood = the sharpest, highest-contrast burn if you want a bolder mark than Badrutt&rsquo;s.</span></p>
-          <p class="why"><b>Best price-per-unit:</b> luxury look at $2.44 each and the crispest engraving. Trade-off: a slimmer profile than the Deluxe.</p>
-          <a class="btn" href="https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural" target="_blank" rel="noopener">View &amp; buy at OnlyHangers →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section style="padding-top:6px">
-  <div class="wrap">
-    <span class="eyebrow">At a glance</span>
-    <h2 class="sec-h">Full comparison &mdash; all 7 vetted options</h2>
-    <p class="sec-sub">Three featured picks plus four runner-ups, so you can see the whole field before buying. Prices &amp; specs pulled from supplier pages on June&nbsp;21, 2026 &mdash; confirm live price at checkout.</p>
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Option</th><th>Supplier</th><th>Per unit</th><th>Min. order / terms</th><th>Wood &amp; profile</th><th>Hook</th><th>Best for</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="pill rec">Pick</span> Contoured Deluxe &mdash; Walnut</td>
-            <td>OnlyHangers</td>
-            <td class="unit">$12.98</td>
-            <td>$38.95 / 3-pack</td>
-            <td>Beech, walnut, thick 18&Prime;</td>
-            <td>Chrome</td>
-            <td>Best all-round balance</td>
-          </tr>
-          <tr>
-            <td><span class="pill prem">Premium</span> Tailor Made® + Brass</td>
-            <td>Butler Luxury</td>
-            <td class="unit">$38.00</td>
-            <td>Single (1)</td>
-            <td>German beech, 2⅝&Prime; shoulder</td>
-            <td>Brass</td>
-            <td>Badrutt&rsquo;s-grade heirloom</td>
-          </tr>
-          <tr>
-            <td><span class="pill val">Value</span> Contoured Locking &mdash; Natural</td>
-            <td>OnlyHangers</td>
-            <td class="unit">$2.44</td>
-            <td>$60.95 / box of 25</td>
-            <td>Natural, 17&Prime;, 1⁄2&Prime;</td>
-            <td>Chrome</td>
-            <td>Lowest cost + crispest logo</td>
-          </tr>
-          <tr>
-            <td><span class="pill ru">Runner-up</span> Luxury Wooden Suit Hanger</td>
-            <td>KirbyAllison</td>
-            <td class="unit">$34.95</td>
-            <td>Single (1)</td>
-            <td>Natural/Trad, 2.5&Prime; flare</td>
-            <td>Chrome ring</td>
-            <td>Premium, buy one to test</td>
-          </tr>
-          <tr>
-            <td><span class="pill ru">Runner-up</span> Royal Heirloom &mdash; Natural</td>
-            <td>Royal Hangers</td>
-            <td class="unit">$1.92</td>
-            <td>$48 / quarter-box of 25</td>
-            <td>Maple, smooth lacquer, 7⁄16&Prime;</td>
-            <td>Chrome</td>
-            <td>Rock-bottom price, smooth face</td>
-          </tr>
-          <tr>
-            <td><span class="pill ru">Runner-up</span> Contoured Deluxe &mdash; Natural</td>
-            <td>Everything Hangers</td>
-            <td class="unit">$22.95</td>
-            <td>Single (3)</td>
-            <td>Same thick 18&Prime; / 2&Prime; profile</td>
-            <td>Chrome</td>
-            <td>If you want exactly one or two</td>
-          </tr>
-          <tr>
-            <td><span class="pill ru">Runner-up</span> Coat Hanger (standard)</td>
-            <td>Butler Luxury</td>
-            <td class="unit">$27.00</td>
-            <td>Single (1)</td>
-            <td>German beech, 4 widths</td>
-            <td>Wood/chrome</td>
-            <td>Butler quality for less</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- NOTES -->
-<section style="padding-top:6px">
-  <div class="wrap">
-    <div class="twocol">
-      <div class="panel">
-        <h3>🔥 In-house engraving guidance</h3>
-        <ul>
-          <li><b>Highest contrast:</b> natural / clear-finish <b>maple, beech or birch</b> &mdash; the laser burns a crisp dark mark into light wood.</li>
-          <li><b>Badrutt&rsquo;s look:</b> medium/warm tones (walnut, butterscotch) give an <b>understated tonal burn</b> &mdash; elegant, not loud.</li>
-          <li><b>Avoid</b> heavy gloss-poly or painted coatings (can melt/discolor). Satin lacquer or natural is ideal &mdash; <b>all picks qualify</b>.</li>
-          <li><b>Placement:</b> the flat front shoulder face, ~1.5&ndash;2&Prime; logo &mdash; exactly where Badrutt&rsquo;s sets its crest.</li>
-          <li><b>Prototype first:</b> the 3-pack Deluxe is the perfect test batch to lock laser power/speed before a full run.</li>
-        </ul>
-      </div>
-      <div class="panel starter">
-        <h3>✅ Suggested &ldquo;prove-the-concept&rdquo; order</h3>
-        <ul>
-          <li><b>1 ×</b> OnlyHangers Deluxe Walnut 3-pack &mdash; $38.95</li>
-          <li><b>1 ×</b> Butler Luxury single (to feel heirloom weight &amp; compare) &mdash; ~$27&ndash;38</li>
-          <li>Engrave a Poco Loco crest on one of each &rarr; pick the winner.</li>
-          <li>Then scale the winner to <b>~9&ndash;12</b> for one closet.</li>
-        </ul>
-        <div class="total">Test spend ≈ $66&ndash;77</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section style="padding-top:6px">
-  <div class="wrap">
-    <span class="eyebrow">The growing list</span>
-    <h2 class="sec-h">Sourcing roadmap</h2>
-    <p class="sec-sub">This dashboard grows one proven item at a time. Up next once you approve the hanger.</p>
-    <div class="road">
-      <div class="rcard done">
-        <div class="st">✓ Complete</div>
-        <h4>Engraveable Wood Hanger</h4>
-        <p>7 options vetted · 3 featured · ready to purchase</p>
-      </div>
-      <div class="rcard">
-        <div class="st next">→ Up next</div>
-        <h4>Branded Pen</h4>
-        <p>Target well under $5/ea · laser or UVDTF brandable · low MOQ</p>
-      </div>
-      <div class="rcard">
-        <div class="st queue">In queue</div>
-        <h4>Bottle Opener</h4>
-        <p>Up to $10/ea · durable &ldquo;stays a while&rdquo; · engraveable</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p><b>How these were vetted.</b> Every option was checked against your four constraints &mdash; <b>brandable</b> (smooth wood face for laser), <b>low minimum order</b> (1&ndash;25 units, no overseas MOQ), <b>price fit</b> (low-cost preferred, quality first), and <b>currently available</b> (in-stock US suppliers). Prices, minimums, specs and the product photos were pulled directly from each supplier&rsquo;s live product page on <b>June&nbsp;21, 2026</b>; confirm the current price at checkout as retail pricing can change.</p>
-    <p style="margin-top:10px">Suppliers referenced: <a href="https://www.onlyhangers.com" target="_blank" rel="noopener">OnlyHangers</a> · <a href="https://www.butlerluxury.com" target="_blank" rel="noopener">Butler Luxury</a> · <a href="https://kirbyallison.com" target="_blank" rel="noopener">KirbyAllison</a> · <a href="https://royalhangers.com" target="_blank" rel="noopener">Royal Hangers</a> · <a href="https://www.everythinghangers.com" target="_blank" rel="noopener">Everything Hangers</a></p>
-    <p style="margin-top:10px;color:#9c8a72">Poco Loco Ranch · 802 FM&nbsp;474, Boerne TX 78006 · OS&amp;E Sourcing Dashboard</p>
-  </div>
-</footer>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poco Loco Ranch — OS&amp;E Sourcing Dashboard</title><link rel="icon" href="assets/img/poco-loco-logo.png"><style>
+:root{--cream:#f8f2e6;--parch:#fffdf7;--espresso:#3b2a1d;--bark:#4f3a28;--rust:#b5532a;--rustsoft:#c87a4f;--sage:#7c7f4e;--brass:#b0894f;--ink:#2c211a;--muted:#7a6a59;--line:#e6dcc8;--good:#3f7d4f;--sh:0 6px 22px rgba(59,42,29,.10);--shlg:0 14px 40px rgba(59,42,29,.16);}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 600px at 82% -10%,#f3e8d4 0,transparent 60%),var(--cream);line-height:1.55}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif}a{color:var(--rust);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+header.top{background:linear-gradient(135deg,var(--espresso),var(--bark));color:#f6ecdc;padding:30px 0 26px;border-bottom:4px solid var(--brass)}
+.brandrow{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.seal-chip{background:#f3e8d4;border-radius:50%;width:92px;height:92px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border:2px solid var(--brass);box-shadow:0 4px 14px rgba(0,0,0,.25);padding:8px}
+.seal-chip img{width:100%;height:100%;object-fit:contain}
+header.top h1{margin:0;font-size:29px;letter-spacing:.3px}header.top .sub{margin:3px 0 0;color:#d9c7ac;font-size:14.5px}
+.meta{margin-top:16px;display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#e9dcc6}.meta b{color:#fff}
+nav.cats{position:sticky;top:0;z-index:20;background:rgba(59,42,29,.97);backdrop-filter:blur(6px);border-bottom:1px solid #5a4430;box-shadow:var(--sh)}
+nav.cats .wrap{display:flex;gap:6px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+nav.cats a{color:#ecdcc4;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:20px;border:1px solid transparent;white-space:nowrap}
+nav.cats a:hover{background:var(--rust);color:#fff;text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:22px 0 6px}
+.stat{background:var(--parch);border:1px solid var(--line);border-radius:14px;padding:15px 17px;box-shadow:var(--sh)}
+.stat .n{font-family:Georgia,serif;font-size:24px;color:var(--bark);line-height:1}.stat .l{font-size:12px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.6px}
+section.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line);padding-bottom:8px;margin-bottom:4px}
+.cat-h h2{font-size:23px;margin:0;color:var(--espresso)}.cat-h .blurb{color:var(--muted);font-size:13.5px}
+.item{padding:22px 0 6px}
+.item-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.item-h h3{font-size:19px;margin:0;color:var(--bark)}
+.chip{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--rust);background:#f6e7d6;border:1px solid #ecdcc0;border-radius:20px;padding:3px 10px}
+.ref{display:flex;gap:13px;background:#fff6e9;border:1px solid #ecdcc0;border-left:4px solid var(--brass);border-radius:11px;padding:12px 15px;margin:0 0 14px;font-size:13.5px;color:#5a4836}
+.ref .tg{font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.card{background:var(--parch);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shlg)}
+.card.rec{border:2px solid var(--good)}
+.ribbon{position:absolute;top:13px;left:0;z-index:2;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:5px 11px 5px 13px;border-radius:0 14px 14px 0;box-shadow:var(--sh)}
+.r-rec{background:var(--good)}.r-prem{background:var(--brass)}.r-val{background:var(--sage)}.r-alt{background:var(--muted)}
+.imgbox{background:#fff;height:200px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);padding:12px}
+.imgbox img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.supplier{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700}
+.pname{font-size:16px;margin:3px 0 8px;color:var(--espresso);line-height:1.25}
+.price{display:flex;align-items:baseline;gap:7px}.price .big{font-family:Georgia,serif;font-size:24px;color:var(--rust)}.price .per{font-size:12.5px;color:var(--muted)}
+.terms{font-size:12.5px;color:#6a5848;margin:2px 0 10px}.terms .mn{display:inline-block;background:#eef0df;color:#5f6235;border-radius:6px;padding:1px 7px;font-weight:700;margin-left:4px}
+.specs{font-size:12.5px;color:#5a4836;border-top:1px dashed var(--line);padding-top:9px;margin:0 0 9px}
+.brand{font-size:12px;color:var(--sage);font-weight:700;margin:0 0 9px;display:flex;gap:6px;align-items:flex-start}
+.brand svg{flex:0 0 auto;margin-top:2px}
+.why{font-size:12.5px;background:#f5efe2;border-radius:9px;padding:9px 11px;color:#5a4836;margin:0 0 12px}
+.btn{margin-top:auto;display:block;text-align:center;background:var(--espresso);color:#fff;padding:10px 12px;border-radius:9px;font-weight:700;font-size:13px}
+.btn:hover{background:var(--rust);text-decoration:none}
+.note{font-size:12.5px;color:#6a5848;background:#faf4e8;border:1px dashed var(--line);border-radius:10px;padding:10px 13px;margin:13px 0 0}.note b{color:var(--bark)}
+footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:30px;border-top:4px solid var(--brass)}footer .wrap{font-size:12.5px}footer b{color:#fff}footer a{color:var(--rustsoft)}
+@media(max-width:920px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media print{.card:hover{transform:none}.btn{display:none}nav.cats{display:none}header.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body>
+<header class="top"><div class="wrap"><div class="brandrow">
+<div class="seal-chip"><img src="assets/img/poco-loco-logo.png" alt="Poco Loco Ranch"></div>
+<div><h1>OS&amp;E Sourcing Dashboard</h1><p class="sub">Low-volume, brandable, luxury-feel guest supplies &mdash; vetted for the Poco Loco Ranch, Boerne, Texas</p></div>
+</div><div class="meta"><div>Prepared <b>June 21, 2026</b></div><div>Inspiration <b>Badrutt&#x27;s Palace, St. Moritz</b></div><div>Branding <b>In-house: laser engraving, embroidery &amp; UVDTF</b></div></div></div></header>
+<nav class="cats"><div class="wrap"><a href="#cat-closet">Closet &amp; Dressing</a><a href="#cat-bath">Bath</a><a href="#cat-bar">Bar &amp; Table</a><a href="#cat-bedroom">Bedroom &amp; Comfort</a><a href="#cat-welcome">Welcome &amp; Desk</a><a href="#cat-outdoor">Entry &amp; Outdoor</a></div></nav>
+<div class="wrap"><div class="stats">
+<div class="stat"><div class="n">15</div><div class="l">Items sourced</div></div>
+<div class="stat"><div class="n">45</div><div class="l">Options vetted</div></div>
+<div class="stat"><div class="n">$0.46&ndash;$440</div><div class="l">Per-unit range</div></div>
+<div class="stat"><div class="n">1</div><div class="l">Lowest min order</div></div>
+</div></div>
+<section class="cat" id="cat-closet"><div class="wrap"><div class="cat-h"><h2>Closet &amp; Dressing</h2><span class="blurb">Heavy, brandable pieces that stay put and feel hotel-grade.</span></div><div class="item" id="item-hanger"><div class="item-h"><h3>Thick Engraveable Wood Hanger</h3><span class="chip">Anti-theft heft</span></div><div class="ref"><span class="tg">Your<br>Reference</span><span>Your Badrutt&#x27;s Palace reference: warm wood, brass hook, an understated engraved crest on the flat shoulder. These chase that heft + engraveable face in Hill-Country tones.</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/hanger-primary-walnut.jpg" alt="Contoured Deluxe Suit Hanger — Walnut" loading="lazy"></div>
+<div class="body">
+<div class="supplier">OnlyHangers</div>
+<h4 class="pname">Contoured Deluxe Suit Hanger — Walnut</h4>
+<div class="price"><span class="big">≈ $12.98</span><span class="per">/ hanger</span></div>
+<div class="terms">$38.95 / 3-pack<span class="mn">min 3</span></div>
+<div class="specs">Beech, walnut finish · thick 18″ contour · chrome hook · non-slip bar</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
+<div class="why">Genuinely thick &amp; heavy, warm walnut suits the ranch, and a 3-pack lets you test your laser before scaling.</div>
+<a class="btn" href="https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/hanger-premium-butler.jpg" alt="Tailor Made® Coat Hanger — Butterscotch + Brass" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Butler Luxury</div>
+<h4 class="pname">Tailor Made® Coat Hanger — Butterscotch + Brass</h4>
+<div class="price"><span class="big">$38.00</span><span class="per">/ hanger</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Grade-A German beech · 2⅝″ sculpted shoulder · solid brass hook</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
+<div class="why">Closest to Badrutt&#x27;s — heirloom weight, brass hook, warm wood. Buy one to prototype.</div>
+<a class="btn" href="https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/hanger-value-natural.jpg" alt="Contoured Suit Hanger w/ Locking Bar — Natural" loading="lazy"></div>
+<div class="body">
+<div class="supplier">OnlyHangers</div>
+<h4 class="pname">Contoured Suit Hanger w/ Locking Bar — Natural</h4>
+<div class="price"><span class="big">≈ $2.44</span><span class="per">/ hanger</span></div>
+<div class="terms">$60.95 / box of 25<span class="mn">min 25</span></div>
+<div class="specs">Natural hardwood, clear lacquer · 17″ · wooden locking bar</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
+<div class="why">Lowest cost per unit and the crispest engraving contrast; trade-off is a slimmer profile.</div>
+<a class="btn" href="https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div><div class="note">Engraving tip: natural/light wood gives the crispest logo contrast; warm walnut gives the subtle, elegant burn of the Badrutt&#x27;s crest. Engrave the flat shoulder face.</div></div><div class="item" id="item-shoehorn"><div class="item-h"><h3>Long-Handled Shoehorn</h3><span class="chip">Entry valet</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/shoehorn-rec.jpg" alt="Hanger Project Walnut Long-Handle Shoe Horn" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Kirby Allison</div>
+<h4 class="pname">Hanger Project Walnut Long-Handle Shoe Horn</h4>
+<div class="price"><span class="big">$210</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Solid walnut, ~24″+, deerskin strap · handcrafted in Dallas, TX</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave handle</span></div>
+<div class="why">Heirloom US-made walnut from the same house as the hanger pick — premium and on-brand.</div>
+<a class="btn" href="https://kirbyallison.com/products/hanger-project-walnut-long-handle-shoe-horn" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/shoehorn-alt1.jpg" alt="Personalized Engraved 7″ Natural Wood Shoe Horn" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Teals Prairie &amp; Co.</div>
+<h4 class="pname">Personalized Engraved 7″ Natural Wood Shoe Horn</h4>
+<div class="price"><span class="big">$29.99</span><span class="per">/ ea</span></div>
+<div class="terms">single · 5% off 5+<span class="mn">min 1</span></div>
+<div class="specs">Natural wood 7″ · handheld · smooth engraving face</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-engraved (turnkey)</span></div>
+<div class="why">The only turnkey option where the supplier laser-engraves your seal for you — no equipment needed.</div>
+<a class="btn" href="https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/shoehorn-alt2.jpg" alt="Long Wooden Shoehorn" loading="lazy"></div>
+<div class="body">
+<div class="supplier">MUJI</div>
+<h4 class="pname">Long Wooden Shoehorn</h4>
+<div class="price"><span class="big">$8.90</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Birch, 22″ · hangs by cord loop</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / engrave</span></div>
+<div class="why">Rock-bottom price for a real long wood shoehorn; brand the handle in-house. The everyday workhorse.</div>
+<a class="btn" href="https://www.muji.us/products/wooden-shoehorn-long-23aw" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-shoehornstand"><div class="item-h"><h3>Standing Shoehorn / Valet Block</h3><span class="chip">Niche category</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/shoehornstand-rec.jpg" alt="Standing Shoehorn (Kime, by Mikiya Kobayashi)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Nalata Nalata (NYC)</div>
+<h4 class="pname">Standing Shoehorn (Kime, by Mikiya Kobayashi)</h4>
+<div class="price"><span class="big">$210</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Walnut horn 28″ + walnut base block 4.7″ · leather loop · Asahikawa craft</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the base block</span></div>
+<div class="why">Best-in-class: a true standing shoehorn in a substantial walnut block — a flat face made for your seal.</div>
+<a class="btn" href="https://shop.nalatanalata.com/products/standing-shoehorn-1" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/shoehornstand-alt1.jpg" alt="Kime Shoehorn with Wooden Stand" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Amazon (ships from Amazon)</div>
+<h4 class="pname">Kime Shoehorn with Wooden Stand</h4>
+<div class="price"><span class="big">$119</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Solid walnut 27.5″ + matching wooden stand · made in Japan</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the base</span></div>
+<div class="why">Nearly the same concept at ~half the price, with frictionless Amazon stock and US shipping.</div>
+<a class="btn" href="https://www.amazon.com/Shoehorn-Stand-Handle-Wooden-Walnut/dp/B0D9LPXZNJ" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/shoehornstand-alt2.jpg" alt="Personalized Engraved Wood Shoe Horn (closest verified)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Teals Prairie &amp; Co.</div>
+<h4 class="pname">Personalized Engraved Wood Shoe Horn (closest verified)</h4>
+<div class="price"><span class="big">$29.99</span><span class="per">/ ea</span></div>
+<div class="terms">single · 5% off 5+<span class="mn">min 1</span></div>
+<div class="specs">Natural wood 7″ · handheld (does not stand) · supplier-engraved</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-engraved (turnkey)</span></div>
+<div class="why">Flagged honestly: handheld, not standing — the closest verified low-cost engravable wood piece if the standing form isn&#x27;t essential.</div>
+<a class="btn" href="https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div><div class="note">Honest note: a long shoehorn seated in its own wooden base block is a genuinely scarce category — only two US-buyable pieces verified. The third is the closest verified low-cost engravable wood shoehorn (handheld). Or pair a Shoehorn pick above with an in-house-engraved walnut block.</div></div></div></section><section class="cat" id="cat-bath"><div class="wrap"><div class="cat-h"><h2>Bath</h2><span class="blurb">Refillable, premium fixtures that replace single-use plastic.</span></div><div class="item" id="item-shower"><div class="item-h"><h3>Shower-Mounted Refillable Bottles</h3><span class="chip">Replaces single-use</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/shower-rec.png" alt="Triple Wall Mount + Signature Amber Glass Dispensers" loading="lazy"></div>
+<div class="body">
+<div class="supplier">The Polished Jar</div>
+<h4 class="pname">Triple Wall Mount + Signature Amber Glass Dispensers</h4>
+<div class="price"><span class="big">≈ $177</span><span class="per">/ station</span></div>
+<div class="terms">$108 bracket + $23/bottle<span class="mn">min 1</span></div>
+<div class="specs">Matte-black or brass triple bracket + 16oz amber glass pumps</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser/UVDTF on glass, or supplier-engraved</span></div>
+<div class="why">Amber glass + matte-black/brass reads premium-rustic, and the smooth glass is the only option you can truly brand in-house.</div>
+<a class="btn" href="https://thepolishedjar.com/products/triple-wall-mount-for-soap-dispensers" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/shower-alt1.jpg" alt="Hotel-at-Home Triple Wall-Mounted Set — Amber" loading="lazy"></div>
+<div class="body">
+<div class="supplier">MaisonOvo</div>
+<h4 class="pname">Hotel-at-Home Triple Wall-Mounted Set — Amber</h4>
+<div class="price"><span class="big">$45</span><span class="per">/ set</span></div>
+<div class="terms">3 bottles + mounts + labels<span class="mn">min 1</span></div>
+<div class="specs">Shatter-safe amber PET ×3 · no-drill adhesive mounts · funnel</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF labels</span></div>
+<div class="why">Cheapest turnkey amber system, shatter-safe for a rental shower — buy one, UVDTF a label, done.</div>
+<a class="btn" href="https://www.maisonovo.com/products/wall-mounted-soap-dispenser-amber-bronze" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/shower-alt2.jpg" alt="Wall Mount Pump — Triple (or Single $50)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">simplehuman</div>
+<h4 class="pname">Wall Mount Pump — Triple (or Single $50)</h4>
+<div class="price"><span class="big">$100</span><span class="per">/ triple</span></div>
+<div class="terms">sealed refillable chambers<span class="mn">min 1</span></div>
+<div class="specs">Brushed stainless, rust-proof, 15oz/chamber · 5-yr warranty</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser/label</span></div>
+<div class="why">The genuine hotel-grade fixture — bulletproof sealed metal, no glass to break. Modern-luxe lean.</div>
+<a class="btn" href="https://www.simplehuman.com/products/wall-mount-pump-triple" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div></div></section><section class="cat" id="cat-bar"><div class="wrap"><div class="cat-h"><h2>Bar &amp; Table</h2><span class="blurb">Durable bar tools and real linen for the table.</span></div><div class="item" id="item-opener"><div class="item-h"><h3>Bottle Opener</h3><span class="chip">Stays on the bar</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/opener-rec.jpg" alt="Wooden Bottle Opener — Walnut/Cherry + Stainless" loading="lazy"></div>
+<div class="body">
+<div class="supplier">BirchBarn Designs (USA)</div>
+<h4 class="pname">Wooden Bottle Opener — Walnut/Cherry + Stainless</h4>
+<div class="price"><span class="big">$20</span><span class="per">/ ea</span></div>
+<div class="terms">free engraving included<span class="mn">min 1</span></div>
+<div class="specs">Stainless speed-opener faced with real hardwood · made in USA</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier engraves free — or in-house on the wood face</span></div>
+<div class="why">Real walnut + solid stainless reads exactly &#x27;Hill Country bar,&#x27; buyable as one, and the only pick that supports both supplier and in-house branding.</div>
+<a class="btn" href="https://birchbarndesigns.com/product/wood-bottle-opener/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/opener-alt1.jpg" alt="Stainless + Leather Bottle Opener (8-pack blanks)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">PYD Life</div>
+<h4 class="pname">Stainless + Leather Bottle Opener (8-pack blanks)</h4>
+<div class="price"><span class="big">$2.75</span><span class="per">/ ea</span></div>
+<div class="terms">$21.99 / 8-pack<span class="mn">min 8</span></div>
+<div class="specs">Stainless + genuine leather face · brown tones</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the leather</span></div>
+<div class="why">Crushes the price target, leather-on-steel matches the palette, and it&#x27;s purpose-built as a laser blank.</div>
+<a class="btn" href="https://shop.pydlife.com/products/craft-blanks-stainless-steel-bottle-opener-with-leather-cover-for-custom-laser-engraving-card-shape-5-color-options-8-pack" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/opener-alt2.jpg" alt="Rustic Cast Iron Wall-Mounted Opener" loading="lazy"></div>
+<div class="body">
+<div class="supplier">BarnwoodUSA</div>
+<h4 class="pname">Rustic Cast Iron Wall-Mounted Opener</h4>
+<div class="price"><span class="big">$9.99</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Solid cast iron, antique-brown, wall-mount fixture</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Mount on an in-house engraved wood backer</span></div>
+<div class="why">The most &#x27;ranch fixture&#x27; look at under $10; brand it via a laser-engraved wood backer board.</div>
+<a class="btn" href="https://barnwoodusa.com/products/rustic-cast-iron-wall-mounted-bottle-opener" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-napkins"><div class="item-h"><h3>Linen Cocktail Napkins</h3><span class="chip">Real linen</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/napkin-rec.jpg" alt="Ecru Hemstitched Linen Cocktail Napkins (dozen)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Bumblebee Linens</div>
+<h4 class="pname">Ecru Hemstitched Linen Cocktail Napkins (dozen)</h4>
+<div class="price"><span class="big">≈ $1.58</span><span class="per">/ napkin</span></div>
+<div class="terms">$18.99 / dozen<span class="mn">min 12</span></div>
+<div class="specs">100% linen, ecru · 6×6″ · ladder hemstitch</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house corner embroidery</span></div>
+<div class="why">Genuine pure linen in an earthy ecru, true cocktail size, by the dozen, purpose-made as an embroidery blank.</div>
+<a class="btn" href="https://bumblebeelinens.com/dozen-ecru-hemstitched-linen-cocktail-napkins-p-201.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/napkin-alt1.webp" alt="Cocktail Napkins — 100% Pure Linen (Beige)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">All Cotton and Linen</div>
+<h4 class="pname">Cocktail Napkins — 100% Pure Linen (Beige)</h4>
+<div class="price"><span class="big">≈ $6.25</span><span class="per">/ napkin</span></div>
+<div class="terms">$24.99 / set of 4<span class="mn">min 4</span></div>
+<div class="specs">100% linen, beige · 12×12″ · wide hem</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery / UVDTF</span></div>
+<div class="why">Premium pure linen at the lowest minimum (just 4) in an on-brand beige.</div>
+<a class="btn" href="https://www.allcottonandlinen.com/products/cocktail-napkins" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/napkin-alt2.jpg" alt="Saro Hemstitched Cocktail Napkins (set of 6)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Tres Belle Fete</div>
+<h4 class="pname">Saro Hemstitched Cocktail Napkins (set of 6)</h4>
+<div class="price"><span class="big">≈ $3.75</span><span class="per">/ napkin</span></div>
+<div class="terms">$22.50 / set of 6<span class="mn">min 6</span></div>
+<div class="specs">55% linen / 45% cotton · 6×6″ · hemstitched · white</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery</span></div>
+<div class="why">Durable linen-cotton blend that launders and embroiders easily for heavy rental turnover.</div>
+<a class="btn" href="https://tresbellefete.com/products/hemstitched-cocktail-napkins" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div></div></section><section class="cat" id="cat-bedroom"><div class="wrap"><div class="cat-h"><h2>Bedroom &amp; Comfort</h2><span class="blurb">Soft goods guests touch — embroiderable and warm.</span></div><div class="item" id="item-blankets"><div class="item-h"><h3>Small Individual Blankets</h3><span class="chip">Embroiderable</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/blanket-rec.jpg" alt="Yakima Camp Throw (54×66″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Pendleton</div>
+<h4 class="pname">Yakima Camp Throw (54×66″)</h4>
+<div class="price"><span class="big">$188</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">Virgin wool/cotton, camp stripe · earthy colorways · USA mills</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house corner embroidery</span></div>
+<div class="why">The genuine Pendleton-style southwestern throw — made-in-USA wool, earthy tones, embroiderable, buyable one at a time.</div>
+<a class="btn" href="https://www.pendleton-usa.com/product/yakima-camp-throw/72266.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/blanket-alt1.jpg" alt="Frontier Wool Throw (50×72″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Faribault Mill</div>
+<h4 class="pname">Frontier Wool Throw (50×72″)</h4>
+<div class="price"><span class="big">$195</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">100% US wool, natural/gray · heritage MN mill since 1865</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery</span></div>
+<div class="why">A quieter solid-tone American wool throw for a more understated, modern-rustic look.</div>
+<a class="btn" href="https://www.faribaultmill.com/products/frontier-throw" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/blanket-alt2.jpg" alt="Core Fleece Blanket BP60 (50×60″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Port Authority / Full Source</div>
+<h4 class="pname">Core Fleece Blanket BP60 (50×60″)</h4>
+<div class="price"><span class="big">$7.68</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually (blank)<span class="mn">min 1</span></div>
+<div class="specs">9oz anti-pill fleece · neutral tones · exact 50×60″</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery or UVDTF</span></div>
+<div class="why">The value play and the only exact 50×60 spec — outfit every bed cheaply and brand in-house.</div>
+<a class="btn" href="https://www.fullsource.com/port-authority-1013143/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-sewing"><div class="item-h"><h3>Sewing Kit</h3><span class="chip">Guest amenity</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/sewing-rec.jpg" alt="#8205 Hard-Case Travel Sewing Kit (28-pc)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Coghlan&#x27;s</div>
+<h4 class="pname">#8205 Hard-Case Travel Sewing Kit (28-pc)</h4>
+<div class="price"><span class="big">$2.99</span><span class="per">/ ea</span></div>
+<div class="terms">no minimum<span class="mn">min 1</span></div>
+<div class="specs">Hard clamshell case 3.3×2.3″ · rugged outdoor brand</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF on the lid</span></div>
+<div class="why">Only option with a true minimum of 1 and a smooth hard lid purpose-built for your UVDTF seal.</div>
+<a class="btn" href="https://www.coghlans.com/sewing-kit-8205" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/sewing-alt1.jpg" alt="Compact Zippered Sewing Kit" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4imprint</div>
+<h4 class="pname">Compact Zippered Sewing Kit</h4>
+<div class="price"><span class="big">$2.99</span><span class="per">/ ea</span></div>
+<div class="terms">min 100 + $40 setup<span class="mn">min 100</span></div>
+<div class="specs">Soft vinyl zip case · black · 10 threads, scissors, tape</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
+<div class="why">Closest to a turnkey pre-branded hotel amenity if you&#x27;d rather not UVDTF them yourself.</div>
+<a class="btn" href="https://www.4imprint.com/product/120055/Compact-Zippered-Sewing-Kit" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/sewing-alt2.jpg" alt="In a Pinch 15-Piece Essentials Kit" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4imprint</div>
+<h4 class="pname">In a Pinch 15-Piece Essentials Kit</h4>
+<div class="price"><span class="big">$7.75</span><span class="per">/ ea</span></div>
+<div class="terms">min 50 + $55 setup<span class="mn">min 50</span></div>
+<div class="specs">Recycled-poly pouch · sewing + grooming multi-amenity</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
+<div class="why">An elevated all-in-one guest essentials pouch with the lowest branded MOQ (50).</div>
+<a class="btn" href="https://www.4imprint.com/product/169888/In-a-Pinch-15-Piece-Essentials-Kit" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div></div></section><section class="cat" id="cat-welcome"><div class="wrap"><div class="cat-h"><h2>Welcome &amp; Desk</h2><span class="blurb">Take-home and everyday-carry pieces, easy to brand in bulk.</span></div><div class="item" id="item-pens"><div class="item-h"><h3>Nice Thick Pens</h3><span class="chip">≤ $5 target</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/pen-alt1.jpg" alt="Venetian Metal Pen — Laser Engraved" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4imprint</div>
+<h4 class="pname">Venetian Metal Pen — Laser Engraved</h4>
+<div class="price"><span class="big">$1.99</span><span class="per">/ pen</span></div>
+<div class="terms">min 75 + $30 setup · ~$1.45@250<span class="mn">min 75</span></div>
+<div class="specs">Solid aluminum barrel, chrome accents · black/green</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier laser-engraved</span></div>
+<div class="why">Hits the target dead-on: well under $5, real metal, engraved-for-you, in stock. Pick black or green for the palette.</div>
+<a class="btn" href="https://www.4imprint.com/product/105100-L/Venetian-Metal-Pen-Laser-Engraved" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/pen-rec.jpg" alt="Parker IM Metal Pen — Laser Engraved" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4imprint</div>
+<h4 class="pname">Parker IM Metal Pen — Laser Engraved</h4>
+<div class="price"><span class="big">$31.25</span><span class="per">/ pen</span></div>
+<div class="terms">min 15 + $20 setup<span class="mn">min 15</span></div>
+<div class="specs">Genuine Parker · solid brass barrel · substantial weight</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier laser-engraved</span></div>
+<div class="why">The showpiece: real Parker brand, heavy brass barrel — rugged-luxury weight in a guest&#x27;s hand. Lowest MOQ (15).</div>
+<a class="btn" href="https://www.4imprint.com/product/146783-L/Parker-IM-Metal-Pen-Laser-Engraved" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/pen-alt2.jpg" alt="Soft Touch Metal Pens (50-pack blanks)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">BulkLaser</div>
+<h4 class="pname">Soft Touch Metal Pens (50-pack blanks)</h4>
+<div class="price"><span class="big">$0.46</span><span class="per">/ pen</span></div>
+<div class="terms">$23 / 50-pack · no setup<span class="mn">min 50</span></div>
+<div class="specs">Aluminum, soft-touch coating · 15 colors · stylus tip</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave</span></div>
+<div class="why">Cheapest path to a custom metal pen if you engrave in-house — $0.46 each, no setup, full control.</div>
+<a class="btn" href="https://bulklaser.com/products/bulk-soft-touch-metal-pens" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-totes"><div class="item-h"><h3>Canvas Tote Bags</h3><span class="chip">Embroider / UVDTF</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/tote-rec.jpg" alt="Bayside 12oz USA Cotton Canvas Tote — Natural" loading="lazy"></div>
+<div class="body">
+<div class="supplier">BagzDepot</div>
+<h4 class="pname">Bayside 12oz USA Cotton Canvas Tote — Natural</h4>
+<div class="price"><span class="big">$19.35</span><span class="per">/ ea</span></div>
+<div class="terms">qty breaks at 6/50/250<span class="mn">min 1</span></div>
+<div class="specs">12oz cotton canvas, MADE IN USA · gusset · natural</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery / UVDTF</span></div>
+<div class="why">Blank natural heavy canvas, made in USA, buyable as singles — substantial enough to feel premium, cheap enough to brand a stack.</div>
+<a class="btn" href="https://www.bagzdepot.com/products/made-in-usa-tote-bags-ba750" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/tote-alt1.jpg" alt="Day Tote in Waxed Canvas (No. 103)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">ARTIFACT Bags (USA)</div>
+<h4 class="pname">Day Tote in Waxed Canvas (No. 103)</h4>
+<div class="price"><span class="big">$140</span><span class="per">/ ea</span></div>
+<div class="terms">sold individually<span class="mn">min 1</span></div>
+<div class="specs">14oz waxed canvas · full-grain leather straps · solid brass · handmade Omaha</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / maker monogram</span></div>
+<div class="why">The true luxury-rustic piece — waxed canvas, leather, brass, made by hand. A flagship welcome gift.</div>
+<a class="btn" href="https://artifactbags.com/products/day-tote-in-waxed-canvas" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/tote-alt2.jpg" alt="Heavy Duty 13oz Canvas Tote — Natural" loading="lazy"></div>
+<div class="body">
+<div class="supplier">BagzDepot</div>
+<h4 class="pname">Heavy Duty 13oz Canvas Tote — Natural</h4>
+<div class="price"><span class="big">$7.25</span><span class="per">/ ea</span></div>
+<div class="terms">qty breaks at 24/250<span class="mn">min 1</span></div>
+<div class="specs">13oz cotton canvas, natural · gusset</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery / UVDTF</span></div>
+<div class="why">Heaviest fabric (13oz) at the lowest price — best dollar-for-quality if you&#x27;re branding a quantity in-house.</div>
+<a class="btn" href="https://www.bagzdepot.com/products/canvas-tote-bags-bs148" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-bandana"><div class="item-h"><h3>Bandana</h3><span class="chip">Print or blank</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/bandana-rec.jpg" alt="Port Authority C960 Cotton Bandana" loading="lazy"></div>
+<div class="body">
+<div class="supplier">DTLA Print</div>
+<h4 class="pname">Port Authority C960 Cotton Bandana</h4>
+<div class="price"><span class="big">$3.40</span><span class="per">/ ea</span></div>
+<div class="terms">blank min 1 · printed no-min (DTG)<span class="mn">min 1</span></div>
+<div class="specs">100% cotton, 21.5×21.5″ · serged seams · many colors</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF/embroidery, or supplier print</span></div>
+<div class="why">The only option that&#x27;s both buyable at qty 1 AND printable with no minimum — brand in-house or have them print it.</div>
+<a class="btn" href="https://www.dtlaprint.com/products/port-authority-cotton-bandana-c960/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/bandana-alt1.webp" alt="Custom Printed Bandana (C960 base)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Broken Arrow Wear</div>
+<h4 class="pname">Custom Printed Bandana (C960 base)</h4>
+<div class="price"><span class="big">quote</span><span class="per">/ ea</span></div>
+<div class="terms">screen min 6 · DTG no-min<span class="mn">min 6</span></div>
+<div class="specs">100% cotton · full-color DTG or 1-color screen</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
+<div class="why">Best dedicated low-MOQ custom-printed route — your seal printed on the same premium cotton.</div>
+<a class="btn" href="https://www.brokenarrowwear.com/catalog/accessories/bandanas.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/bandana-alt2.jpg" alt="Border 50 Custom Screen-Printed Bandana" loading="lazy"></div>
+<div class="body">
+<div class="supplier">WholesaleForEveryone</div>
+<h4 class="pname">Border 50 Custom Screen-Printed Bandana</h4>
+<div class="price"><span class="big">$25</span><span class="per">/ ea</span></div>
+<div class="terms">at 12 pcs · scales down with volume<span class="mn">min 12</span></div>
+<div class="specs">100% cotton 22×22″ · earth-tone base colors (khaki/rust/brown)</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier screen-print</span></div>
+<div class="why">The only custom option with true earth-tone base fabric to match the ranch palette.</div>
+<a class="btn" href="https://custom.wholesaleforeveryone.com/product/border-50-custom-printed-bandanas-design-your-own-screen-printed/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div></div></section><section class="cat" id="cat-outdoor"><div class="wrap"><div class="cat-h"><h2>Entry &amp; Outdoor</h2><span class="blurb">Big statement pieces for the porch, entry and yard.</span></div><div class="item" id="item-mat"><div class="item-h"><h3>Thick Branded Outdoor Rubber Mat</h3><span class="chip">Logo molded-in</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/mat-rec.jpg" alt="SuperScrape Impressions Custom Logo Mat" loading="lazy"></div>
+<div class="body">
+<div class="supplier">FloorMatShop (USA)</div>
+<h4 class="pname">SuperScrape Impressions Custom Logo Mat</h4>
+<div class="price"><span class="big">$147.98</span><span class="per">/ mat</span></div>
+<div class="terms">2.5×3′ ($151.81 for 3×4′)<span class="mn">min 1</span></div>
+<div class="specs">100% nitrile rubber, 3/16″ thick · up to 6×8′ · logo molded in</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-molded full-color logo</span></div>
+<div class="why">A genuinely thick, heavy all-rubber scraper with the seal permanently molded in — survives Hill-Country sun, rain and boots.</div>
+<a class="btn" href="https://www.floormatshop.com/Superscrape-Impressions-Logo-Mat.aspx" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/mat-alt1.jpg" alt="Rubber Logo Scraper Mat (Custom)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Custom-Mats.com</div>
+<h4 class="pname">Rubber Logo Scraper Mat (Custom)</h4>
+<div class="price"><span class="big">$95.16</span><span class="per">/ mat</span></div>
+<div class="terms">2×3′ on sale<span class="mn">min 1</span></div>
+<div class="specs">All-rubber scraper cleats · HD 4-color print + PMS match</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
+<div class="why">Same all-rubber outdoor concept ~$50 cheaper at the small size, still qty 1.</div>
+<a class="btn" href="https://custom-mats.com/collections/outdoor-logo-mats/products/rubber-logo-scraper-mat" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/mat-alt2.png" alt="Completely Custom Coir Doormat" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Nickel Designs (USA)</div>
+<h4 class="pname">Completely Custom Coir Doormat</h4>
+<div class="price"><span class="big">$74.99</span><span class="per">/ mat</span></div>
+<div class="terms">18×30″ standard<span class="mn">min 1</span></div>
+<div class="specs">Natural coir on thick vinyl base · UV-printed · made in USA</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier UV-print (or blank for in-house)</span></div>
+<div class="why">Warmest &#x27;ranch-porch&#x27; look — natural coir, US small-shop made, the cheapest of the three. Confirm made-to-order stock.</div>
+<a class="btn" href="https://nickel-designs.com/products/completely-custom-personalized-doormat" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-umbrellaholder"><div class="item-h"><h3>Umbrella Holder / Stand</h3><span class="chip">Entry fixture</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/umbrellaholder-rec.jpg" alt="Scroll Forged Wrought Iron Umbrella Stand" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Iron Accents (USA)</div>
+<h4 class="pname">Scroll Forged Wrought Iron Umbrella Stand</h4>
+<div class="price"><span class="big">$315</span><span class="per">/ ea</span></div>
+<div class="terms">made-to-order<span class="mn">min 1</span></div>
+<div class="specs">Hand-forged iron, 25″H, 13 lbs · aged-patina finishes · US-made</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave / UVDTF</span></div>
+<div class="why">Hand-forged American iron reads rugged Hill Country, and solid iron is the cleanest engraving substrate. Order early (multi-week build).</div>
+<a class="btn" href="https://www.ironaccents.com/products/scroll-umbrella-stand" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/umbrellaholder-alt1.jpg" alt="Galvanized Metal Umbrella Stand, 28″" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Globedecor</div>
+<h4 class="pname">Galvanized Metal Umbrella Stand, 28″</h4>
+<div class="price"><span class="big">$109.99</span><span class="per">/ ea</span></div>
+<div class="terms">in stock now<span class="mn">min 1</span></div>
+<div class="specs">Galvanized steel barrel + brass-tone footed base · 28″H</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house engrave / UVDTF the barrel</span></div>
+<div class="why">The galvanized-bucket look the brief asked for, in stock, at a third of the premium price.</div>
+<a class="btn" href="https://globedecor.com/product/metal-umbrella-stand-galvanized-gray-28/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/umbrellaholder-alt2.jpg" alt="Country Stump Vintage Umbrella Stand" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Bushy Box</div>
+<h4 class="pname">Country Stump Vintage Umbrella Stand</h4>
+<div class="price"><span class="big">$159</span><span class="per">/ ea</span></div>
+<div class="terms">in stock<span class="mn">min 1</span></div>
+<div class="specs">Cement composite faux tree-stump · 32″H · weatherproof</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF or engraved medallion</span></div>
+<div class="why">A memorable rustic statement piece; brand via UVDTF or an applied engraved tag (textured surface).</div>
+<a class="btn" href="https://www.bushybox.com/products/country-stump-vintage-farmhouse-umbrella-stand-unique-indoor-outdoor-walking-stick-umbrella-holder-rustic-home-entryway-log-bin" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-umbrellas"><div class="item-h"><h3>Long Umbrellas</h3><span class="chip">Print or blank</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/umbrella-rec.jpg" alt="The Selva Auto-Open Bamboo Stick Umbrella (48″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4imprint</div>
+<h4 class="pname">The Selva Auto-Open Bamboo Stick Umbrella (48″)</h4>
+<div class="price"><span class="big">$20.99</span><span class="per">/ ea</span></div>
+<div class="terms">min 25 · print included, no setup<span class="mn">min 25</span></div>
+<div class="specs">Bamboo shaft + handle · vented RPET canopy · auto-open</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier 4-color print included</span></div>
+<div class="why">Natural bamboo = the warm wood/canvas look, vented = windproof, and a full multi-color logo print is included with zero setup fee.</div>
+<a class="btn" href="https://www.4imprint.com/product/156465/The-Selva-Auto-Open-Stick-Umbrella-48-Arc" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/umbrella-alt1.jpg" alt="Aluminum Stick Umbrella with Wood Handle (48″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Umbrellas &amp; Beyond</div>
+<h4 class="pname">Aluminum Stick Umbrella with Wood Handle (48″)</h4>
+<div class="price"><span class="big">$12.23</span><span class="per">/ ea</span></div>
+<div class="terms">blank, qty 1<span class="mn">min 1</span></div>
+<div class="specs">Aluminum shaft · wood grip · nylon canopy · khaki · auto-open</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / engrave the handle</span></div>
+<div class="why">The qty-1, lowest-cost, brand-it-yourself play — khaki + wood handle nails the neutral palette.</div>
+<a class="btn" href="https://umbrellasandbeyond.com/products/ht-4020-wood-handle-stick-umbrella-48" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-prem">Premium</div>
+<div class="imgbox"><img src="assets/img/umbrella-alt2.jpg" alt="Classic Curved-Handle Umbrella (54″)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">4AllPromos</div>
+<h4 class="pname">Classic Curved-Handle Umbrella (54″)</h4>
+<div class="price"><span class="big">$18.05</span><span class="per">/ ea</span></div>
+<div class="terms">min 36 + $50/color<span class="mn">min 36</span></div>
+<div class="specs">54″ arc · dark wood crook handle with brass accents · auto-open</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier screen-print</span></div>
+<div class="why">The dressiest silhouette — full walking-stick with real wood crook + brass. Wood + brass = the Poco Loco material story.</div>
+<a class="btn" href="https://www.4allpromos.com/product/classic-curved-handle-umbrella" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div><div class="item" id="item-cornhole"><div class="item-h"><h3>Poco Loco Cornhole</h3><span class="chip">Custom printed</span></div><div class="grid"><article class="card rec">
+<div class="ribbon r-rec">★ Recommended</div>
+<div class="imgbox"><img src="assets/img/cornhole-rec.jpg" alt="Custom Tournament Series Set + Pro Bags" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Cornhole Solutions (USA)</div>
+<h4 class="pname">Custom Tournament Series Set + Pro Bags</h4>
+<div class="price"><span class="big">≈ $440</span><span class="per">/ set</span></div>
+<div class="terms">$379.99 boards + $59.99 bags<span class="mn">min 1 set</span></div>
+<div class="specs">Regulation 2×4′ · 3/4″ Baltic birch · edge-to-edge UV print · folding legs</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed full color</span></div>
+<div class="why">Premium 3/4″ Baltic birch with edge-to-edge logo printing, orderable as one set, fast turnaround. The natural birch suits the ranch.</div>
+<a class="btn" href="https://cornholesolutions.com/products/custom-cornhole-set-direct-printed-regulation-2-by-4-tournament-set" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-val">Value</div>
+<div class="imgbox"><img src="assets/img/cornhole-alt1.jpg" alt="Business Design #28 Custom Birch Boards" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Cornhole Pro LLC (USA)</div>
+<h4 class="pname">Business Design #28 Custom Birch Boards</h4>
+<div class="price"><span class="big">$265</span><span class="per">/ set</span></div>
+<div class="terms">boards only (bags extra)<span class="mn">min 1 set</span></div>
+<div class="specs">Regulation 2×4′ · Baltic birch (1/2″ or 3/4″ Pro) · full UV print</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed full color</span></div>
+<div class="why">Same premium birch + full-color print ~$115 cheaper at the board level; add the 3/4″ Pro tier for max heft.</div>
+<a class="btn" href="https://cornholepromn.com/business-design-28-custom-with-your-business-logo-regulation-size-cornhole-boards-baltic-birch-cornhole-boards-custom-cornhole-boards/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article><article class="card">
+<div class="ribbon r-alt">Alternative</div>
+<div class="imgbox"><img src="assets/img/cornhole-alt2.jpg" alt="Lightweight Regulation Set + 8 Bags + Case (blank)" loading="lazy"></div>
+<div class="body">
+<div class="supplier">Tailgating Pros (USA)</div>
+<h4 class="pname">Lightweight Regulation Set + 8 Bags + Case (blank)</h4>
+<div class="price"><span class="big">$129.85</span><span class="per">/ set</span></div>
+<div class="terms">includes bags + carry case<span class="mn">min 1 set</span></div>
+<div class="specs">Solid-wood frame, 1/2″ ply top · 8 bags + case</div>
+<div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF or laser-engrave</span></div>
+<div class="why">The budget/control route — a complete set for ~a third the price; laser-engrave or UVDTF the seal yourself.</div>
+<a class="btn" href="https://www.tailgatingpros.com/4x2-lightweight-regulation-cornhole-boards/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
+</div></article></div></div></div></section>
+<footer><div class="wrap"><p><b>How these were vetted.</b> Every option was checked against four constraints &mdash; <b>brandable</b> (in-house laser/embroidery/UVDTF or supplier customization), <b>low minimum order</b> (mostly 1&ndash;25 units, no overseas MOQ), <b>price fit</b> (low cost preferred, quality first), and <b>currently available</b> (in-stock US suppliers). Prices, minimums, specs and the product photos were pulled directly from each supplier's live product page on <b>June 21, 2026</b>; confirm current price at checkout as retail pricing can change. A few items note an honest caveat where a category is genuinely scarce in low volume.</p>
+<p style="margin-top:9px;color:#9c8a72">Poco Loco Ranch &middot; Boerne, Texas &middot; OS&amp;E Sourcing Dashboard &middot; 15 items &middot; 45 options</p></div></footer>
+</body></html>
