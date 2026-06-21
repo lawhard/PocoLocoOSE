@@ -204,6 +204,20 @@ DATA = [
          "quote","/ cover","foil/deboss included · die fee by quote","quote","Rigid bookbinder's cloth over board · 14 colors · screw-post & ring versions","Supplier foil-stamp or blind deboss",
          "Widest format range — including screw-post/ring casebound for an easily refreshable wine list — while still a true rigid hardcover with supplier foil.","assets/img/menucover-alt2.png"),
    ]),
+ dict(id="stationery", cat="welcome", name="Hotel Stationery — Cards & Envelopes", tag="Bordered · crested",
+   reference="Like your Badrutt's desk set: bordered correspondence cards with a small crest and matching envelopes, in cream/soft tones. (Embossing/foil on paper is a supplier job, not an in-house one.)",
+   note="The fine-hotel upgrade: Crane & Co. 100% cotton bordered correspondence cards (gold or navy border on ecru), $32–$34 per box of 10 incl. envelopes, made in USA — order direct at crane.com (their photos are hotlink-protected, so not shown here). For heavy cotton to letterpress your crest yourself: Crane Lettra (~$13.64/50) or Original Crown Mill pure-cotton sets.",
+   options=[
+     opt("recommended","Bordered Correspondence Cards + Envelopes","Merrimade","https://www.merrimade.com/bordered-correspondence-cards.html",
+         "$3.00","/ card","$75 / box of 25 (incl. 25 envelopes)","min 25","Bordered card · raised-ink your crest/text · white/ivory + red/navy/green border · 6.25×4.5″","Supplier raised-ink print of your crest",
+         "Bordered hotel-style cards with your crest printed and matching envelopes included, at a low 25 minimum — the closest turnkey branded match to the Badrutt's set.","assets/img/stationery-rec.jpg"),
+     opt("value","Embossed Border Correspondence Cards (#3120)","American Stationery","https://www.americanstationery.com/embossed-border-correspondence-cards-7254.html",
+         "≈ $2.24","/ card","$55.95 / box of 25","min 25","Embossed raised border + personalization · white/ivory · envelopes included · 6.25×4.5″","Supplier emboss + print",
+         "A true embossed border plus your printed crest at the lowest branded price — the most 'embossed' look of the three.","assets/img/stationery-alt1.jpg"),
+     opt("alt","A7 Ecru Embossed Panel Cards (blank)","LCI Paper","https://lcipaper.com/a7-panel-card-lci-smooth-80lb-blank-cards-ecru/pd/E7PC-80.html",
+         "≈ $0.30","/ card","$14.78 / 50 · envelopes ~$8.91/25","min 50","Blind-embossed panel border · ecru · 80lb · blank, laser/inkjet printable","In-house: print/stamp your crest",
+         "The cheapest path — premium blind-embossed bordered blanks you run your own crest onto (or letterpress).","assets/img/stationery-alt2.jpg"),
+   ]),
  # ---------------- ENTRY & OUTDOOR ----------------
  dict(id="mat", cat="outdoor", name="Thick Branded Outdoor Rubber Mat", tag="Logo molded-in",
    options=[
