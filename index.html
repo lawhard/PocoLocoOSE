@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Poco Loco Ranch — OS&amp;E Sourcing Dashboard</title>
+<style>
+  :root{
+    --cream:#f8f2e6;
+    --parchment:#fffdf7;
+    --espresso:#3b2a1d;
+    --bark:#4f3a28;
+    --rust:#b5532a;
+    --rust-soft:#c87a4f;
+    --sage:#7c7f4e;
+    --brass:#b0894f;
+    --ink:#2c211a;
+    --muted:#7a6a59;
+    --line:#e6dcc8;
+    --good:#3f7d4f;
+    --shadow:0 6px 24px rgba(59,42,29,.10);
+    --shadow-lg:0 14px 40px rgba(59,42,29,.16);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #f3e8d4 0%, transparent 60%),
+      var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+  a{color:var(--rust);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* Header */
+  header.top{
+    background:linear-gradient(135deg,var(--espresso),var(--bark));
+    color:#f6ecdc;
+    padding:34px 0 30px;
+    border-bottom:4px solid var(--brass);
+  }
+  .brandrow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .seal{
+    width:62px;height:62px;border-radius:50%;flex:0 0 auto;
+    border:2px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 35%,#5a4430,#33241a);
+    color:var(--brass);font-family:Georgia,serif;font-weight:bold;font-size:13px;
+    text-align:center;line-height:1.05;letter-spacing:.5px;
+  }
+  header.top h1{margin:0;font-size:30px;letter-spacing:.3px}
+  header.top .sub{margin:2px 0 0;color:#d9c7ac;font-size:15px}
+  .meta{margin-top:18px;display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:#e9dcc6}
+  .meta b{color:#fff}
+
+  /* Stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 4px}
+  .stat{background:var(--parchment);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .stat .n{font-family:Georgia,serif;font-size:26px;color:var(--bark);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.6px}
+
+  /* Section */
+  section{padding:30px 0}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rust);font-weight:700;margin-bottom:6px}
+  .sec-h{font-size:25px;margin:0 0 4px;color:var(--espresso)}
+  .sec-sub{color:var(--muted);margin:0 0 8px;max-width:760px}
+
+  /* Reference callout */
+  .ref{
+    display:flex;gap:16px;align-items:flex-start;background:#fff6e9;border:1px solid #ecdcc0;
+    border-left:4px solid var(--brass);border-radius:12px;padding:16px 18px;margin:14px 0 26px;
+  }
+  .ref .tag{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+  .ref p{margin:0;font-size:14.5px;color:#5a4836}
+
+  /* Cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .card{
+    background:var(--parchment);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease;position:relative;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .card.rec{border:2px solid var(--good)}
+  .ribbon{position:absolute;top:14px;left:0;z-index:2;color:#fff;font-size:11px;font-weight:800;letter-spacing:.7px;
+    text-transform:uppercase;padding:5px 12px 5px 14px;border-radius:0 16px 16px 0;box-shadow:var(--shadow)}
+  .ribbon.r-rec{background:var(--good)}
+  .ribbon.r-prem{background:var(--brass)}
+  .ribbon.r-val{background:var(--sage)}
+  .imgbox{background:#fff;height:230px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);padding:14px}
+  .imgbox img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+  .supplier{font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700}
+  .pname{font-size:18px;margin:4px 0 8px;color:var(--espresso);line-height:1.25}
+  .price{display:flex;align-items:baseline;gap:8px;margin:2px 0 2px}
+  .price .big{font-family:Georgia,serif;font-size:27px;color:var(--rust)}
+  .price .per{font-size:13px;color:var(--muted)}
+  .terms{font-size:13px;color:#6a5848;margin:0 0 12px}
+  .terms b{color:var(--bark)}
+  .specs{list-style:none;padding:0;margin:0 0 12px;border-top:1px dashed var(--line)}
+  .specs li{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
+  .specs li span:first-child{color:var(--muted)}
+  .specs li span:last-child{color:var(--ink);text-align:right;font-weight:600}
+  .why{font-size:13.5px;background:#f5efe2;border-radius:10px;padding:10px 12px;color:#5a4836;margin:0 0 14px}
+  .why b{color:var(--bark)}
+  .engrave{font-size:12.5px;color:var(--sage);font-weight:700;margin:0 0 14px;display:flex;gap:7px;align-items:flex-start}
+  .engrave svg{flex:0 0 auto;margin-top:2px}
+  .btn{margin-top:auto;display:inline-block;text-align:center;background:var(--espresso);color:#fff;
+    padding:11px 14px;border-radius:10px;font-weight:700;font-size:14px;letter-spacing:.3px}
+  .btn:hover{background:var(--rust);text-decoration:none}
+
+  /* Comparison table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);background:var(--parchment)}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  thead th{background:#efe6d3;color:var(--espresso);font-family:Georgia,serif;font-size:13.5px;position:sticky;top:0}
+  tbody tr:hover{background:#fbf6ec}
+  td.unit{font-weight:700;color:var(--rust)}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:.4px}
+  .pill.rec{background:#e3f0e6;color:var(--good)}
+  .pill.prem{background:#f4ead5;color:var(--brass)}
+  .pill.val{background:#eef0df;color:var(--sage)}
+  .pill.ru{background:#efe7da;color:var(--muted)}
+
+  /* Notes / two-up */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .panel{background:var(--parchment);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .panel h3{margin:0 0 10px;color:var(--espresso);font-size:18px}
+  .panel ul{margin:0;padding-left:18px}
+  .panel li{margin:7px 0;font-size:14px}
+  .panel li b{color:var(--bark)}
+  .starter{background:linear-gradient(135deg,#5a4430,#3b2a1d);color:#f3e7d3;border:none}
+  .starter h3{color:#fff}
+  .starter li{color:#ecdcc4}
+  .starter b{color:#fff}
+  .starter .total{margin-top:12px;font-family:Georgia,serif;font-size:20px;color:var(--brass)}
+
+  /* Roadmap */
+  .road{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rcard{border:1.5px dashed var(--line);border-radius:14px;padding:18px;background:#fbf7ee}
+  .rcard.done{border-style:solid;border-color:var(--good);background:#f4faf4}
+  .rcard .st{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+  .rcard.done .st{color:var(--good)}
+  .rcard .st.next{color:var(--rust)}
+  .rcard .st.queue{color:var(--muted)}
+  .rcard h4{margin:8px 0 4px;font-family:Georgia,serif;font-size:17px;color:var(--espresso)}
+  .rcard p{margin:0;font-size:13px;color:var(--muted)}
+
+  footer{background:var(--espresso);color:#d9c7ac;padding:26px 0 34px;margin-top:24px;border-top:4px solid var(--brass)}
+  footer .wrap{font-size:13px}
+  footer b{color:#fff}
+  footer a{color:var(--rust-soft)}
+
+  @media(max-width:900px){
+    .grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .twocol{grid-template-columns:1fr}
+    .road{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .card:hover{transform:none;box-shadow:var(--shadow)}
+    .btn{display:none}
+    header.top{background:var(--espresso) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="seal">POCO<br>LOCO<br>RANCH</div>
+      <div>
+        <h1>OS&amp;E Sourcing Dashboard</h1>
+        <p class="sub">Low-volume, brandable, luxury-feel guest supplies &mdash; vetted for the Poco Loco Ranch, Boerne&nbsp;TX</p>
+      </div>
+    </div>
+    <div class="meta">
+      <div>Prepared <b>June&nbsp;21, 2026</b></div>
+      <div>Inspiration <b>Badrutt&rsquo;s Palace, St.&nbsp;Moritz</b></div>
+      <div>Branding <b>In-house: laser engraving</b></div>
+      <div>Status <b>Item&nbsp;1 of&nbsp;3 complete</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">1</div><div class="l">Item sourced</div></div>
+    <div class="stat"><div class="n">7</div><div class="l">Options vetted</div></div>
+    <div class="stat"><div class="n">$1.92&ndash;$38</div><div class="l">Per-unit range</div></div>
+    <div class="stat"><div class="n">1&ndash;3</div><div class="l">Lowest min. order</div></div>
+  </div>
+</div>
+
+<!-- ITEM 1 -->
+<section id="hanger">
+  <div class="wrap">
+    <span class="eyebrow">Item 01 &middot; Closet</span>
+    <h2 class="sec-h">Thick, Engraveable Wood Hanger</h2>
+    <p class="sec-sub">A substantial, heavy hanger that feels luxurious, resists walking off with guests, and gives a smooth wood face for your in-house laser engraving &mdash; the same logic as the Badrutt&rsquo;s example.</p>
+
+    <div class="ref">
+      <span class="tag">Your<br>Reference</span>
+      <p><b>Badrutt&rsquo;s Palace hanger:</b> warm medium-brown hardwood, solid brass hook, an understated laser-engraved crest on the flat shoulder face, and a dusty-rose velvet trouser bar. The picks below match its defining traits &mdash; <b>heft, warm wood, and an engraveable flat shoulder</b> &mdash; while leaning into the ranch&rsquo;s earthy Hill-Country palette rather than alpine pink.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- RECOMMENDED -->
+      <article class="card rec">
+        <div class="ribbon r-rec">★ Recommended</div>
+        <div class="imgbox"><img src="assets/img/hanger-primary-walnut.jpg" alt="Contoured Deluxe Walnut wood suit hanger with non-slip bar"></div>
+        <div class="body">
+          <div class="supplier">OnlyHangers</div>
+          <h3 class="pname">Contoured Deluxe Suit Hanger w/ Non-Slip Bar &mdash; Walnut</h3>
+          <div class="price"><span class="big">≈ $12.98</span><span class="per">/ hanger</span></div>
+          <p class="terms"><b>$38.95</b> per pack of 3 &middot; <b>Min. order: 3</b> &middot; ships from US stock</p>
+          <ul class="specs">
+            <li><span>Wood</span><span>Beech hardwood, walnut finish</span></li>
+            <li><span>Profile</span><span>Thick &ldquo;deluxe&rdquo; contour, 18&Prime;</span></li>
+            <li><span>Hook</span><span>Chrome swivel</span></li>
+            <li><span>Trouser bar</span><span>Non-slip vinyl sleeve</span></li>
+            <li><span>Reviews</span><span>4.6 / 5</span></li>
+          </ul>
+          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Engraves to an elegant subtle burn &mdash; the same understated look as your Badrutt&rsquo;s crest.</span></p>
+          <p class="why"><b>Why it wins:</b> genuinely thick &amp; heavy (won&rsquo;t walk off), warm walnut suits the ranch, and a 3-pack minimum lets you dial in your laser before scaling.</p>
+          <a class="btn" href="https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar" target="_blank" rel="noopener">View &amp; buy at OnlyHangers →</a>
+        </div>
+      </article>
+
+      <!-- PREMIUM -->
+      <article class="card">
+        <div class="ribbon r-prem">Premium &middot; Heirloom</div>
+        <div class="imgbox"><img src="assets/img/hanger-premium-butler.jpg" alt="Butler Luxury Tailor Made wood hanger with brass hook"></div>
+        <div class="body">
+          <div class="supplier">Butler Luxury (USA)</div>
+          <h3 class="pname">Tailor Made® Coat Hanger &mdash; Butterscotch + Brass</h3>
+          <div class="price"><span class="big">$38.00</span><span class="per">/ hanger</span></div>
+          <p class="terms"><b>Min. order: 1</b> &middot; standard Coat Hanger from <b>$27</b> ea</p>
+          <ul class="specs">
+            <li><span>Wood</span><span>Grade-A German beech</span></li>
+            <li><span>Shoulder</span><span>2&#8540;&Prime; sculpted, 16.5/18&Prime;</span></li>
+            <li><span>Hook</span><span>Solid brass (matches Badrutt&rsquo;s)</span></li>
+            <li><span>Trouser bars</span><span>Two bars</span></li>
+            <li><span>Made</span><span>Heirloom, lifetime build</span></li>
+          </ul>
+          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Smooth German beech is a premium laser substrate; butterscotch gives a refined medium-contrast mark.</span></p>
+          <p class="why"><b>Closest to Badrutt&rsquo;s:</b> heirloom weight, brass hook, warm wood. Buy a single to prototype before committing.</p>
+          <a class="btn" href="https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger" target="_blank" rel="noopener">View &amp; buy at Butler Luxury →</a>
+        </div>
+      </article>
+
+      <!-- VALUE -->
+      <article class="card">
+        <div class="ribbon r-val">Value &middot; Crispest engraving</div>
+        <div class="imgbox"><img src="assets/img/hanger-value-natural.jpg" alt="Natural contoured wood suit hanger with locking bar"></div>
+        <div class="body">
+          <div class="supplier">OnlyHangers</div>
+          <h3 class="pname">Contoured Suit Hanger w/ Locking Bar &mdash; Natural</h3>
+          <div class="price"><span class="big">≈ $2.44</span><span class="per">/ hanger</span></div>
+          <p class="terms"><b>$60.95</b> per box of 25 &middot; <b>Min. order: 25</b> &middot; 50/100 boxes too</p>
+          <ul class="specs">
+            <li><span>Wood</span><span>Natural hardwood, clear lacquer</span></li>
+            <li><span>Profile</span><span>Contoured, 17&Prime;, 1⁄2&Prime; thick</span></li>
+            <li><span>Hook</span><span>Chrome swivel</span></li>
+            <li><span>Trouser bar</span><span>Wooden locking bar</span></li>
+            <li><span>Tone</span><span>Light &mdash; max logo contrast</span></li>
+          </ul>
+          <p class="engrave"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Light natural wood = the sharpest, highest-contrast burn if you want a bolder mark than Badrutt&rsquo;s.</span></p>
+          <p class="why"><b>Best price-per-unit:</b> luxury look at $2.44 each and the crispest engraving. Trade-off: a slimmer profile than the Deluxe.</p>
+          <a class="btn" href="https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural" target="_blank" rel="noopener">View &amp; buy at OnlyHangers →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="padding-top:6px">
+  <div class="wrap">
+    <span class="eyebrow">At a glance</span>
+    <h2 class="sec-h">Full comparison &mdash; all 7 vetted options</h2>
+    <p class="sec-sub">Three featured picks plus four runner-ups, so you can see the whole field before buying. Prices &amp; specs pulled from supplier pages on June&nbsp;21, 2026 &mdash; confirm live price at checkout.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th><th>Supplier</th><th>Per unit</th><th>Min. order / terms</th><th>Wood &amp; profile</th><th>Hook</th><th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pill rec">Pick</span> Contoured Deluxe &mdash; Walnut</td>
+            <td>OnlyHangers</td>
+            <td class="unit">$12.98</td>
+            <td>$38.95 / 3-pack</td>
+            <td>Beech, walnut, thick 18&Prime;</td>
+            <td>Chrome</td>
+            <td>Best all-round balance</td>
+          </tr>
+          <tr>
+            <td><span class="pill prem">Premium</span> Tailor Made® + Brass</td>
+            <td>Butler Luxury</td>
+            <td class="unit">$38.00</td>
+            <td>Single (1)</td>
+            <td>German beech, 2⅝&Prime; shoulder</td>
+            <td>Brass</td>
+            <td>Badrutt&rsquo;s-grade heirloom</td>
+          </tr>
+          <tr>
+            <td><span class="pill val">Value</span> Contoured Locking &mdash; Natural</td>
+            <td>OnlyHangers</td>
+            <td class="unit">$2.44</td>
+            <td>$60.95 / box of 25</td>
+            <td>Natural, 17&Prime;, 1⁄2&Prime;</td>
+            <td>Chrome</td>
+            <td>Lowest cost + crispest logo</td>
+          </tr>
+          <tr>
+            <td><span class="pill ru">Runner-up</span> Luxury Wooden Suit Hanger</td>
+            <td>KirbyAllison</td>
+            <td class="unit">$34.95</td>
+            <td>Single (1)</td>
+            <td>Natural/Trad, 2.5&Prime; flare</td>
+            <td>Chrome ring</td>
+            <td>Premium, buy one to test</td>
+          </tr>
+          <tr>
+            <td><span class="pill ru">Runner-up</span> Royal Heirloom &mdash; Natural</td>
+            <td>Royal Hangers</td>
+            <td class="unit">$1.92</td>
+            <td>$48 / quarter-box of 25</td>
+            <td>Maple, smooth lacquer, 7⁄16&Prime;</td>
+            <td>Chrome</td>
+            <td>Rock-bottom price, smooth face</td>
+          </tr>
+          <tr>
+            <td><span class="pill ru">Runner-up</span> Contoured Deluxe &mdash; Natural</td>
+            <td>Everything Hangers</td>
+            <td class="unit">$22.95</td>
+            <td>Single (3)</td>
+            <td>Same thick 18&Prime; / 2&Prime; profile</td>
+            <td>Chrome</td>
+            <td>If you want exactly one or two</td>
+          </tr>
+          <tr>
+            <td><span class="pill ru">Runner-up</span> Coat Hanger (standard)</td>
+            <td>Butler Luxury</td>
+            <td class="unit">$27.00</td>
+            <td>Single (1)</td>
+            <td>German beech, 4 widths</td>
+            <td>Wood/chrome</td>
+            <td>Butler quality for less</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section style="padding-top:6px">
+  <div class="wrap">
+    <div class="twocol">
+      <div class="panel">
+        <h3>🔥 In-house engraving guidance</h3>
+        <ul>
+          <li><b>Highest contrast:</b> natural / clear-finish <b>maple, beech or birch</b> &mdash; the laser burns a crisp dark mark into light wood.</li>
+          <li><b>Badrutt&rsquo;s look:</b> medium/warm tones (walnut, butterscotch) give an <b>understated tonal burn</b> &mdash; elegant, not loud.</li>
+          <li><b>Avoid</b> heavy gloss-poly or painted coatings (can melt/discolor). Satin lacquer or natural is ideal &mdash; <b>all picks qualify</b>.</li>
+          <li><b>Placement:</b> the flat front shoulder face, ~1.5&ndash;2&Prime; logo &mdash; exactly where Badrutt&rsquo;s sets its crest.</li>
+          <li><b>Prototype first:</b> the 3-pack Deluxe is the perfect test batch to lock laser power/speed before a full run.</li>
+        </ul>
+      </div>
+      <div class="panel starter">
+        <h3>✅ Suggested &ldquo;prove-the-concept&rdquo; order</h3>
+        <ul>
+          <li><b>1 ×</b> OnlyHangers Deluxe Walnut 3-pack &mdash; $38.95</li>
+          <li><b>1 ×</b> Butler Luxury single (to feel heirloom weight &amp; compare) &mdash; ~$27&ndash;38</li>
+          <li>Engrave a Poco Loco crest on one of each &rarr; pick the winner.</li>
+          <li>Then scale the winner to <b>~9&ndash;12</b> for one closet.</li>
+        </ul>
+        <div class="total">Test spend ≈ $66&ndash;77</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section style="padding-top:6px">
+  <div class="wrap">
+    <span class="eyebrow">The growing list</span>
+    <h2 class="sec-h">Sourcing roadmap</h2>
+    <p class="sec-sub">This dashboard grows one proven item at a time. Up next once you approve the hanger.</p>
+    <div class="road">
+      <div class="rcard done">
+        <div class="st">✓ Complete</div>
+        <h4>Engraveable Wood Hanger</h4>
+        <p>7 options vetted · 3 featured · ready to purchase</p>
+      </div>
+      <div class="rcard">
+        <div class="st next">→ Up next</div>
+        <h4>Branded Pen</h4>
+        <p>Target well under $5/ea · laser or UVDTF brandable · low MOQ</p>
+      </div>
+      <div class="rcard">
+        <div class="st queue">In queue</div>
+        <h4>Bottle Opener</h4>
+        <p>Up to $10/ea · durable &ldquo;stays a while&rdquo; · engraveable</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>How these were vetted.</b> Every option was checked against your four constraints &mdash; <b>brandable</b> (smooth wood face for laser), <b>low minimum order</b> (1&ndash;25 units, no overseas MOQ), <b>price fit</b> (low-cost preferred, quality first), and <b>currently available</b> (in-stock US suppliers). Prices, minimums, specs and the product photos were pulled directly from each supplier&rsquo;s live product page on <b>June&nbsp;21, 2026</b>; confirm the current price at checkout as retail pricing can change.</p>
+    <p style="margin-top:10px">Suppliers referenced: <a href="https://www.onlyhangers.com" target="_blank" rel="noopener">OnlyHangers</a> · <a href="https://www.butlerluxury.com" target="_blank" rel="noopener">Butler Luxury</a> · <a href="https://kirbyallison.com" target="_blank" rel="noopener">KirbyAllison</a> · <a href="https://royalhangers.com" target="_blank" rel="noopener">Royal Hangers</a> · <a href="https://www.everythinghangers.com" target="_blank" rel="noopener">Everything Hangers</a></p>
+    <p style="margin-top:10px;color:#9c8a72">Poco Loco Ranch · 802 FM&nbsp;474, Boerne TX 78006 · OS&amp;E Sourcing Dashboard</p>
+  </div>
+</footer>
+
+</body>
+</html>

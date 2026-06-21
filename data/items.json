@@ -1,0 +1,132 @@
+{
+  "dashboard": {
+    "property": "Poco Loco Ranch",
+    "location": "802 FM 474, Boerne, TX 78006",
+    "purpose": "Low-volume, brandable, luxury-feel OS&E guest supplies",
+    "branding_method": "In-house (laser engraving for this item; embroidery / UVDTF for future items)",
+    "inspiration": "Badrutt's Palace, St. Moritz",
+    "prepared": "2026-06-21",
+    "price_note": "Prices and minimums pulled from supplier product pages on 2026-06-21; confirm at checkout."
+  },
+  "items": [
+    {
+      "id": "hanger",
+      "name": "Thick, engraveable wood hanger",
+      "category": "Closet",
+      "status": "complete",
+      "constraints": {
+        "brandable": "Smooth wood shoulder face for in-house laser engraving",
+        "low_volume": "Minimum order 1-25 units, US in-stock (no overseas MOQ)",
+        "price": "Low cost preferred; quality is the floor. No hard cap given.",
+        "must_be": "Heavy / thick / bulky so it is unlikely to be taken; currently available"
+      },
+      "options": [
+        {
+          "tier": "recommended",
+          "product": "Contoured Deluxe Wood Suit Hanger w/ Non-Slip Bar - Walnut",
+          "supplier": "OnlyHangers",
+          "url": "https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar",
+          "price_per_unit_usd": 12.98,
+          "pricing_terms": "$38.95 per pack of 3",
+          "min_order": 3,
+          "wood": "Beech hardwood, walnut lacquer finish",
+          "size": "18 in wide, thick 'deluxe' contoured profile",
+          "hook": "Chrome swivel",
+          "trouser_bar": "Non-slip vinyl sleeve",
+          "rating": "4.6/5",
+          "engraving": "Beech engraves cleanly; walnut tone gives an understated tonal burn (matches Badrutt's crest look).",
+          "why": "Best balance: genuinely thick/heavy, warm walnut suits the ranch, 3-pack MOQ ideal for testing in-house laser.",
+          "image": "assets/img/hanger-primary-walnut.jpg"
+        },
+        {
+          "tier": "premium",
+          "product": "Tailor Made® Coat Hanger - Deep Butterscotch + Brass",
+          "supplier": "Butler Luxury (USA)",
+          "url": "https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger",
+          "price_per_unit_usd": 38.00,
+          "pricing_terms": "Sold individually; standard Butler 'Coat Hanger' from $27 ea",
+          "min_order": 1,
+          "wood": "Grade-A German beech",
+          "size": "16.5 in or 18 in; 2-5/8 in sculpted shoulder",
+          "hook": "Solid brass (also walnut-espresso + matte chrome option)",
+          "trouser_bar": "Two trouser bars",
+          "engraving": "Smooth German beech is a premium laser substrate; butterscotch gives refined medium-contrast.",
+          "why": "Closest match to the Badrutt's hanger - heirloom weight, brass hook, warm wood. Buy one to prototype.",
+          "image": "assets/img/hanger-premium-butler.jpg"
+        },
+        {
+          "tier": "value",
+          "product": "Contoured Suit Hanger w/ Locking Bar - Natural",
+          "supplier": "OnlyHangers",
+          "url": "https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural",
+          "price_per_unit_usd": 2.44,
+          "pricing_terms": "$60.95 per box of 25 (also 50 / 100)",
+          "min_order": 25,
+          "wood": "Natural hardwood, clear lacquer",
+          "size": "17 in; 1/2 in thick (slimmer than the Deluxe)",
+          "hook": "Chrome swivel",
+          "trouser_bar": "Wooden locking bar",
+          "engraving": "Light natural wood = highest logo contrast (crisp dark burn).",
+          "why": "Lowest cost per unit and sharpest engraving; trade-off is a slimmer profile.",
+          "image": "assets/img/hanger-value-natural.jpg"
+        }
+      ],
+      "runner_ups": [
+        {
+          "product": "Luxury Wooden Suit Hanger",
+          "supplier": "KirbyAllison",
+          "url": "https://kirbyallison.com/products/wooden-suit-hangers",
+          "price_per_unit_usd": 34.95,
+          "min_order": 1,
+          "notes": "2.5 in shoulder flare, finishes incl. Natural, felted trouser bar; premium, sold singly.",
+          "image": "assets/img/hanger-alt-kirbyallison.jpg"
+        },
+        {
+          "product": "Natural Royal Heirloom Wooden Suit Hanger",
+          "supplier": "Royal Hangers",
+          "url": "https://royalhangers.com/products/natural-royal-heirloom-wooden-suit-hangers",
+          "price_per_unit_usd": 1.92,
+          "pricing_terms": "$48 per quarter-box of 25",
+          "min_order": 25,
+          "notes": "Solid maple, smooth multi-coat lacquer, non-slip pant bar; lowest price, smooth face, slim 7/16 in.",
+          "image": "assets/img/hanger-alt-royal.png"
+        },
+        {
+          "product": "Contoured Suit Hanger w/ Non-Slip Bar - Natural",
+          "supplier": "Everything Hangers",
+          "url": "https://www.everythinghangers.com/16-natural-wood-hanger-collection",
+          "price_per_unit_usd": 22.95,
+          "min_order": 3,
+          "notes": "Same thick 18 in / 2 in deluxe profile as the primary pick but pricier per unit; good if you want just one or two."
+        },
+        {
+          "product": "Coat Hanger (standard)",
+          "supplier": "Butler Luxury",
+          "url": "https://www.butlerluxury.com/collections/mens-coat-hangers",
+          "price_per_unit_usd": 27.00,
+          "min_order": 1,
+          "notes": "German beech, 4 widths; lower-cost entry to Butler heirloom quality."
+        }
+      ],
+      "engraving_guidance": [
+        "Highest contrast: natural / clear-finish maple, beech or birch (crisp dark burn on light wood).",
+        "Badrutt's look: medium/warm tones (walnut, butterscotch) give an understated tonal burn.",
+        "Avoid heavy gloss-poly or painted coatings; satin lacquer or natural is ideal (all picks qualify).",
+        "Placement: flat front shoulder face, ~1.5-2 in logo (where Badrutt's sets its crest).",
+        "Prototype on the 3-pack to lock laser power/speed before a full run."
+      ],
+      "suggested_test_order": {
+        "lines": [
+          "1 x OnlyHangers Deluxe Walnut 3-pack ($38.95)",
+          "1 x Butler Luxury single (~$27-38) to compare heirloom weight"
+        ],
+        "estimated_total_usd": "66-77"
+      }
+    }
+  ],
+  "roadmap": [
+    {"item": "Engraveable wood hanger", "status": "complete"},
+    {"item": "Branded pen", "status": "next", "target": "Well under $5/ea, laser or UVDTF, low MOQ"},
+    {"item": "Bottle opener", "status": "queued", "target": "Up to $10/ea, durable, engraveable"}
+  ]
+}
