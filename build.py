@@ -84,17 +84,19 @@ DATA = [
          "Flagged honestly: handheld, not standing — the closest verified low-cost engravable wood piece if the standing form isn't essential.","assets/img/shoehornstand-alt2.jpg"),
    ]),
  # ---------------- BATH ----------------
- dict(id="shower", cat="bath", name="Shower-Mounted Refillable Bottles", tag="Replaces single-use",
+ dict(id="shower", cat="bath", name="Shower-Mounted Refillable Bottles", tag="Hotel locking 3-rack",
+   note="Avoid: the simplehuman-style sealed pump and any clear 'see-the-liquid' bottle, and the retail Better Living AVIVA (translucent, no lock). If you'll accept three separate brackets, FINESSY / MaisoNovo do opaque amber/black sets (no lock). Custom logo labels are a Dispenser Amenities factory program (setup + label minimum) — ask your reseller.",
    options=[
-     opt("recommended","Triple Wall Mount + Signature Amber Glass Dispensers","The Polished Jar","https://thepolishedjar.com/products/triple-wall-mount-for-soap-dispensers",
-         "≈ $177","/ station","$108 bracket + $23/bottle","min 1","Matte-black or brass triple bracket + 16oz amber glass pumps","In-house laser/UVDTF on glass, or supplier-engraved",
-         "Amber glass + matte-black/brass reads premium-rustic, and the smooth glass is the only option you can truly brand in-house.","assets/img/shower-rec.png"),
-     opt("value","Hotel-at-Home Triple Wall-Mounted Set — Amber","MaisonOvo","https://www.maisonovo.com/products/wall-mounted-soap-dispenser-amber-bronze",
-         "$45","/ set","3 bottles + mounts + labels","min 1","Shatter-safe amber PET ×3 · no-drill adhesive mounts · funnel","In-house UVDTF labels",
-         "Cheapest turnkey amber system, shatter-safe for a rental shower — buy one, UVDTF a label, done.","assets/img/shower-alt1.jpg"),
-     opt("premium","Wall Mount Pump — Triple (or Single $50)","simplehuman","https://www.simplehuman.com/products/wall-mount-pump-triple",
-         "$100","/ triple","sealed refillable chambers","min 1","Brushed stainless, rust-proof, 15oz/chamber · 5-yr warranty","In-house laser/label",
-         "The genuine hotel-grade fixture — bulletproof sealed metal, no glass to break. Modern-luxe lean.","assets/img/shower-alt2.jpg"),
+     opt("recommended","SOLera III 3-Chamber Locking — Solid BLACK (opaque)","Dispenser Amenities · buy at WebstaurantStore","https://www.webstaurantstore.com/dispenser-amenities-39388-03-bkfa-solera-36-oz-black-abs-plastic-wall-mounted-adjustable-3-chamber-locking-shower-dispenser-with-oval-bottles-and-beekman-label/5263938803BKFA.html",
+         "≈ $109","/ station","qty 1 · no account","min 1","ONE adjustable backplate · 3 individual locking refillable bottles · solid BLACK opaque ABS · 12oz/chamber","Supplier custom-printed label (factory program)",
+         "The genuine hotel product, and it hits every ask: one locking backplate, three individual refillable bottles, SOLID BLACK (opaque — not see-through), brandable label — buyable qty 1, no account.","assets/img/shower-rec.jpg",
+         learn="<span class='hd'>Where hotels actually buy these</span>One company dominates: <b>Dispenser Amenities</b> (makers of <b>SOLera</b> & <b>AVIVA</b>). Hotels buy through gated B2B distributors — <b>GuestSupply</b> (Sysco), <b>HD Supply</b>, <b>American Hotel Register</b> — which require a trade account and hide prices behind a login.<span class='hd'>How a single property buys the same unit</span>Open e-commerce resellers sell the identical SKUs at qty 1, no account: <b>WebstaurantStore</b>, <b>HotelSupplyDepot</b>, <b>Zogics</b>, <b>Rapid Hotel Supplies</b>, <b>Pineapple Hospitality</b>.<span class='hd'>The opaque catch</span>SOLera/AVIVA default to <b>translucent</b> bottles (so staff see fill levels). Insist on a <b>SOLID/opaque</b> SKU — SOLera <b>Solid Black</b> (39388-O3-BKFA) or AVIVA <b>Solid White</b> (37350) — not the translucent versions.<span class='hd'>Branding</span>Custom logo labels/faceplates are a <b>factory program</b> (Dispenser Amenities' design team, via your reseller) with a setup + label minimum — confirm cost/MOQ; the dispenser itself is qty 1.<span class='hd'>How it mounts</span>One height-adjustable ABS backplate (maximum adhesive surface = strongest hold) + double-faced tape & silicone, no drilling; each bottle locks front-facing behind a tamper gate and lifts out to refill from bulk."),
+     opt("alt","SOLera III Locking — Black Rectangular (45oz)","Dispenser Amenities · WebstaurantStore","https://www.webstaurantstore.com/dispenser-amenities-39388-r3-wht-solera-45-oz-black-abs-plastic-wall-mounted-adjustable-3-chamber-locking-shower-dispenser-with-rectangular-bottles/52639388R3WHT.html",
+         "≈ $120","/ station","qty 1 · no account","min 1","Same locking rack · larger 15oz/chamber rectangular bottles · solid black opaque","Supplier custom label (factory program)",
+         "Same opaque-black locking system with bigger 15oz chambers — fewer refills for a busy bath. AVIVA Solid White (~$78) is the smaller, cheaper sibling.","assets/img/shower-alt1.jpg"),
+     opt("premium","Triple Wall Mount + Matte Bottles (brandable)","The Polished Jar","https://thepolishedjar.com/products/triple-wall-mount-for-soap-dispensers",
+         "≈ $177","/ station","$108 bracket + bottles","min 1","One triple bracket + 3 bottles · matte-black or brass · choose matte (opaque) finish","In-house laser/UVDTF, or supplier-engraved",
+         "The boutique, fully-brandable route — a triple bracket + bottles you can engrave or UVDTF yourself (pick the matte/opaque finish, not clear amber). Premium rustic look.","assets/img/shower-pj.png"),
    ]),
  # ---------------- BAR & TABLE ----------------
  dict(id="opener", cat="bar", name="Bottle Opener", tag="Stays on the bar",
@@ -134,6 +136,19 @@ DATA = [
      opt("value","Cork Coasters, 4″ round (6-pack)","WidgetCo","https://www.widgetco.com/products/1-8-x-4-round-cork-coasters-6-pack",
          "≈ $1.17","/ ea","$6.99 / 6-pack","min 6","Natural cork · 4″ round · 1/8″ thick","In-house laser (warm brown etch)",
          "Eco, warm, and cheap — cork etches with great contrast for the seal, from a dedicated cork specialist with reliable stock.","assets/img/coaster-alt2.jpg"),
+   ]),
+ dict(id="coffeecups", cat="bar", name="Branded Coffee Cups", tag="Kraft · supplier-printed",
+   note="Your black-and-white seal counts as a 1-color print, so you stay in the cheapest tier with no plate fee everywhere. Lowest true MOQ found is 100 (The Cup Store). For the kraft look at the lowest branding cost, a printed kraft sleeve over blank cups (~$0.30) also works. Lids added per supplier.",
+   options=[
+     opt("recommended","Kraft Insulated Double-Wall Hot Cup (8–20oz)","Your Brand Cafe","https://www.yourbrandcafe.com/custom-double-wall-coffee-cups/",
+         "≈ $0.41","/ cup","$206 / 500 (12oz) · $50 one-time setup","min 500","Kraft double-wall, insulated (no sleeve) · poly-lined · matching dome lids","Supplier full-color print (1-color seal = cheapest)",
+         "Exactly the brief — earthy kraft + premium double-wall with lids, at the lowest MOQ (500) for that look. The $50 setup is one-time.","assets/img/cup-rec.jpg"),
+     opt("value","12oz Double-Wall White Hot Cup","The Cup Store","https://thecupstore.com/products/12-oz-custom-printed-recyclable-double-walled-paper-cup",
+         "≈ $0.52","/ cup","100-pack (lowest MOQ) · 1-color free","min 100","White double-wall, insulated · recyclable · dome/lock lids avail.","Supplier-printed (1–2 color)",
+         "Premium insulated double-wall at a true 100-cup minimum — the cheapest way to test the design or stock a low-traffic room.","assets/img/cup-alt1.jpg"),
+     opt("alt","Custom Kraft Brown Coffee Sleeve (over blanks)","The Cup Store","https://thecupstore.com/products/custom-printed-kraft-brown-coffee-sleeve",
+         "≈ $0.30","/ sleeve","over ~$0.08 blank cups","min 500","Kraft brown sleeve, full-color · fits 10–20oz cups","Supplier-printed sleeve (black pops on kraft)",
+         "The rustic kraft + black-print look at the lowest branding cost — one sleeve works across cup sizes; the cup stays cheap/blank.","assets/img/cup-alt2.jpg"),
    ]),
  # ---------------- BEDROOM & COMFORT ----------------
  dict(id="blankets", cat="bedroom", name="Plain Low-Cost Blankets", tag="Woven cotton · no lint",
@@ -193,18 +208,18 @@ DATA = [
          "$129.95","/ ea","in stock · made to order","min 1","18oz waxed duck canvas · full-grain leather grips · Brown/Briquette","In-house UVDTF / embroidered patch",
          "The in-stock American-made step-up — heavyweight 18oz waxed canvas and full-grain leather; under the $140 ARTIFACT (no brass).","assets/img/tote-alt2.jpg"),
    ]),
- dict(id="bandana", cat="welcome", name="Custom Paisley Bandana", tag="Paisley + your logo",
-   note="Cotton vs. poly is the real choice. All-over DYE-SUBLIMATION (Bandana Supply, FastPrintStar, Pop! Promos) prints paisley + seal edge-to-edge but is polyester. Cotton paths: a stock paisley with a screen-printed seal (Western Express earthy colors; 4AllPromos corner), an open-center medallion (OutfitYourLogo), or FULL-custom cotton with the seal baked into the paisley (The Bandanna Co./Hav-A-Hank, screen min 50). Cheapest earthy cotton blank: August Caps khaki/beige (~$0.66/ea). Note: bandana.com / nationalbandana are defunct.",
+ dict(id="bandana", cat="welcome", name="Custom Paisley Bandana", tag="Full-bleed cotton", subpage=("bandana.html","Full bandana breakdown — 16 vendors, methods & our pick"),
+   note="Open the full breakdown above for all 16 vendors, the three approaches, and art/finishing notes. Short version: for full-bleed on COTTON at ~100, DTLA Print or Printology (US, all-over screen); for full-color digital on USA cotton with a published price, 4AllPromos ($11.76/100); for the easy/cheap poly route, Bandana Supply (local Sugar Land, TX, no min). bandana.com / NYBandana are defunct.",
    options=[
-     opt("recommended","Custom Full-Color Bandana — all-over dye-sub","Bandana Supply (Sugar Land, TX)","https://bandanasupply.com/products/custom-full-color-bandanas-as-low-as-4-8-per-piece",
-         "≈ $4.80","/ ea","~$480 / 100 · no setup, no min","min 1","22×22″ poly microfiber · all-over edge-to-edge print","Supplier dye-sublimation (paisley + seal)",
-         "Local Texas shop AND true all-over print — paisley and seal go corner-to-corner with no screen limits, no minimum, no setup. Trade-off: polyester, not cotton.","assets/img/bandana-rec.jpg"),
-     opt("value","Open-Center Paisley Bandana, USA Made","OutfitYourLogo","https://www.outfityourlogo.com/detail.php?p=PAIS",
-         "$4.97","/ ea","~$555 / 100 (incl. $58 setup)","min 100","22×22″ 100% COTTON · classic paisley + 10×10 blank center","Supplier screen-print into the center",
-         "The cotton route to your 'paisley with a blank spot for the logo' — traditional paisley, USA cotton, every earthy color, clean 100-unit pricing.","assets/img/bandana-alt1.jpg"),
-     opt("alt","USA-Made Earthy Paisley — Brown/Olive/Beige","Western Express","https://wexpress.com/bandanas-brown-paisley-usa-made/",
-         "$5.99","/ ea","add a screen-printed seal","min 1","22×22″ 100% COTTON · earthy stock paisley (brown/olive/beige)","Screen-print corner/center seal (local decorator)",
-         "The only earthy-toned USA-made cotton paisley that fits the Hill-Country palette; add a screen-printed corner seal. Premium cotton hand.","assets/img/bandana-alt2.jpg"),
+     opt("recommended","Custom All-Over Bandana — screen on cotton","DTLA Print (Vernon, CA)","https://www.dtlaprint.com/custom/bandanas/",
+         "quote","/ ea","all-over · hemmed · MOQ ~24","min ~24","100% cotton, 22×22″ · edge-to-edge screen · hemmed 4 sides","Supplier all-over screen (your paisley + seal)",
+         "The best practical full-bleed COTTON route — edge-to-edge on real cotton, hemmed 4 sides, US-made, at a low ~24 minimum. Built for a classic paisley + your seal.","assets/img/bandana-rec.jpg"),
+     opt("premium","Authentic Rotary All-Over Cotton Paisley","The Bandanna Co. / Hav-A-Hank","https://thebandannacompany.com/custom-paisley/",
+         "quote","/ ea","screen 50 · rotary all-over 3,000","min 50","100% cotton, USA-woven mill · true rotary all-over paisley","Supplier rotary/screen (full custom)",
+         "The heirloom flagship — a genuine USA mill making authentic rotary all-over cotton paisley. The real thing; the all-over rotary look needs ~3,000.","assets/img/bandana-havahank.png"),
+     opt("value","Open-Center Paisley Bandana (cotton)","OutfitYourLogo","https://www.outfityourlogo.com/detail.php?p=PAIS",
+         "$4.97","/ ea","~$555 / 100 (incl. $58 setup)","min 100","100% cotton 22×22″ · stock paisley + 10×10 blank center","Supplier screen-print into the center",
+         "The cheap cotton route if you don't need edge-to-edge — traditional paisley with your seal in the open center; every earthy color.","assets/img/bandana-outfit.jpg"),
    ]),
  dict(id="menucovers", cat="welcome", name="Hard Embossed Menu Covers", tag="Rigid · foil-stamped",
    reference="Like your Badrutt's 'In-Room Dining' and 'Le Restaurant' menus — permanent rigid hardcovers, foil-stamped or blind-debossed. Use for an in-room dining menu, welcome book, guest directory, or wine list.",
@@ -240,6 +255,32 @@ DATA = [
          "≈ $0.30","/ card","$14.78 / 50 · envelopes ~$8.91/25","min 50","Blind-embossed panel border · ecru · 80lb · blank, laser/inkjet printable","In-house: print/stamp your crest",
          "The cheapest path — premium blind-embossed bordered blanks you run your own crest onto (or letterpress).","assets/img/stationery-alt2.jpg",
          learn="<span class='hd'>How it works</span>The <b>DIY blank</b> path: buy premium <b>blind-embossed panel cards</b> (a raised frame + recessed center panel, no ink) and add your crest yourself — run them through a laser/inkjet printer, hand-stamp them, or take them to a local letterpress for a foil/letterpress crest.<span class='hd'>What to know</span><ul><li><b>$14.78 / 50 (~$0.30/card)</b>; matching A7 envelopes are <b>separate</b> (~$8.91/25).</li><li>80lb cover, ecru, smooth wood-pulp (not cotton); A7 = 5⅛×7″; acid-free.</li><li>The blind-embossed panel reads upscale even before you add anything.</li></ul><span class='hd'>Pro tip</span>Cheapest path and full control. For the richest result, have a local letterpress foil-stamp your seal into the panel — you supply the blanks, they run the die."),
+   ]),
+ dict(id="seedenvelopes", cat="welcome", name="Branded Seed Envelopes", tag="Take-home gift",
+   note="Easiest prefilled-with-seeds path: Wonder Flora prints your seal AND fills with real Texas bluebonnet seed (MOQ 20). Scale cheaper at 100+ with Earthly Goods. Fully DIY: Seed Needs kraft envelopes (~$0.20) you stamp + fill yourself. Also worth a look: Botanical PaperWorks plantable seed-paper favors (plant the whole card).",
+   options=[
+     opt("recommended","Custom Bluebonnet Seed Packet Favors","Wonder Flora","https://www.wonderflorashop.com/shop/p/custom-seed-packet-favors-bluebonnet",
+         "$3.00","/ packet","prefilled · personalization incl.","min 20","PREFILLED w/ real Texas bluebonnet seed · premium hand-folded paper · scalloped flap","Supplier-printed your seal",
+         "The easiest prefilled path and the most on-brand — they print your seal AND fill with Texas bluebonnet (the state flower). MOQ just 20.","assets/img/seed-rec.jpg"),
+     opt("value","Texas Bluebonnet Personalized Seed Packets","Earthly Goods","https://www.earthlygoods.com/texas-bluebonnet-personalized-seed-packets.html",
+         "$2.50","/ packet","$1.35 @250 · free 4-color + setup","min 100","PREFILLED bluebonnet seed · recycled paper, soy ink · 3.25×4.5″","Supplier-printed (free 4-color)",
+         "The best prefilled value if you scale — under $1.35 at 250+, free print + setup, genuinely eco/rustic recycled paper.","assets/img/seed-alt1.jpg"),
+     opt("alt","Proterra Kraft Seed Envelopes (empty)","Seed Needs","https://www.seedneeds.com/products/kraft-seed-envelopes-2b",
+         "≈ $0.20","/ envelope","$8.99 / 50-pack","min 50","EMPTY kraft, self-seal · 3.25×4.5″ · you fill with your own seed","In-house: stamp/print + fill",
+         "Lowest cost and full control — a true kraft 'garden packet' look; stamp your seal and fill with locally-sourced bluebonnet. Trade-off is the hand-labor.","assets/img/seed-alt2.jpg"),
+   ]),
+ dict(id="postcards", cat="welcome", name="Branded Postcards", tag="Ranch photography",
+   note="Only true mailable postcards (writable/addressable back, no envelope) come from Nations Photo Lab and Artifact Uprising — Mpix's 'postcard' is really a flat card with envelopes. For a foil / painted-edge premium card, MOO and Jukebox also apply (see the Stationery item's Learn-more).",
+   options=[
+     opt("recommended","Create-Your-Own Photo Postcard","Nations Photo Lab","https://www.nationsphotolab.com/products/cards-create-your-own",
+         "≈ $1.72","/ card","$46.75 / 25 (promos drop it)","min 25","True mailable postcard · uncoated writable backs (Signature Matte / Cotton / Smooth) · many stocks","Supplier-printed (your photo + seal)",
+         "Cheapest true mailable postcard, lowest MOQ (25), widest stock choice incl. uncoated writable backs — ranch photo front, seal + message on the back.","assets/img/postcard-rec.jpg"),
+     opt("premium","Custom Photo Postcards (Classic Recycled)","Artifact Uprising","https://www.artifactuprising.com/photo-cards",
+         "≈ $1.85","/ card","sets of 10–300 · no envelope needed","min 10","Heavyweight 100% recycled, eggshell matte · 5×3.5 or 6×4 · Photo+Text back","Supplier-printed (premium)",
+         "The luxury pick — thick, tactile recycled stock and a true no-envelope postcard with a Photo+Text back. MOQ just 10.","assets/img/postcard-alt1.jpg"),
+     opt("alt","Signature Flat Photo Card","Mpix","https://www.mpix.com/cards/diy/custom-horizontal-flat-card",
+         "≈ $1.86","/ card","from 50 ($93)","min 50","Photo-lab quality, ultra-thick 130# Signature stock · 4×5.5–6×8","Supplier-printed (your photo + seal)",
+         "Photo-lab quality for an enclosed flat card (ships with envelopes) — not a mail-the-back postcard, but the richest photo reproduction.","assets/img/postcard-alt2.jpg"),
    ]),
  # ---------------- ENTRY & OUTDOOR ----------------
  dict(id="mat", cat="outdoor", name="Thick Branded Outdoor Rubber Mat", tag="Logo molded-in",
@@ -291,6 +332,19 @@ DATA = [
      opt("alt","Quick-Ship Blank Top — 3/4″ Baltic Birch (No Clear Coat)","Dirty Bags Cornhole","https://dirtybagscornhole.com/products/quick-ship-cornhole-boards-blank-top-boards-no-clear-coat",
          "$249","/ set","regulation 2×4 · confirm restock","min 1","2 boards · 3/4″ Baltic birch · blank top, no clear coat — built for custom art","In-house DTF/UVDTF",
          "Purpose-built blank top for custom artwork (no clear coat to fight) — ideal for DTF. Was sold out at research; confirm restock.","assets/img/cornhole-alt2.webp"),
+   ]),
+ dict(id="strawhats", cat="outdoor", name="Branded Straw Hats", tag="Texas-made option",
+   note="Most on-brand: SunBody (Houston, TX) real Guatemalan palm — add a stamped-leather seal patch + custom band. Prototype the patch at qty 1 via Crafters Lab. Budget take-home: Park Wholesale toyo (~$13) to band in-house. Local experiential idea: a Rancher Hat Bar pop-up, or Gruene Hat Co (New Braunfels, ~25 min away) brands hats on-site.",
+   options=[
+     opt("recommended","Palm Western Hat (real Guatemalan palm)","SunBody Hats (Houston, TX)","https://www.sunbody.com/Hats/?pt=1",
+         "$46.65","/ hat","retail; wholesale on approved acct","min 1","Real palm leaf · cattleman / open-crown / Gus · UPF 50+ · sizes 5–8","In-house leather seal patch + custom band",
+         "The single most on-brand piece — a genuine Texas (Houston) maker, authentic palm Western hats, UPF 50+. Add a stamped-leather seal patch + custom band.","assets/img/hat-rec.webp"),
+     opt("alt","Leather-Patch Straw Cowboy Hat (turnkey)","Crafters Lab","https://crafterslab.com/products/custom-leather-patch-otto-cap-straw-cowboy",
+         "$49.99","/ hat","no real minimum","min 1","Natural straw, 4″ brim · M/L · custom leather patch done for you","Supplier engraves + sews your seal patch",
+         "Lowest-friction branded hat — your seal on a veg-tan leather patch, qty 1, done for you. Perfect to prototype the look before a SunBody run.","assets/img/hat-alt1.jpg"),
+     opt("value","Outback / Western Toyo Cowboy Hat (blank)","The Park Wholesale","https://theparkwholesale.com/collections/wholesale-cowboy-hats",
+         "$13.40","/ hat","wholesale, low minimums","min ~12","Toyo / raffia / paper straw western · natural + stained · adjustable","In-house band + UVDTF / leather patch",
+         "Best cost-per-hat for take-home / giveaway — cheap enough to band in-house and still feel western. The value tier under SunBody.","assets/img/hat-alt2.jpg"),
    ]),
 ]
 
@@ -353,7 +407,30 @@ section.cat{padding:30px 0 6px}
 .btn:hover{background:var(--rust);text-decoration:none}
 .note{font-size:12.5px;color:#6a5848;background:#faf4e8;border:1px dashed var(--line);border-radius:10px;padding:10px 13px;margin:13px 0 0}.note b{color:var(--bark)}
 footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:30px;border-top:4px solid var(--brass)}footer .wrap{font-size:12.5px}footer b{color:#fff}footer a{color:var(--rustsoft)}
-@media(max-width:920px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+.subpage-link{display:inline-flex;align-items:center;gap:8px;margin:14px 0 2px;background:var(--rust);color:#fff;padding:11px 18px;border-radius:10px;font-weight:800;font-size:13.5px;box-shadow:var(--sh)}
+.subpage-link:hover{background:var(--espresso);text-decoration:none}
+.backlink{display:inline-block;margin:0 0 8px;color:#e9dcc6;font-size:13px;font-weight:700}
+.backlink:hover{color:#fff}
+.sec-lead{color:var(--muted);max-width:840px;margin:0 0 18px;font-size:14.5px;line-height:1.55}
+.approaches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:4px 0 26px}
+.appcard{background:var(--parch);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--sh)}
+.appcard h4{margin:3px 0 6px;color:var(--espresso);font-size:16px}
+.appcard .tagp{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--rust)}
+.appcard p{font-size:13px;color:#5a4836;margin:0;line-height:1.5}
+.appcard.best{border:2px solid var(--good)}
+.heropick{display:grid;grid-template-columns:300px 1fr;gap:0;background:var(--parch);border:2px solid var(--good);border-radius:18px;overflow:hidden;box-shadow:var(--shlg);margin:0 0 28px}
+.heropick .pic{background:#fff;display:flex;align-items:center;justify-content:center;padding:18px;border-right:1px solid var(--line)}
+.heropick .pic img{max-width:100%;max-height:280px;object-fit:contain;mix-blend-mode:multiply}
+.heropick .info{padding:20px 24px}
+.heropick .crown{display:inline-block;background:var(--good);color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;padding:4px 11px;border-radius:20px;margin-bottom:8px}
+.heropick h3{margin:0 0 4px;font-size:21px;color:var(--espresso)}
+.heropick .info p{font-size:13.5px;color:#5a4836;line-height:1.55;margin:8px 0 0}.heropick .info ul{margin:8px 0 0;padding-left:17px;font-size:13px}.heropick .info li{margin:4px 0}
+.vtable{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);background:var(--parch);margin:0 0 26px}
+.vtable table{border-collapse:collapse;width:100%;min-width:920px;font-size:12.5px}
+.vtable th,.vtable td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.vtable thead th{background:#efe6d3;color:var(--espresso);font-family:Georgia,serif;position:sticky;top:0}
+.vtable tbody tr:hover{background:#fbf6ec}.vtable tr.top td{background:#eef6ef;font-weight:600}
+@media(max-width:920px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.approaches{grid-template-columns:1fr}.heropick{grid-template-columns:1fr}}
 @media print{.card:hover{transform:none}.btn{display:none}nav.cats{display:none}header.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 """
 
@@ -388,6 +465,9 @@ def item_html(it):
     parts.append('<div class="grid">' + "".join(card_html(o) for o in it["options"]) + '</div>')
     if it.get("note"):
         parts.append(f'<div class="note">{esc(it["note"])}</div>')
+    if it.get("subpage"):
+        u, l = it["subpage"]
+        parts.append(f'<a class="subpage-link" href="{esc(u)}">{esc(l)} &rarr;</a>')
     parts.append('</div>')
     return "".join(parts)
 
@@ -431,6 +511,76 @@ def inline_images(doc):
         return f'src="data:{mime};base64,{b64}"'
     return re.sub(r'src="(assets/img/[^"]+)"', repl, doc)
 
+BANDANA = {
+ "lead_sub": "Every way to brand a bandana — ranked for a full-bleed cotton result, with our pick at the top.",
+ "lead": "You have three routes. The cheapest/most traditional is a stock paisley with a blank center you fill with the seal (A); the most hands-on is buying blanks and branding them yourself (B); and the one you want — a genuinely bespoke product — is a completely custom, edge-to-edge design that turns the whole bandana into Poco Loco paisley + Western iconography (C). Below: the honest method trade-offs, our vetted pick, and a wide ranked vendor list.",
+ "approaches": [
+   {"tag":"Approach A","name":"Open-center medallion","body":"A stock traditional paisley with a blank <b>center medallion</b>; you or the vendor screen the seal into the open middle. Real cotton, classic, cheap, low-ish MOQ — but the paisley is generic and the logo is confined to the center.","best":False},
+   {"tag":"Approach B","name":"Blank → brand in-house","body":"Buy blank earthy-cotton paisley or solid bandanas and brand them yourself (UVDTF / screen / embroidered corner). Total control, any quantity — but in-house transfer can't achieve true edge-to-edge all-over, and washes less durably than dyed-in print.","best":False},
+   {"tag":"Approach C — your goal","name":"Full-custom, all-over","body":"Your complete design — custom paisley + the Poco Loco seal + iconography — printed <b>edge to edge</b>. The premium, fully-branded result. On <b>cotton</b> via all-over screen or digital print; the easy/cheap path is dye-sublimation but that's <b>polyester</b>; the authentic look is rotary screen on USA cotton (high MOQ).","best":True},
+ ],
+ "pick": {
+   "name":"Full-bleed on cotton — DTLA Print (and The Bandanna Co. for a flagship run)",
+   "supplier":"DTLA Print (Vernon, CA) · The Bandanna Company (USA mill, pictured)",
+   "url":"https://www.dtlaprint.com/custom/bandanas/",
+   "img":"assets/img/bandana-havahank.png",
+   "body":"<p>For your full-bleed, all-over <b>cotton</b> goal at a realistic ~24–300 units, <b>DTLA Print</b> is the best practical pick: all-over <b>screen print on 100% cotton</b>, <b>hemmed on all four sides</b>, edge-to-edge, US-made (Vernon, CA), effective MOQ ~24. A classic paisley field + your 1–3 color seal as a centered medallion is exactly its sweet spot.</p><ul><li><b>Lowest MOQ US cotton full-bleed:</b> Printology (full-bleed screen on cotton, MOQ 12).</li><li><b>Full-color digital on USA cotton, verified price:</b> 4AllPromos ($11.76/ea at 100) or Planet Apparel (Austin, TX; organic option).</li><li><b>Authentic heirloom flagship:</b> The Bandanna Company / Hav-A-Hank (pictured) — genuine USA-mill <b>rotary all-over cotton paisley</b>, the real thing — but the all-over rotary look needs ~<b>3,000 pcs</b>.</li><li><b>Easy & cheap (poly):</b> Bandana Supply (local Sugar Land, TX), Pop! Promos — gorgeous full-bleed via dye-sublimation, but polyester, which reads athletic, not rustic.</li></ul><p>Pictured: The Bandanna Company's authentic rotary cotton paisley — the look to aim for. Sample 2–3 finalists before a full run.</p>",
+ },
+ "table_lead": "Approach: A = open-center · B = blank for in-house · C = full-custom all-over. Ranked for full-bleed cotton. Quote-only vendors don't publish unit prices (flagged). Confirm price/MOQ/hem at order.",
+ "vendors": [
+   {"name":"DTLA Print","loc":"Vernon, CA (US)","approach":"C / A / B","method":"All-over screen on cotton; DTG; embroidery","fabric":"100% cotton","moq":"~24","price":"quote ($1.85–8.46)","verdict":"Best practical full-bleed cotton; hemmed 4 sides","url":"https://www.dtlaprint.com/custom/bandanas/","top":True},
+   {"name":"Printology","loc":"San Diego + Las Vegas (US)","approach":"C","method":"Full-bleed screen / DTG (cotton); dye-sub (poly)","fabric":"Cotton or poly","moq":"12","price":"quote","verdict":"Lowest-MOQ US full-bleed on cotton","url":"https://printology.io/products/custom-bandanas/","top":False},
+   {"name":"4AllPromos (Digital Cotton)","loc":"USA","approach":"C","method":"Digital full-color (front)","fabric":"100% cotton","moq":"100","price":"$11.76","verdict":"Verified-price full-bleed on USA cotton","url":"https://www.4allpromos.com/product/usa-made-digitally-printed-bandannas-100-cotton-sustainable-22-x-22","top":False},
+   {"name":"Planet Apparel","loc":"San Diego + Austin, TX","approach":"C","method":"Digital full-bleed / sublimation / screen","fabric":"USA cotton + organic","moq":"48","price":"quote ($45/color screen)","verdict":"Digital full-bleed on USA cotton; TX presence","url":"https://www.planetapparel.com/custom-bandanas/","top":False},
+   {"name":"The Bandanna Co. / Hav-A-Hank","loc":"SC + NC (US mill)","approach":"C / A","method":"Rotary all-over (≤8 clr); screen (1–4 clr)","fabric":"100% cotton, USA-woven","moq":"50 screen / 3,000 rotary","price":"quote","verdict":"Authentic USA rotary all-over — the heirloom flagship","url":"https://thebandannacompany.com/custom-paisley/","top":False},
+   {"name":"AMBRO Manufacturing","loc":"NJ/NY (US)","approach":"C / A / B","method":"Discharge/screen all-over; dye-sub (poly)","fabric":"100% cotton or poly","moq":"144","price":"quote","verdict":"US mill; offers 27×27 'wild rag' size","url":"https://www.ambromanufacturing.com/custom-all-over-print-bandanas/","top":False},
+   {"name":"Hoo-rag / Wyldr","loc":"USA","approach":"C","method":"Dye-sub (1 side &lt;5k); screen (both &gt;5k)","fabric":"100% cotton","moq":"24","price":"$10","verdict":"Low-MOQ all-cotton full-bleed (24×24)","url":"https://www.wyldr.com/main-customs-page/","top":False},
+   {"name":"Alchemy Merch","loc":"Overseas (China)","approach":"C","method":"Digital full-color (unlimited clr)","fabric":"100% cotton poplin","moq":"50","price":"~$7.60","verdict":"Unlimited-color digital on cotton; ~1 month","url":"https://alchemymerch.com/products/bandanas-100-cotton","top":False},
+   {"name":"Bandana Supply Co","loc":"Sugar Land, TX","approach":"C / B","method":"Dye-sublimation, all-over","fabric":"Polyester","moq":"none","price":"~$4.80","verdict":"Local TX, no-min, fast — but poly, not cotton","url":"https://bandanasupply.com/products/custom-full-color-bandanas-as-low-as-4-8-per-piece","top":False},
+   {"name":"Pop! Promos","loc":"Philly HQ / made China","approach":"C","method":"Dye-sublimation","fabric":"Microfiber poly","moq":"100","price":"$9.22","verdict":"Clean sublimation + pricing; square or triangle","url":"https://poppromos.com/product/full-color-bandana/","top":False},
+   {"name":"4inBandana","loc":"Overseas (China)","approach":"C","method":"Sublimation + DTG, all-over","fabric":"Cotton / satin / poly","moq":"none","price":"~$5.65","verdict":"No-min cotton all-over; overseas, hem unconfirmed","url":"https://4inbandana.com/custom-bandanas","top":False},
+   {"name":"Printful","loc":"US facilities","approach":"C","method":"Dye-sublimation","fabric":"Polyester","moq":"1","price":"~$10","verdict":"Zero-MOQ finished full-bleed; poly, vague sizes","url":"https://www.printful.com/custom-bandanas","top":False},
+   {"name":"Spoonflower","loc":"USA","approach":"C (raw)","method":"Digital pigment on fabric","fabric":"100% cotton (by the yard)","moq":"none","price":"~$22/yd","verdict":"Cotton, zero-MOQ — but raw fabric, you cut & hem","url":"https://www.spoonflower.com/en/cotton-poplin","top":False},
+   {"name":"OutfitYourLogo","approach":"A","loc":"US co.","method":"Screen into the open center","fabric":"100% cotton","moq":"100","price":"$4.97 (+$58/clr)","verdict":"Cheapest open-center medallion; not edge-to-edge","url":"https://www.outfityourlogo.com/detail.php?p=PAIS","top":False},
+   {"name":"CustomInk","loc":"US-based","approach":"A / C(poly)","method":"Digital (poly) / screen / cotton corner SKU","fabric":"Poly (full-color) / cotton (corner)","moq":"~12","price":"quote","verdict":"Easy UX; full-color = poly, cotton = centered only","url":"https://www.customink.com/products/accessories/bandanas/full-color-classic-bandana/1944300","top":False},
+   {"name":"Western Express","loc":"USA","approach":"A / B","method":"Stock paisley + your screen","fabric":"100% cotton","moq":"1","price":"$5.99","verdict":"Earthy cotton paisley blanks (brown/olive/beige)","url":"https://wexpress.com/bandanas-brown-paisley-usa-made/","top":False},
+ ],
+ "notes": "<span class='hd'>Cotton vs. polyester — the core decision</span>Dye-sublimation gives effortless edge-to-edge full color but <b>only on polyester</b> (reads athletic/synthetic — wrong for an upscale-rustic ranch). A true all-over <b>cotton</b> bandana means all-over <b>screen</b> (finite spot colors — perfect for paisley + a 1–3 color seal), <b>digital/pigment</b> (unlimited color, back prints lighter), or <b>reactive/rotary</b> (deepest, most premium, but high MOQ). For Poco Loco, stay cotton — a classic paisley + your black-and-white seal is ideal for screen.<span class='hd'>Art-setup gotchas for full-bleed</span><ul><li><b>Bleed:</b> extend the paisley ~0.25″ past the cut/hem line so no white slivers show after hemming.</li><li><b>Safe area:</b> a hem folds ~0.25–0.5″ under each side — keep the seal & text ≥1.5–2″ from the raw edge.</li><li><b>Layout:</b> build the paisley as a seamless tile; seal as a centered medallion with a decorative inner border (the classic bandana look).</li><li><b>Color:</b> specify Pantone Solid Coated; exact match is guaranteed only on white/natural grounds — design on a natural base, not a pre-dyed color.</li><li><b>Sides:</b> sublimation/reactive print through to the back; screen/digital usually print one side (natural-cotton back) — the most cost-effective premium layout.</li></ul><span class='hd'>Size & finishing</span><b>22×22″</b> is the standard neckerchief; <b>27×27″</b> is the 'wild rag' cowboys actually tie — more premium drape for a flagship piece (AMBRO offers 27×27). Specify a <b>double-folded, stitched hem on all four sides</b> (better than a raw serge) in a mid-to-heavy cotton.<span class='hd'>Defunct / not viable</span>bandana.com (now a jobs site), NYBandana (dead), Apliiq & Gelato (no bandana product), Real Thread (pet/dog bandana only).",
+ "footer": "Recommended next steps: decide if the seal is 1–4 spot colors (screen/rotary on cotton) or full-color (digital on cotton); sample DTLA Print, Printology, and 4AllPromos; quote The Bandanna Company if you ever want a 3,000-pc heirloom rotary run. Prices/MOQs from live vendor pages, June 2026.",
+}
+
+def render_bandana_page(d):
+    apps = "".join(
+        f"<div class='appcard{' best' if a.get('best') else ''}'><span class='tagp'>{esc(a['tag'])}</span><h4>{esc(a['name'])}</h4><p>{a['body']}</p></div>"
+        for a in d["approaches"])
+    p = d["pick"]
+    rows = ""
+    for v in d["vendors"]:
+        tc = " class='top'" if v.get("top") else ""
+        rows += (f"<tr{tc}><td><b>{esc(v['name'])}</b><br><span style='color:#9c8a72;font-size:11px'>{esc(v.get('loc',''))}</span></td>"
+                 f"<td>{esc(v['approach'])}</td><td>{esc(v['method'])}</td><td>{esc(v['fabric'])}</td>"
+                 f"<td>{esc(v['moq'])}</td><td>{esc(v['price'])}</td><td>{esc(v['verdict'])}</td>"
+                 f"<td><a href='{esc(v['url'])}' target='_blank' rel='noopener'>visit</a></td></tr>")
+    return f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poco Loco Ranch — Bandana Vendor Breakdown</title><link rel="icon" href="assets/img/poco-loco-logo.png"><style>{CSS}</style></head><body>
+<header class="top"><div class="wrap"><a class="backlink" href="index.html">&larr; Back to the OS&amp;E dashboard</a><div class="brandrow">
+<div class="seal-chip"><img src="assets/img/poco-loco-logo.png" alt="Poco Loco Ranch"></div>
+<div><h1>Bandanas — Complete Vendor Breakdown</h1><p class="sub">{esc(d['lead_sub'])}</p></div></div></div></header>
+<div class="wrap">
+<section class="cat"><div class="cat-h"><h2>The three ways to do it</h2></div><p class="sec-lead">{d['lead']}</p>
+<div class="approaches">{apps}</div>
+<div class="cat-h"><h2>Our pick</h2></div>
+<div class="heropick"><div class="pic"><img src="{esc(p['img'])}" alt="{esc(p['name'])}"></div>
+<div class="info"><span class="crown">★ Vetted best for full-bleed cotton</span><h3>{esc(p['name'])}</h3>
+<div class="supplier">{esc(p['supplier'])}</div>{p['body']}
+<a class="btn" style="max-width:260px;margin-top:14px" href="{esc(p['url'])}" target="_blank" rel="noopener">Visit DTLA Print &rarr;</a></div></div>
+<div class="cat-h"><h2>Every vendor we vetted</h2></div><p class="sec-lead">{d['table_lead']}</p>
+<div class="vtable"><table><thead><tr><th>Vendor</th><th>Approach</th><th>Method</th><th>Fabric</th><th>MOQ</th><th>~100 price</th><th>Verdict</th><th></th></tr></thead><tbody>{rows}</tbody></table></div>
+<div class="cat-h"><h2>Methods, art &amp; finishing</h2></div><div class="note" style="font-size:13px">{d['notes']}</div>
+</section></div>
+<footer><div class="wrap"><p>{esc(d['footer'])}</p><p style="margin-top:8px;color:#9c8a72">Poco Loco Ranch &middot; Bandana sourcing deep-dive &middot; confirm live pricing at order.</p></div></footer>
+</body></html>"""
+
 if __name__ == "__main__":
     (ROOT / "data").mkdir(exist_ok=True)
     (ROOT / "data" / "items.json").write_text(json.dumps(
@@ -438,5 +588,6 @@ if __name__ == "__main__":
     doc = render()
     (ROOT / "index.html").write_text(doc)
     (ROOT / "dashboard-standalone.html").write_text(inline_images(doc))
+    (ROOT / "bandana.html").write_text(render_bandana_page(BANDANA))
     print("items:", len(DATA), "options:", sum(len(i['options']) for i in DATA))
     print("wrote index.html, dashboard-standalone.html, data/items.json")

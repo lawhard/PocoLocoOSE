@@ -4,7 +4,7 @@ Low-volume, brandable, luxury-feel guest supplies for the **Poco Loco Ranch** (B
 inspired by the OS&E at **Badrutt's Palace**. Branding is done **in-house** (laser engraving,
 embroidery, and UVDTF) — or via supplier customization where noted.
 
-**15 items · 45 vetted options · per-unit range $0.46–$440 · lowest minimum order: 1**
+**22 items · 68 vetted options · plus a dedicated bandana vendor subpage (`bandana.html`) · lowest minimum order: 1**
 
 ## How to view
 
