@@ -30,9 +30,10 @@ production sheet (or ask for a label-free version).
 
 ## Notes / production caveats
 
-- **Plaque:** its lettering is *knocked out to transparent* in the source art,
-  so it's flattened onto **white** here — it prints as a black plaque with white
-  text (a rectangular sticker), instead of see-through letters on clear film.
+- **Plaque:** uses the clean source art (solid black body, **opaque white**
+  lettering) placed with its transparent background preserved — it prints as a
+  black plaque with white text, die-cut to the plaque outline. (An earlier copy
+  had semi-transparent knockout text that rendered muddy/"filled in"; replaced.)
 - **1″ seal:** the "BOERNE, TEXAS" ring and outline approach the 0.02″ minimum
   feature size — that's exactly the legibility limit this test is meant to show.
 - The other four marks are black line art on a fully transparent background.

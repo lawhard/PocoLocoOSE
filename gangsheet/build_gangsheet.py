@@ -40,19 +40,11 @@ def trimmed(name):
     im = Image.open(f"{ASSET_DIR}/{name}").convert("RGBA")
     return im.crop(im.split()[3].getbbox())
 
-def plaque_solid():
-    """Plaque text is knocked out to transparent; flatten on white so it
-    reproduces as a black plaque w/ white text, then crop to the art."""
-    im = Image.open(f"{ASSET_DIR}/historic-plaque.png").convert("RGBA")
-    bb = im.split()[3].getbbox()
-    bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
-    return Image.alpha_composite(bg, im).crop(bb)   # opaque rectangle
-
-GATE     = trimmed("gate.webp")        # entrance gate (wide)
-SCRIPT   = trimmed("script-logo.webp") # Poco Loco Ranch script + cactus
-WINDMILL = trimmed("windmill.webp")    # windmill (tall)
-SEAL     = trimmed("seal.webp")        # circular seal
-PLAQUE   = plaque_solid()          # Texas historic-site plaque (rectangular)
+GATE     = trimmed("gate.webp")            # entrance gate (wide)
+SCRIPT   = trimmed("script-logo.webp")     # Poco Loco Ranch script + cactus
+WINDMILL = trimmed("windmill.webp")        # windmill (tall)
+SEAL     = trimmed("seal.webp")            # circular seal
+PLAQUE   = trimmed("historic-plaque.png")  # black plaque, white text, transparent bg
 
 def scaled_w(img, inches):
     w = int(round(inches * DPI)); h = int(round(w * img.height / img.width))
