@@ -497,8 +497,8 @@
       "id": "sewing",
       "cat": "bedroom",
       "name": "Disposable Sewing Kit",
-      "tag": "Paper packaging",
-      "note": "All non-plastic paper styles (no clamshell cases). More eco-kraft: World Amenities Grooming Kraft Sachet ($0.35/ea, min 300) and Maples 'Eden' kraft box both print your logo (overseas / higher MOQ). For a boutique touch: linen 'hussif' fabric-roll kits and Sashiko paper-box mending kits on Etsy (premium, small batches).",
+      "tag": "Paper / fabric \u2014 no plastic",
+      "note": "All non-plastic. More eco-kraft in bulk: World Amenities Grooming Kraft Sachet ($0.35/ea, min 300) and Maples 'Eden' kraft box (logo-printed; overseas/higher MOQ). A true kraft-box craft kit: Sashiko 'Mending Blues' box (WeeThingsFiberArts, Etsy, ~$54) ships in a real brown kraft box. Or a personalized empty linen pouch to fill with your own notions (DittoDesignsCo, ~$14.50).",
       "options": [
         {
           "tier": "recommended",
@@ -530,6 +530,22 @@
           "brand": "Supplier-printed / UVDTF the box",
           "why": "A clean white paper pillow-box (zero plastic), US-stocked and dirt cheap per unit \u2014 a tidy, brandable upgrade over the matchbook at volume.",
           "img": "assets/img/sewing-box.jpg",
+          "learn": null
+        },
+        {
+          "tier": "premium",
+          "badge": "Premium",
+          "name": "'Hussif' Fabric Sewing Roll \u2014 customizable",
+          "supplier": "FashionableFrolick (Etsy)",
+          "url": "https://www.etsy.com/listing/505916892/design-your-own-18th-century",
+          "price": "$65.75",
+          "unit": "/ ea",
+          "terms": "$79.75 with tools \u00b7 handmade to order",
+          "min": "min 1",
+          "specs": "Linen/cotton/wool roll that ties shut \u00b7 pick your fabrics \u00b7 scissors, needles, winders, tape",
+          "brand": "Embroider the seal / add a leather tag",
+          "why": "The luxury, zero-packaging touch \u2014 a handmade fabric roll you customize in your own fabrics; message the maker for multiples. Very Badrutt's-in-the-drawer.",
+          "img": "assets/img/sewing-hussif.jpg",
           "learn": null
         },
         {
