@@ -159,7 +159,7 @@ DATA = [
          "$0.24","/ ea","$120 / case of 500","min 500","White paperboard pillow-box · 6 threads, needle, 2 buttons, safety pin","Supplier-printed / UVDTF the box",
          "A clean white paper pillow-box (zero plastic), US-stocked and dirt cheap per unit — a tidy, brandable upgrade over the matchbook at volume.","assets/img/sewing-box.jpg"),
      opt("premium","'Hussif' Fabric Sewing Roll — customizable","FashionableFrolick (Etsy)","https://www.etsy.com/listing/505916892/design-your-own-18th-century",
-         "$65.75","/ ea","$79.75 with tools · handmade to order","min 1","Linen/cotton/wool roll that ties shut · pick your fabrics · scissors, needles, winders, tape","Embroider the seal / add a leather tag",
+         "$65–80","/ ea","roll vs. with-tools · confirm on Etsy","min 1","Linen/cotton/wool roll that ties shut · pick your fabrics · scissors, needles, winders, tape","Embroider the seal / add a leather tag",
          "The luxury, zero-packaging touch — a handmade fabric roll you customize in your own fabrics; message the maker for multiples. Very Badrutt's-in-the-drawer.","assets/img/sewing-hussif.jpg"),
      opt("alt","Booklet 'Sewing Tray' Kit (#WA536)","ImprintItems","https://www.imprintitems.com/",
          "$1.46","/ ea","website logo printing","min ~250","Flat paper booklet that opens like a little book · cover printed","Supplier-printed cover (website)",
