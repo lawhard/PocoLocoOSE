@@ -15,28 +15,38 @@ best physical size for each can be chosen before a production run.
 | **Transparent background** PNG | RGBA, transparent |
 | Color: Adobe RGB (1998) recommended | art is pure black / white (profile-independent) |
 | Min feature ≥ 0.02″ (0.5 mm) | see note on the 1″ seal below |
-| Max file size 50 MB | ~6.7 MB |
+| Max file size 50 MB | ~7.6 MB |
 
 ## What's on the sheet
 
-- **Circular seal** — 4.5″ → 1″ (by width)
-- **Ranch script logo** — 4.5″ → 1″ (by width)
-- **Entrance gate** — 9″ → 3″ (by width)
-- **Windmill** — 4.5″ → 1.5″ (by height)
-- **Historic-site plaque** — 3.5″ → 2″ (by height)
+- **Circular seal** — 3.5″ → 1.25″, each size shown **two ways: transparent and
+  white-backed** (an opaque white disc behind the ring) for comparison
+- **Ranch script logo** — 4″ → 1″ (transparent)
+- **Entrance gate** — 7″ → 2″ (transparent)
+- **Windmill** — 4″ → 1.5″ tall (transparent)
+- **Historic-site plaque** — 3.5″ → 2″ tall
+- **Ranch house line art** — 6″ → 2.5″ (transparent)
 
 Small gray labels/headings are **guides for the size test** — strip them for a
 production sheet (or ask for a label-free version).
 
+## Transparent vs white backing
+
+A **transparent** transfer prints only the inked art — the surface shows through
+the gaps, which looks best on light goods. A **white-backed** version adds an
+opaque white layer behind the art so it stays crisp on dark or colored goods.
+Per request, only the **seal** is shown both ways (white disc); everything else
+is transparent.
+
 ## Notes / production caveats
 
-- **Plaque:** uses the clean source art (solid black body, **opaque white**
-  lettering) placed with its transparent background preserved — it prints as a
-  black plaque with white text, die-cut to the plaque outline. (An earlier copy
-  had semi-transparent knockout text that rendered muddy/"filled in"; replaced.)
-- **1″ seal:** the "BOERNE, TEXAS" ring and outline approach the 0.02″ minimum
-  feature size — that's exactly the legibility limit this test is meant to show.
-- The other four marks are black line art on a fully transparent background.
+- **Plaque:** clean source art (solid black body, **opaque white** lettering)
+  placed with its transparent background preserved — prints as a black plaque
+  with white text, die-cut to the plaque outline.
+- **House:** fine navy line art — delicate at the smaller sizes; the size test
+  shows where the thin lines start to drop out.
+- **Smallest marks** (1.25″ seal, 1″ script): thin rings/strokes approach the
+  0.02″ minimum feature size — exactly the legibility limit this test reveals.
 
 ## Regenerate
 

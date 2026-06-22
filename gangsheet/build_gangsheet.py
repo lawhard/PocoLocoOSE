@@ -36,14 +36,18 @@ F_HEAD  = font(54)
 F_LABEL = font(40)
 
 # ---- load + prep source art -------------------------------------------------
-def trimmed(name):
+def trimmed(name, athresh=12):
     im = Image.open(f"{ASSET_DIR}/{name}").convert("RGBA")
-    return im.crop(im.split()[3].getbbox())
+    r, g, b, a = im.split()
+    a = a.point(lambda v: 0 if v < athresh else v)   # drop near-invisible halo px
+    im.putalpha(a)
+    return im.crop(a.getbbox())
 
 GATE     = trimmed("gate.webp")            # entrance gate (wide)
 SCRIPT   = trimmed("script-logo.webp")     # Poco Loco Ranch script + cactus
 WINDMILL = trimmed("windmill.webp")        # windmill (tall)
 SEAL     = trimmed("seal.webp")            # circular seal
+HOUSE    = trimmed("house.webp")           # ranch-house line drawing (wide)
 PLAQUE   = trimmed("historic-plaque.png")  # black plaque, white text, transparent bg
 
 def scaled_w(img, inches):
@@ -53,6 +57,24 @@ def scaled_w(img, inches):
 def scaled_h(img, inches):
     h = int(round(inches * DPI)); w = int(round(h * img.width / img.height))
     return img.resize((w, h), Image.LANCZOS)
+
+def white_disc(art, inset=0.02):
+    """white circular backing under a round mark (the seal)."""
+    w, h = art.size
+    base = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ix, iy = int(w*inset), int(h*inset)
+    ImageDraw.Draw(base).ellipse([ix, iy, w-1-ix, h-1-iy], fill=(255, 255, 255, 255))
+    base.alpha_composite(art)
+    return base
+
+def white_plaque(art, pad_in=0.08, radius_in=0.10):
+    """white rounded-rectangle backing behind an irregular mark."""
+    pad = int(pad_in*DPI); rad = int(radius_in*DPI)
+    base = Image.new("RGBA", (art.width+2*pad, art.height+2*pad), (0, 0, 0, 0))
+    ImageDraw.Draw(base).rounded_rectangle([0, 0, base.width-1, base.height-1],
+                                           radius=rad, fill=(255, 255, 255, 255))
+    base.alpha_composite(art, (pad, pad))
+    return base
 
 def label(text):
     bb = F_LABEL.getbbox(text)
@@ -98,20 +120,34 @@ def band(title, items, y):
 
 # title
 draw.text((MARGIN, MARGIN - int(0.04*DPI)),
-          'POCO LOCO RANCH  —  BRAND ASSET SIZE TEST  —  22" x 24" UV DTF GANG SHEET  —  300 DPI',
+          'POCO LOCO RANCH  —  BRAND ASSET SIZE TEST  (+ SEAL WHITE-BACKING)  —  22" x 24" UV DTF GANG SHEET  —  300 DPI',
           font=F_TITLE, fill=GRAY)
 y = MARGIN + int(0.45 * DPI)
 
-y = band("CIRCULAR SEAL  (width)",
-         [item(scaled_w(SEAL, s), f'{s}"') for s in (4.5,3.5,3,2.5,2,1.5,1.25,1)], y)
+def paired(art, sizes, backing):
+    """alternate a transparent + a white-backed copy of one mark at each size."""
+    out = []
+    for s in sizes:
+        a = scaled_w(art, s)
+        out.append(item(a, f'{s}"'))
+        out.append(item(backing(a), f'{s}"  white'))
+    return out
+
+# white backing requested on the SEAL only
+y = band("CIRCULAR SEAL  —  transparent + white backing at each size",
+         paired(SEAL, (3.5,2.5,1.75,1.25), white_disc), y)
 y = band("RANCH SCRIPT LOGO  (width)",
-         [item(scaled_w(SCRIPT, s), f'{s}"') for s in (4.5,3.5,3,2.5,2,1.5,1.25,1)], y)
+         [item(scaled_w(SCRIPT, s), f'{s}"') for s in (4,3.5,3,2.5,2,1.5,1.25,1)], y)
 y = band("ENTRANCE GATE  (width)",
-         [item(scaled_w(GATE, s), f'{s}"') for s in (9,6,4.5,3)], y)
+         [item(scaled_w(GATE, s), f'{s}"') for s in (7,4.5,3,2)], y)
+
 # windmill (by height) + plaque (by height) share a band to save space
-wm = [item(scaled_h(WINDMILL, s), f'{s}" tall') for s in (4.5,3.5,2.75,2,1.5)]
+wm = [item(scaled_h(WINDMILL, s), f'{s}" tall') for s in (4,3,2.25,1.5)]
 pl = [item(scaled_h(PLAQUE, s),   f'{s}" tall') for s in (3.5,2.75,2)]
 y = band("WINDMILL  &  HISTORIC-SITE PLAQUE  (height)", wm + pl, y)
+
+y = band("RANCH HOUSE LINE ART  (width)",
+         [item(scaled_w(HOUSE, s), f'{s}"') for s in (6,4,2.5)], y)
 
 print(f"content bottom y = {y}px ({y/DPI:.2f}in) of {H}px ({H_IN}in)")
 assert y <= H - MARGIN, "OVERFLOW: content exceeds canvas height"
@@ -119,7 +155,7 @@ assert y <= H - MARGIN, "OVERFLOW: content exceeds canvas height"
 canvas.save(OUT, dpi=(DPI, DPI))
 # downscaled preview for quick visual check
 prev = canvas.copy()
-bg = Image.new("RGBA", prev.size, (245,245,245,255))   # light gray to see white art edges
+bg = Image.new("RGBA", prev.size, (199,199,199,255))   # mid gray so white backing is visible
 Image.alpha_composite(bg, prev).convert("RGB").resize((W//6, H//6), Image.LANCZOS).save("/tmp/gangsheet_preview.jpg", quality=88)
 import os
 print("saved", OUT, f"{os.path.getsize(OUT)/1e6:.2f} MB", canvas.size)
