@@ -38,9 +38,9 @@ TIERS = {
     "alt":         ("alt",  "Alternative"),
 }
 
-def opt(tier, name, supplier, url, price, unit, terms, mn, specs, brand, why, img, badge=None):
+def opt(tier, name, supplier, url, price, unit, terms, mn, specs, brand, why, img, badge=None, learn=None):
     return dict(tier=tier, badge=badge or TIERS[tier][1], name=name, supplier=supplier, url=url,
-                price=price, unit=unit, terms=terms, min=mn, specs=specs, brand=brand, why=why, img=img)
+                price=price, unit=unit, terms=terms, min=mn, specs=specs, brand=brand, why=why, img=img, learn=learn)
 
 DATA = [
  # ---------------- CLOSET & DRESSING ----------------
@@ -317,6 +317,15 @@ section.cat{padding:30px 0 6px}
 .brand{font-size:12px;color:var(--sage);font-weight:700;margin:0 0 9px;display:flex;gap:6px;align-items:flex-start}
 .brand svg{flex:0 0 auto;margin-top:2px}
 .why{font-size:12.5px;background:#f5efe2;border-radius:9px;padding:9px 11px;color:#5a4836;margin:0 0 12px}
+.learn{margin:0 0 12px}
+.learn summary{cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.3px;color:var(--rust);list-style:none;padding:8px 11px;background:#f6e7d6;border:1px solid #ecdcc0;border-radius:9px;display:flex;align-items:center;gap:6px}
+.learn summary::-webkit-details-marker{display:none}
+.learn summary::after{content:"▾";margin-left:auto;transition:transform .15s}
+.learn[open] summary{border-radius:9px 9px 0 0}
+.learn[open] summary::after{transform:rotate(180deg)}
+.learn .ld{font-size:12px;line-height:1.5;color:#5a4836;padding:11px 12px;border:1px solid #ecdcc0;border-top:none;border-radius:0 0 9px 9px;background:#fffdf7}
+.learn .ld b{color:var(--bark)}.learn .ld ul{margin:7px 0 0;padding-left:16px}.learn .ld li{margin:4px 0}
+.learn .ld .hd{font-weight:800;color:var(--espresso);display:block;margin:9px 0 3px;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
 .btn{margin-top:auto;display:block;text-align:center;background:var(--espresso);color:#fff;padding:10px 12px;border-radius:9px;font-weight:700;font-size:13px}
 .btn:hover{background:var(--rust);text-decoration:none}
 .note{font-size:12.5px;color:#6a5848;background:#faf4e8;border:1px dashed var(--line);border-radius:10px;padding:10px 13px;margin:13px 0 0}.note b{color:var(--bark)}
@@ -332,6 +341,8 @@ def esc(s): return _html.escape(str(s), quote=True)
 def card_html(o):
     cls, _ = TIERS[o["tier"]]
     rec = " rec" if o["tier"] == "recommended" else ""
+    learn = o.get("learn")
+    learn_block = (f'<details class="learn"><summary>Learn more &mdash; how it works &amp; what to know</summary><div class="ld">{learn}</div></details>') if learn else ""
     return f"""<article class="card{rec}">
 <div class="ribbon r-{cls}">{esc(o['badge'])}</div>
 <div class="imgbox"><img src="{esc(o['img'])}" alt="{esc(o['name'])}" loading="lazy"></div>
@@ -343,6 +354,7 @@ def card_html(o):
 <div class="specs">{esc(o['specs'])}</div>
 <div class="brand">{ENGRAVE_SVG}<span>{esc(o['brand'])}</span></div>
 <div class="why">{esc(o['why'])}</div>
+{learn_block}
 <a class="btn" href="{esc(o['url'])}" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article>"""
 

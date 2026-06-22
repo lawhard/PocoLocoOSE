@@ -44,6 +44,15 @@ section.cat{padding:30px 0 6px}
 .brand{font-size:12px;color:var(--sage);font-weight:700;margin:0 0 9px;display:flex;gap:6px;align-items:flex-start}
 .brand svg{flex:0 0 auto;margin-top:2px}
 .why{font-size:12.5px;background:#f5efe2;border-radius:9px;padding:9px 11px;color:#5a4836;margin:0 0 12px}
+.learn{margin:0 0 12px}
+.learn summary{cursor:pointer;font-size:12px;font-weight:800;letter-spacing:.3px;color:var(--rust);list-style:none;padding:8px 11px;background:#f6e7d6;border:1px solid #ecdcc0;border-radius:9px;display:flex;align-items:center;gap:6px}
+.learn summary::-webkit-details-marker{display:none}
+.learn summary::after{content:"▾";margin-left:auto;transition:transform .15s}
+.learn[open] summary{border-radius:9px 9px 0 0}
+.learn[open] summary::after{transform:rotate(180deg)}
+.learn .ld{font-size:12px;line-height:1.5;color:#5a4836;padding:11px 12px;border:1px solid #ecdcc0;border-top:none;border-radius:0 0 9px 9px;background:#fffdf7}
+.learn .ld b{color:var(--bark)}.learn .ld ul{margin:7px 0 0;padding-left:16px}.learn .ld li{margin:4px 0}
+.learn .ld .hd{font-weight:800;color:var(--espresso);display:block;margin:9px 0 3px;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
 .btn{margin-top:auto;display:block;text-align:center;background:var(--espresso);color:#fff;padding:10px 12px;border-radius:9px;font-weight:700;font-size:13px}
 .btn:hover{background:var(--rust);text-decoration:none}
 .note{font-size:12.5px;color:#6a5848;background:#faf4e8;border:1px dashed var(--line);border-radius:10px;padding:10px 13px;margin:13px 0 0}.note b{color:var(--bark)}
@@ -73,6 +82,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Beech, walnut finish · thick 18″ contour · chrome hook · non-slip bar</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
 <div class="why">Genuinely thick &amp; heavy, warm walnut suits the ranch, and a 3-pack lets you test your laser before scaling.</div>
+
 <a class="btn" href="https://www.onlyhangers.com/products/contoured-deluxe-wood-suit-hanger-wnon-slip-bar" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -85,6 +95,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Grade-A German beech · 2⅝″ sculpted shoulder · solid brass hook</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
 <div class="why">Closest to Badrutt&#x27;s — heirloom weight, brass hook, warm wood. Buy one to prototype.</div>
+
 <a class="btn" href="https://www.butlerluxury.com/products/tailor-made-custom-suit-hanger" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -97,6 +108,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Natural hardwood, clear lacquer · 17″ · wooden locking bar</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave</span></div>
 <div class="why">Lowest cost per unit and the crispest engraving contrast; trade-off is a slimmer profile.</div>
+
 <a class="btn" href="https://www.onlyhangers.com/products/contoured-wooden-suit-hanger-wlocking-bar-natural" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Engraving tip: natural/light wood gives the crispest logo contrast; warm walnut gives the subtle, elegant burn of the Badrutt&#x27;s crest. Engrave the flat shoulder face.</div></div><div class="item" id="item-shoehorn"><div class="item-h"><h3>Long-Handled Shoehorn</h3><span class="chip">Entry valet</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -109,6 +121,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Solid walnut, ~24″+, deerskin strap · handcrafted in Dallas, TX</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser engrave handle</span></div>
 <div class="why">Heirloom US-made walnut from the same house as the hanger pick — premium and on-brand.</div>
+
 <a class="btn" href="https://kirbyallison.com/products/hanger-project-walnut-long-handle-shoe-horn" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -121,6 +134,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Natural wood 7″ · handheld · smooth engraving face</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-engraved (turnkey)</span></div>
 <div class="why">The only turnkey option where the supplier laser-engraves your seal for you — no equipment needed.</div>
+
 <a class="btn" href="https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -133,6 +147,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Birch, 22″ · hangs by cord loop</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / engrave</span></div>
 <div class="why">Rock-bottom price for a real long wood shoehorn; brand the handle in-house. The everyday workhorse.</div>
+
 <a class="btn" href="https://www.muji.us/products/wooden-shoehorn-long-23aw" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div></div><div class="item" id="item-shoehornstand"><div class="item-h"><h3>Standing Shoehorn / Valet Block</h3><span class="chip">Niche category</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -145,6 +160,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Walnut horn 28″ + walnut base block 4.7″ · leather loop · Asahikawa craft</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the base block</span></div>
 <div class="why">Best-in-class: a true standing shoehorn in a substantial walnut block — a flat face made for your seal.</div>
+
 <a class="btn" href="https://shop.nalatanalata.com/products/standing-shoehorn-1" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -157,6 +173,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Solid walnut 27.5″ + matching wooden stand · made in Japan</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the base</span></div>
 <div class="why">Nearly the same concept at ~half the price, with frictionless Amazon stock and US shipping.</div>
+
 <a class="btn" href="https://www.amazon.com/Shoehorn-Stand-Handle-Wooden-Walnut/dp/B0D9LPXZNJ" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -169,6 +186,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Natural wood 7″ · handheld (does not stand) · supplier-engraved</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-engraved (turnkey)</span></div>
 <div class="why">Flagged honestly: handheld, not standing — the closest verified low-cost engravable wood piece if the standing form isn&#x27;t essential.</div>
+
 <a class="btn" href="https://www.tealsprairie.com/products/personalized-engraved-7-in-natural-wood-shoe-horn-with-quote/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Honest note: a long shoehorn seated in its own wooden base block is a genuinely scarce category — only two US-buyable pieces verified. The third is the closest verified low-cost engravable wood shoehorn (handheld). Or pair a Shoehorn pick above with an in-house-engraved walnut block.</div></div></div></section><section class="cat" id="cat-bath"><div class="wrap"><div class="cat-h"><h2>Bath</h2><span class="blurb">Refillable, premium fixtures that replace single-use plastic.</span></div><div class="item" id="item-shower"><div class="item-h"><h3>Shower-Mounted Refillable Bottles</h3><span class="chip">Replaces single-use</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -181,6 +199,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Matte-black or brass triple bracket + 16oz amber glass pumps</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser/UVDTF on glass, or supplier-engraved</span></div>
 <div class="why">Amber glass + matte-black/brass reads premium-rustic, and the smooth glass is the only option you can truly brand in-house.</div>
+
 <a class="btn" href="https://thepolishedjar.com/products/triple-wall-mount-for-soap-dispensers" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -193,6 +212,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Shatter-safe amber PET ×3 · no-drill adhesive mounts · funnel</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF labels</span></div>
 <div class="why">Cheapest turnkey amber system, shatter-safe for a rental shower — buy one, UVDTF a label, done.</div>
+
 <a class="btn" href="https://www.maisonovo.com/products/wall-mounted-soap-dispenser-amber-bronze" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -205,6 +225,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Brushed stainless, rust-proof, 15oz/chamber · 5-yr warranty</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser/label</span></div>
 <div class="why">The genuine hotel-grade fixture — bulletproof sealed metal, no glass to break. Modern-luxe lean.</div>
+
 <a class="btn" href="https://www.simplehuman.com/products/wall-mount-pump-triple" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div></div></div></section><section class="cat" id="cat-bar"><div class="wrap"><div class="cat-h"><h2>Bar &amp; Table</h2><span class="blurb">Durable bar tools and real linen for the table.</span></div><div class="item" id="item-opener"><div class="item-h"><h3>Bottle Opener</h3><span class="chip">Stays on the bar</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -217,6 +238,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Stainless speed-opener faced with real hardwood · made in USA</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier engraves free — or in-house on the wood face</span></div>
 <div class="why">Real walnut + solid stainless reads exactly &#x27;Hill Country bar,&#x27; buyable as one, and the only pick that supports both supplier and in-house branding.</div>
+
 <a class="btn" href="https://birchbarndesigns.com/product/wood-bottle-opener/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -229,6 +251,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Stainless + genuine leather face · brown tones</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave the leather</span></div>
 <div class="why">Crushes the price target, leather-on-steel matches the palette, and it&#x27;s purpose-built as a laser blank.</div>
+
 <a class="btn" href="https://shop.pydlife.com/products/craft-blanks-stainless-steel-bottle-opener-with-leather-cover-for-custom-laser-engraving-card-shape-5-color-options-8-pack" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -241,6 +264,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Solid cast iron, antique-brown, wall-mount fixture</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Mount on an in-house engraved wood backer</span></div>
 <div class="why">The most &#x27;ranch fixture&#x27; look at under $10; brand it via a laser-engraved wood backer board.</div>
+
 <a class="btn" href="https://barnwoodusa.com/products/rustic-cast-iron-wall-mounted-bottle-opener" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div></div><div class="item" id="item-napkins"><div class="item-h"><h3>Linen-Feel Cocktail Napkins</h3><span class="chip">Disposable · printed</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -253,6 +277,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Airlaid linen-feel · 5×5″ · one-time use · cream/natural</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed (1-color or foil)</span></div>
 <div class="why">Lowest MOQ (25) and a $10 flat setup — the closest match to the Badrutt&#x27;s printed linen-feel napkin at boutique quantity.</div>
+
 <a class="btn" href="https://limelightpaper.com/products/linun-beverage-napkin" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -265,6 +290,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Triple-ply paper-linen · natural linen border · 5×5″</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Blank: stamp seal in-house or use as-is</span></div>
 <div class="why">The most premium-feeling blank in a true cream/natural tone at the lowest commitment — Caspari is the luxury name in paper-linen.</div>
+
 <a class="btn" href="https://www.casparionline.com/products/linen-border-paper-cocktail-napkins-in-natural-20-per-package" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -277,6 +303,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Natural kraft linen-feel airlaid · rustic tone</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Blank: in-house stamp / UVDTF</span></div>
 <div class="why">Ultra-low cost and the most rustic natural tone; a case of 1,000 for a property that stamps in-house.</div>
+
 <a class="btn" href="https://www.webstaurantstore.com/hoffmaster-046128-10-x-10-linen-like-natural-kraft-1-4-fold-beverage-napkin-case/788BNAP14NT.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Like the Badrutt&#x27;s napkin: a disposable linen-feel (airlaid) napkin with a printed logo. Limelight prints your seal at the lowest minimum (25); Caspari and Hoffmaster are premium natural blanks you can stamp in-house. Runner-ups: For Your Party (foil) and Champagne &amp; Ink (100 min, ~$1.18 printed).</div></div></div></section><section class="cat" id="cat-bedroom"><div class="wrap"><div class="cat-h"><h2>Bedroom &amp; Comfort</h2><span class="blurb">Soft goods guests touch — embroiderable and warm.</span></div><div class="item" id="item-blankets"><div class="item-h"><h3>Plain Low-Cost Blankets</h3><span class="chip">Woven cotton · no lint</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -289,6 +316,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">100% pre-washed cotton waffle weave · Natural/Olive/Grey/White · 50×60</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery</span></div>
 <div class="why">Flat woven cotton — sheds lint instead of grabbing it. Exact 50×60, true neutrals, under ~$25, single-unit.</div>
+
 <a class="btn" href="https://allysonsplace.com/products/vhc-brands-waffle-weave-white-throw-50x60-decorative-cotton-blanket-for-farmhouse-boho-decor" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -301,6 +329,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">100% combed cotton waffle · Oatmeal/Taupe/Grey · 50×60</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery</span></div>
 <div class="why">Another woven-cotton waffle in true oatmeal/taupe, single-unit at Target — same anti-lint behavior.</div>
+
 <a class="btn" href="https://www.target.com/p/cotton-super-soft-all-season-waffle-weave-knit-blanket-great-bay-home-throw-oatmeal/-/A-91107311" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -313,6 +342,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">100% cotton flat basketweave thermal · Charcoal/Taupe/Khaki/Ivory · 50×60</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house embroidery</span></div>
 <div class="why">The tightest, flattest weave here = the best lint-shedder of all; just over $25 with confirmed neutral colors.</div>
+
 <a class="btn" href="https://www.superiorbrand.com/products/basket-weave-all-season-100-cotton-thermal-woven-blanket" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Why woven, not fleece: flat-woven cotton (waffle / basketweave) has no raised nap or static, so it sheds pet hair and lint instead of grabbing it like polar fleece. All plain and embroiderable. More options: DII Herringbone (~$20, Amazon) and the Superior Diamond-weave throw.</div></div><div class="item" id="item-sewing"><div class="item-h"><h3>Disposable Sewing Kit</h3><span class="chip">Hotel amenity · printed</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -325,6 +355,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Thin flat case · threads, needles, pins, buttons · logo on front</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed (website)</span></div>
 <div class="why">Lowest per-unit ($0.83) and setup ($34.99) of the disposable-style kits, website-branded, clean amenity look.</div>
+
 <a class="btn" href="https://www.proimprint.com/Custom-Logo-Imprinted-Sewing-Kits" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -337,6 +368,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">True paper matchbook folder — the authentic hotel format · cover printed</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed cover (website)</span></div>
 <div class="why">The truest disposable hotel matchbook, with your logo offset-printed across the cover. Pricing is quote-only.</div>
+
 <a class="btn" href="https://www.imprintitems.com/product/9755292" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -349,6 +381,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Compact case · multi-thread, needles, pins, buttons</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed (website)</span></div>
 <div class="why">A turnkey website-branded kit from a trusted US promo house — clean and cheap at 250.</div>
+
 <a class="btn" href="https://www.4imprint.com/product/962/Sewing-Kit" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">A genuine disposable matchbook/folder kit that ALSO prints your logo on the website is rare. ProImprint (flat case) has the lowest cost + setup; ImprintItems prints a true paper matchbook cover (quote-only, ~$500 min). All print the seal for you — no in-house work needed.</div></div></div></section><section class="cat" id="cat-welcome"><div class="wrap"><div class="cat-h"><h2>Welcome &amp; Desk</h2><span class="blurb">Take-home and everyday-carry pieces, easy to brand in bulk.</span></div><div class="item" id="item-pens"><div class="item-h"><h3>Pens with Heft &amp; Character</h3><span class="chip">≤ $5 · metal</span></div><div class="ref"><span class="tg">Your<br>Reference</span><span>Your exemplar: a substantial cream-lacquer barrel with gold trim, twist-action — a real hotel pen, not promo SWAG.</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -361,6 +394,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Solid BRASS barrel, lacquer finish, twist · gold-toned engraving</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier laser-engraved</span></div>
 <div class="why">The only verified genuinely HEAVY pen in budget — real brass, classic executive feel, gold imprint. Black lacquer + gold seal is the most upscale combo (no cream offered).</div>
+
 <a class="btn" href="https://www.4imprint.com/product/8804-L/Executive-Metal-Pen-Laser-Engraved" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -373,6 +407,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">White metal barrel + gold trim, twist · the cream/gold look</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
 <div class="why">Closest to your exemplar&#x27;s cream-and-gold palette and cheapest — but slim, so sample it to confirm the weight clears the &#x27;not throwaway&#x27; bar.</div>
+
 <a class="btn" href="https://www.qualitylogoproducts.com/custom-pens/slim-metal-gold-pen.htm" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -385,6 +420,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Champagne/white + gold trim metal barrel, twist · laser-engravable</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house or supplier laser-engrave</span></div>
 <div class="why">Cream/champagne + gold with cleaner laser engraving and some metal weight; the pearl cap is a glam accent — order Champagne for the closest match.</div>
+
 <a class="btn" href="https://www.4custompromo.com/custom-metal-twist-ballpoint-pen-with-big-pearl.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Honest tradeoff: under $5 you can get heavy brass (the Executive — but black/gold, not cream) OR the cream/gold look (slim, lighter). A cream-lacquer + gold + HEAVY pen isn&#x27;t stocked at this price — sample the brass Executive and the white/gold Slim before a 100-unit buy, or go ~$16 (Garland Hamilton) for an exact heavy cream/gold match.</div></div><div class="item" id="item-totes"><div class="item-h"><h3>Waxed Canvas Tote Bags</h3><span class="chip">ARTIFACT look for less</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -397,6 +433,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Waxed canvas · full-grain leather strap · antique brass rivets · Brown/Green</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / embroidered patch</span></div>
 <div class="why">The ARTIFACT look at ~half price and buyable today — real leather + antique brass + waxed canvas in earthy brown/green.</div>
+
 <a class="btn" href="https://www.rogue-industries.com/products/waxed-canvas-tote-bag" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -409,6 +446,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">14.7oz waxed canvas · full-grain veg-tan leather · SOLID brass · Tan/Olive/Charcoal</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / embroidered patch</span></div>
 <div class="why">Spec-for-spec the closest ARTIFACT clone and cheapest — solid brass, US-made, perfect palette. Caveat: colors were sold out (set a restock alert).</div>
+
 <a class="btn" href="https://www.blueclawco.com/products/market-tote-tan" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -421,6 +459,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">18oz waxed duck canvas · full-grain leather grips · Brown/Briquette</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / embroidered patch</span></div>
 <div class="why">The in-stock American-made step-up — heavyweight 18oz waxed canvas and full-grain leather; under the $140 ARTIFACT (no brass).</div>
+
 <a class="btn" href="https://www.steelecanvas.com/products/steele-utility-tote" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">The genuine waxed-canvas + full-grain leather + brass combo from US makers mostly lands $130+ (which is why ARTIFACT is $140). Rogue ($65, in stock) is the best &#x27;same look for less.&#x27; Still want a plain cheap canvas tote to brand a stack? The BagzDepot 12oz USA natural (~$19) is the bulk play.</div></div><div class="item" id="item-bandana"><div class="item-h"><h3>Custom Paisley Bandana</h3><span class="chip">Paisley + your logo</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -433,6 +472,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">22×22″ 100% cotton · classic paisley + 10×10 blank center · khaki/olive/navy/rust/red/black</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier screen-print into the center</span></div>
 <div class="why">Exactly your &#x27;paisley with a blank spot for the logo&#x27; idea — traditional paisley, USA-made cotton, every earthy color, with clean 100-unit pricing.</div>
+
 <a class="btn" href="https://www.outfityourlogo.com/detail.php?p=PAIS" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -445,6 +485,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">100% cotton · your seal printed INTO a full custom paisley · US heritage maker</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier full-custom screen-print</span></div>
 <div class="why">The true full-design route — they bake your seal into the paisley itself. Achievable at ~100 via their 50-pc screen minimum; call for the 100-unit total.</div>
+
 <a class="btn" href="https://thebandannacompany.com/custom-paisley/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -457,6 +498,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">22×22″ 100% cotton · stock paisley, logo in a corner/side strip</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier screen-print (corner)</span></div>
 <div class="why">Fully-verified turnkey 100-unit pricing and free shipping; the seal prints in a corner strip rather than centered.</div>
+
 <a class="btn" href="https://www.4allpromos.com/product/usa-made-paisley-bandana-cotton-22-inch" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Two routes: (B) a traditional paisley with a blank CENTER MEDALLION your seal prints into — OutfitYourLogo, ~$555 for 100 incl. setup; or (A) FULL CUSTOM, your seal baked into the paisley — The Bandanna Company (Hav-A-Hank), screen min 50, quote pricing. Local option: Bandana Supply (Sugar Land, TX). Note: bandana.com / nationalbandana are defunct.</div></div><div class="item" id="item-menucovers"><div class="item-h"><h3>Hard Embossed Menu Covers</h3><span class="chip">Rigid · foil-stamped</span></div><div class="ref"><span class="tg">Your<br>Reference</span><span>Like your Badrutt&#x27;s &#x27;In-Room Dining&#x27; and &#x27;Le Restaurant&#x27; menus — permanent rigid hardcovers, foil-stamped or blind-debossed. Use for an in-room dining menu, welcome book, guest directory, or wine list.</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -469,6 +511,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">True casebound — book cloth over rigid board · burgundy/black/brown/green · slip-in corners</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier gold/silver foil or blind deboss</span></div>
 <div class="why">The closest match to your burgundy gold-foil &#x27;In-Room Dining&#x27; menu — genuinely rigid, a real foil die, burgundy in stock, the lowest verified hardback minimum (15).</div>
+
 <a class="btn" href="https://www.menucoverdepot.com/formal-menu-covers/standard-hardcover-menu-covers.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -481,6 +524,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">True hardback casebound · textured LINEN cloth · many sizes · corner/bar inserts</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier foil-stamp or blind deboss</span></div>
 <div class="why">The actual linen/cloth hardcover at the lowest per-unit and most flexible quantity — best for a sage/tan linen welcome book with a blind-deboss + gold crest.</div>
+
 <a class="btn" href="https://menucovercentral.com/menu-covers-with-diploma-corners/summit-linen-menu-covers/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -493,6 +537,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Rigid bookbinder&#x27;s cloth over board · 14 colors · screw-post &amp; ring versions</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier foil-stamp or blind deboss</span></div>
 <div class="why">Widest format range — including screw-post/ring casebound for an easily refreshable wine list — while still a true rigid hardcover with supplier foil.</div>
+
 <a class="btn" href="https://www.menushoppe.com/leatherette-menu-covers" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Supplier foil-stamps/embosses these (not an in-house job). Burgundy + gold foil matches the &#x27;In-Room Dining&#x27; look; a sage/tan linen with blind deboss + gold matches &#x27;Le Restaurant.&#x27; For a refreshable wine list, choose a screw-post or ring version. Bespoke tier: Hartnack &amp; Co (UK); true bookbindery: Monastery Hill.</div></div><div class="item" id="item-stationery"><div class="item-h"><h3>Hotel Stationery — Cards &amp; Envelopes</h3><span class="chip">Bordered · crested</span></div><div class="ref"><span class="tg">Your<br>Reference</span><span>Like your Badrutt&#x27;s desk set: bordered correspondence cards with a small crest and matching envelopes, in cream/soft tones. (Embossing/foil on paper is a supplier job, not an in-house one.)</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -505,6 +550,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Bordered card · raised-ink your crest/text · white/ivory + red/navy/green border · 6.25×4.5″</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier raised-ink print of your crest</span></div>
 <div class="why">Bordered hotel-style cards with your crest printed and matching envelopes included, at a low 25 minimum — the closest turnkey branded match to the Badrutt&#x27;s set.</div>
+
 <a class="btn" href="https://www.merrimade.com/bordered-correspondence-cards.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -517,6 +563,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Embossed raised border + personalization · white/ivory · envelopes included · 6.25×4.5″</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier emboss + print</span></div>
 <div class="why">A true embossed border plus your printed crest at the lowest branded price — the most &#x27;embossed&#x27; look of the three.</div>
+
 <a class="btn" href="https://www.americanstationery.com/embossed-border-correspondence-cards-7254.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -529,6 +576,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Blind-embossed panel border · ecru · 80lb · blank, laser/inkjet printable</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house: print/stamp your crest</span></div>
 <div class="why">The cheapest path — premium blind-embossed bordered blanks you run your own crest onto (or letterpress).</div>
+
 <a class="btn" href="https://lcipaper.com/a7-panel-card-lci-smooth-80lb-blank-cards-ecru/pd/E7PC-80.html" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">The fine-hotel upgrade: Crane &amp; Co. 100% cotton bordered correspondence cards (gold or navy border on ecru), $32–$34 per box of 10 incl. envelopes, made in USA — order direct at crane.com (their photos are hotlink-protected, so not shown here). For heavy cotton to letterpress your crest yourself: Crane Lettra (~$13.64/50) or Original Crown Mill pure-cotton sets.</div></div></div></section><section class="cat" id="cat-outdoor"><div class="wrap"><div class="cat-h"><h2>Entry &amp; Outdoor</h2><span class="blurb">Big statement pieces for the porch, entry and yard.</span></div><div class="item" id="item-mat"><div class="item-h"><h3>Thick Branded Outdoor Rubber Mat</h3><span class="chip">Logo molded-in</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -541,6 +589,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">100% nitrile rubber, 3/16″ thick · up to 6×8′ · logo molded in</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-molded full-color logo</span></div>
 <div class="why">A genuinely thick, heavy all-rubber scraper with the seal permanently molded in — survives Hill-Country sun, rain and boots.</div>
+
 <a class="btn" href="https://www.floormatshop.com/Superscrape-Impressions-Logo-Mat.aspx" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -553,6 +602,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">All-rubber scraper cleats · HD 4-color print + PMS match</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier-printed</span></div>
 <div class="why">Same all-rubber outdoor concept ~$50 cheaper at the small size, still qty 1.</div>
+
 <a class="btn" href="https://custom-mats.com/collections/outdoor-logo-mats/products/rubber-logo-scraper-mat" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -565,6 +615,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Natural coir on thick vinyl base · UV-printed · made in USA</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier UV-print (or blank for in-house)</span></div>
 <div class="why">Warmest &#x27;ranch-porch&#x27; look — natural coir, US small-shop made, the cheapest of the three. Confirm made-to-order stock.</div>
+
 <a class="btn" href="https://nickel-designs.com/products/completely-custom-personalized-doormat" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div></div><div class="item" id="item-umbrellaholder"><div class="item-h"><h3>Brass Umbrella Stand</h3><span class="chip">Brass tube</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -577,6 +628,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Clean 23″H × 9″ cylinder · satin brass on spun aluminum · water tray</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave / UVDTF the face</span></div>
 <div class="why">The cleanest &#x27;brass tube&#x27; silhouette available new — a plain polished cylinder, tarnish-proof so an engraved seal stays sharp, commercial-grade, under $200.</div>
+
 <a class="btn" href="https://trashcansunlimited.com/satin-brass-or-aluminum-umbrella-stand-921-by-glaro/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -589,6 +641,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Larger 23″H × 15″ tube · ~20 lb · bigger branding face</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house laser-engrave / UVDTF</span></div>
 <div class="why">Same brand and clean-tube look but heavier (20 lb, won&#x27;t tip) with a bigger face for the seal — for a high-traffic entry.</div>
+
 <a class="btn" href="https://trashcansunlimited.com/aluminum-or-brass-combination-umbrella-stand-259-by-glaro/" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -601,6 +654,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Genuine SOLID brass with natural patina · 24″H · Art Nouveau serpent rings</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>UVDTF on the base (open form)</span></div>
 <div class="why">If you want truly solid brass, this is it — a real vintage piece. Trade-off: an open ring form (not a smooth tube), so engraving isn&#x27;t practical.</div>
+
 <a class="btn" href="https://www.chairish.com/product/2920555/early-20th-century-french-brass-umbrella-holder" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">Material reality: new clean-cylinder &#x27;brass&#x27; stands (Glaro and its commercial twins) are satin-brass FINISH on rust-proof aluminum, not solid brass — a genuine solid-brass smooth tube only exists vintage or custom-fabricated. For true solid brass, the vintage Chairish piece is the real thing (an open serpent-ring form, not a smooth tube).</div></div><div class="item" id="item-umbrellas"><div class="item-h"><h3>Long Umbrellas</h3><span class="chip">Print or blank</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -613,6 +667,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Bamboo shaft + handle · vented RPET canopy · auto-open</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier 4-color print included</span></div>
 <div class="why">Natural bamboo = the warm wood/canvas look, vented = windproof, and a full multi-color logo print is included with zero setup fee.</div>
+
 <a class="btn" href="https://www.4imprint.com/product/156465/The-Selva-Auto-Open-Stick-Umbrella-48-Arc" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -625,6 +680,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">Aluminum shaft · wood grip · nylon canopy · khaki · auto-open</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house UVDTF / engrave the handle</span></div>
 <div class="why">The qty-1, lowest-cost, brand-it-yourself play — khaki + wood handle nails the neutral palette.</div>
+
 <a class="btn" href="https://umbrellasandbeyond.com/products/ht-4020-wood-handle-stick-umbrella-48" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-prem">Premium</div>
@@ -637,6 +693,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">54″ arc · dark wood crook handle with brass accents · auto-open</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>Supplier screen-print</span></div>
 <div class="why">The dressiest silhouette — full walking-stick with real wood crook + brass. Wood + brass = the Poco Loco material story.</div>
+
 <a class="btn" href="https://www.4allpromos.com/product/classic-curved-handle-umbrella" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div></div><div class="item" id="item-cornhole"><div class="item-h"><h3>Cornhole Boards (blank for DTF)</h3><span class="chip">DTF-ready blanks</span></div><div class="grid"><article class="card rec">
 <div class="ribbon r-rec">★ Recommended</div>
@@ -649,6 +706,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">2 boards · 3/4″ Baltic birch top + frame · folding legs · raw, no graphics</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house DTF/UVDTF (light seal first)</span></div>
 <div class="why">The only verified in-stock true 3/4″ Baltic birch blank with no poly and no graphics — the smoothest, most premium DTF base, tournament-grade.</div>
+
 <a class="btn" href="https://cornholeace.com/products/plain-unfinished-cornhole-board-set-professional-no-poly" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-val">Value</div>
@@ -661,6 +719,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">2 boards · 1/2″ varnished cabinet-grade ply · carry case (bags separate)</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house DTF (scuff-sand first)</span></div>
 <div class="why">Lowest-price in-stock set from a reputable brand; the light varnished top takes a DTF transfer well after a quick scuff-sand.</div>
+
 <a class="btn" href="https://www.playgosports.com/products/gosports-4x2-regulation-size-wooden-cornhole-boards-set-includes-carrying-case-and-bean-bags-choose-your-colors-over-100-color-combinations" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article><article class="card">
 <div class="ribbon r-alt">Alternative</div>
@@ -673,6 +732,7 @@ footer{background:var(--espresso);color:#d9c7ac;padding:24px 0 32px;margin-top:3
 <div class="specs">2 boards · 3/4″ Baltic birch · blank top, no clear coat — built for custom art</div>
 <div class="brand"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c7f4e" stroke-width="2.2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><span>In-house DTF/UVDTF</span></div>
 <div class="why">Purpose-built blank top for custom artwork (no clear coat to fight) — ideal for DTF. Was sold out at research; confirm restock.</div>
+
 <a class="btn" href="https://dirtybagscornhole.com/products/quick-ship-cornhole-boards-blank-top-boards-no-clear-coat" target="_blank" rel="noopener">View &amp; buy &rarr;</a>
 </div></article></div><div class="note">You&#x27;ll DTF the seal yourself, so these ship blank. Raw 3/4″ Baltic birch (CornholeAce) is the flattest, most premium transfer base — a light clear seal first improves UVDTF grip and weatherproofs it. Runner-up: Slick Woody&#x27;s vinyl-coated white top is transfer-ready with no prep (confirm stock).</div></div></div></section>
 <footer><div class="wrap"><p><b>How these were vetted.</b> Every option was checked against four constraints &mdash; <b>brandable</b> (in-house laser/embroidery/UVDTF or supplier customization), <b>low minimum order</b> (mostly 1&ndash;25 units, no overseas MOQ), <b>price fit</b> (low cost preferred, quality first), and <b>currently available</b> (in-stock US suppliers). Prices, minimums, specs and the product photos were pulled directly from each supplier's live product page on <b>June 21, 2026</b>; confirm current price at checkout as retail pricing can change. A few items note an honest caveat where a category is genuinely scarce in low volume.</p>

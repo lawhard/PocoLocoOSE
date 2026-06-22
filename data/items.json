@@ -60,7 +60,8 @@
           "specs": "Beech, walnut finish \u00b7 thick 18\u2033 contour \u00b7 chrome hook \u00b7 non-slip bar",
           "brand": "In-house laser engrave",
           "why": "Genuinely thick & heavy, warm walnut suits the ranch, and a 3-pack lets you test your laser before scaling.",
-          "img": "assets/img/hanger-primary-walnut.jpg"
+          "img": "assets/img/hanger-primary-walnut.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -75,7 +76,8 @@
           "specs": "Grade-A German beech \u00b7 2\u215d\u2033 sculpted shoulder \u00b7 solid brass hook",
           "brand": "In-house laser engrave",
           "why": "Closest to Badrutt's \u2014 heirloom weight, brass hook, warm wood. Buy one to prototype.",
-          "img": "assets/img/hanger-premium-butler.jpg"
+          "img": "assets/img/hanger-premium-butler.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -90,7 +92,8 @@
           "specs": "Natural hardwood, clear lacquer \u00b7 17\u2033 \u00b7 wooden locking bar",
           "brand": "In-house laser engrave",
           "why": "Lowest cost per unit and the crispest engraving contrast; trade-off is a slimmer profile.",
-          "img": "assets/img/hanger-value-natural.jpg"
+          "img": "assets/img/hanger-value-natural.jpg",
+          "learn": null
         }
       ]
     },
@@ -113,7 +116,8 @@
           "specs": "Solid walnut, ~24\u2033+, deerskin strap \u00b7 handcrafted in Dallas, TX",
           "brand": "In-house laser engrave handle",
           "why": "Heirloom US-made walnut from the same house as the hanger pick \u2014 premium and on-brand.",
-          "img": "assets/img/shoehorn-rec.jpg"
+          "img": "assets/img/shoehorn-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -128,7 +132,8 @@
           "specs": "Natural wood 7\u2033 \u00b7 handheld \u00b7 smooth engraving face",
           "brand": "Supplier-engraved (turnkey)",
           "why": "The only turnkey option where the supplier laser-engraves your seal for you \u2014 no equipment needed.",
-          "img": "assets/img/shoehorn-alt1.jpg"
+          "img": "assets/img/shoehorn-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -143,7 +148,8 @@
           "specs": "Birch, 22\u2033 \u00b7 hangs by cord loop",
           "brand": "In-house UVDTF / engrave",
           "why": "Rock-bottom price for a real long wood shoehorn; brand the handle in-house. The everyday workhorse.",
-          "img": "assets/img/shoehorn-alt2.jpg"
+          "img": "assets/img/shoehorn-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -167,7 +173,8 @@
           "specs": "Walnut horn 28\u2033 + walnut base block 4.7\u2033 \u00b7 leather loop \u00b7 Asahikawa craft",
           "brand": "In-house laser-engrave the base block",
           "why": "Best-in-class: a true standing shoehorn in a substantial walnut block \u2014 a flat face made for your seal.",
-          "img": "assets/img/shoehornstand-rec.jpg"
+          "img": "assets/img/shoehornstand-rec.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -182,7 +189,8 @@
           "specs": "Solid walnut 27.5\u2033 + matching wooden stand \u00b7 made in Japan",
           "brand": "In-house laser-engrave the base",
           "why": "Nearly the same concept at ~half the price, with frictionless Amazon stock and US shipping.",
-          "img": "assets/img/shoehornstand-alt1.jpg"
+          "img": "assets/img/shoehornstand-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -197,7 +205,8 @@
           "specs": "Natural wood 7\u2033 \u00b7 handheld (does not stand) \u00b7 supplier-engraved",
           "brand": "Supplier-engraved (turnkey)",
           "why": "Flagged honestly: handheld, not standing \u2014 the closest verified low-cost engravable wood piece if the standing form isn't essential.",
-          "img": "assets/img/shoehornstand-alt2.jpg"
+          "img": "assets/img/shoehornstand-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -220,7 +229,8 @@
           "specs": "Matte-black or brass triple bracket + 16oz amber glass pumps",
           "brand": "In-house laser/UVDTF on glass, or supplier-engraved",
           "why": "Amber glass + matte-black/brass reads premium-rustic, and the smooth glass is the only option you can truly brand in-house.",
-          "img": "assets/img/shower-rec.png"
+          "img": "assets/img/shower-rec.png",
+          "learn": null
         },
         {
           "tier": "value",
@@ -235,7 +245,8 @@
           "specs": "Shatter-safe amber PET \u00d73 \u00b7 no-drill adhesive mounts \u00b7 funnel",
           "brand": "In-house UVDTF labels",
           "why": "Cheapest turnkey amber system, shatter-safe for a rental shower \u2014 buy one, UVDTF a label, done.",
-          "img": "assets/img/shower-alt1.jpg"
+          "img": "assets/img/shower-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -250,7 +261,8 @@
           "specs": "Brushed stainless, rust-proof, 15oz/chamber \u00b7 5-yr warranty",
           "brand": "In-house laser/label",
           "why": "The genuine hotel-grade fixture \u2014 bulletproof sealed metal, no glass to break. Modern-luxe lean.",
-          "img": "assets/img/shower-alt2.jpg"
+          "img": "assets/img/shower-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -273,7 +285,8 @@
           "specs": "Stainless speed-opener faced with real hardwood \u00b7 made in USA",
           "brand": "Supplier engraves free \u2014 or in-house on the wood face",
           "why": "Real walnut + solid stainless reads exactly 'Hill Country bar,' buyable as one, and the only pick that supports both supplier and in-house branding.",
-          "img": "assets/img/opener-rec.jpg"
+          "img": "assets/img/opener-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -288,7 +301,8 @@
           "specs": "Stainless + genuine leather face \u00b7 brown tones",
           "brand": "In-house laser-engrave the leather",
           "why": "Crushes the price target, leather-on-steel matches the palette, and it's purpose-built as a laser blank.",
-          "img": "assets/img/opener-alt1.jpg"
+          "img": "assets/img/opener-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -303,7 +317,8 @@
           "specs": "Solid cast iron, antique-brown, wall-mount fixture",
           "brand": "Mount on an in-house engraved wood backer",
           "why": "The most 'ranch fixture' look at under $10; brand it via a laser-engraved wood backer board.",
-          "img": "assets/img/opener-alt2.jpg"
+          "img": "assets/img/opener-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -327,7 +342,8 @@
           "specs": "Airlaid linen-feel \u00b7 5\u00d75\u2033 \u00b7 one-time use \u00b7 cream/natural",
           "brand": "Supplier-printed (1-color or foil)",
           "why": "Lowest MOQ (25) and a $10 flat setup \u2014 the closest match to the Badrutt's printed linen-feel napkin at boutique quantity.",
-          "img": "assets/img/napkin-rec.jpg"
+          "img": "assets/img/napkin-rec.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -342,7 +358,8 @@
           "specs": "Triple-ply paper-linen \u00b7 natural linen border \u00b7 5\u00d75\u2033",
           "brand": "Blank: stamp seal in-house or use as-is",
           "why": "The most premium-feeling blank in a true cream/natural tone at the lowest commitment \u2014 Caspari is the luxury name in paper-linen.",
-          "img": "assets/img/napkin-alt1n.jpg"
+          "img": "assets/img/napkin-alt1n.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -357,7 +374,8 @@
           "specs": "Natural kraft linen-feel airlaid \u00b7 rustic tone",
           "brand": "Blank: in-house stamp / UVDTF",
           "why": "Ultra-low cost and the most rustic natural tone; a case of 1,000 for a property that stamps in-house.",
-          "img": "assets/img/napkin-alt2.jpg"
+          "img": "assets/img/napkin-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -381,7 +399,8 @@
           "specs": "100% pre-washed cotton waffle weave \u00b7 Natural/Olive/Grey/White \u00b7 50\u00d760",
           "brand": "In-house embroidery",
           "why": "Flat woven cotton \u2014 sheds lint instead of grabbing it. Exact 50\u00d760, true neutrals, under ~$25, single-unit.",
-          "img": "assets/img/blanket-rec.jpg"
+          "img": "assets/img/blanket-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -396,7 +415,8 @@
           "specs": "100% combed cotton waffle \u00b7 Oatmeal/Taupe/Grey \u00b7 50\u00d760",
           "brand": "In-house embroidery",
           "why": "Another woven-cotton waffle in true oatmeal/taupe, single-unit at Target \u2014 same anti-lint behavior.",
-          "img": "assets/img/blanket-alt1.jpg"
+          "img": "assets/img/blanket-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -411,7 +431,8 @@
           "specs": "100% cotton flat basketweave thermal \u00b7 Charcoal/Taupe/Khaki/Ivory \u00b7 50\u00d760",
           "brand": "In-house embroidery",
           "why": "The tightest, flattest weave here = the best lint-shedder of all; just over $25 with confirmed neutral colors.",
-          "img": "assets/img/blanket-alt2.webp"
+          "img": "assets/img/blanket-alt2.webp",
+          "learn": null
         }
       ]
     },
@@ -435,7 +456,8 @@
           "specs": "Thin flat case \u00b7 threads, needles, pins, buttons \u00b7 logo on front",
           "brand": "Supplier-printed (website)",
           "why": "Lowest per-unit ($0.83) and setup ($34.99) of the disposable-style kits, website-branded, clean amenity look.",
-          "img": "assets/img/sewing-alt2.jpg"
+          "img": "assets/img/sewing-alt2.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -450,7 +472,8 @@
           "specs": "True paper matchbook folder \u2014 the authentic hotel format \u00b7 cover printed",
           "brand": "Supplier-printed cover (website)",
           "why": "The truest disposable hotel matchbook, with your logo offset-printed across the cover. Pricing is quote-only.",
-          "img": "assets/img/sewing-rec.jpg"
+          "img": "assets/img/sewing-rec.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -465,7 +488,8 @@
           "specs": "Compact case \u00b7 multi-thread, needles, pins, buttons",
           "brand": "Supplier-printed (website)",
           "why": "A turnkey website-branded kit from a trusted US promo house \u2014 clean and cheap at 250.",
-          "img": "assets/img/sewing-alt1.jpg"
+          "img": "assets/img/sewing-alt1.jpg",
+          "learn": null
         }
       ]
     },
@@ -490,7 +514,8 @@
           "specs": "Solid BRASS barrel, lacquer finish, twist \u00b7 gold-toned engraving",
           "brand": "Supplier laser-engraved",
           "why": "The only verified genuinely HEAVY pen in budget \u2014 real brass, classic executive feel, gold imprint. Black lacquer + gold seal is the most upscale combo (no cream offered).",
-          "img": "assets/img/pen-rec.jpg"
+          "img": "assets/img/pen-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -505,7 +530,8 @@
           "specs": "White metal barrel + gold trim, twist \u00b7 the cream/gold look",
           "brand": "Supplier-printed",
           "why": "Closest to your exemplar's cream-and-gold palette and cheapest \u2014 but slim, so sample it to confirm the weight clears the 'not throwaway' bar.",
-          "img": "assets/img/pen-alt1.jpg"
+          "img": "assets/img/pen-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -520,7 +546,8 @@
           "specs": "Champagne/white + gold trim metal barrel, twist \u00b7 laser-engravable",
           "brand": "In-house or supplier laser-engrave",
           "why": "Cream/champagne + gold with cleaner laser engraving and some metal weight; the pearl cap is a glam accent \u2014 order Champagne for the closest match.",
-          "img": "assets/img/pen-alt2.jpg"
+          "img": "assets/img/pen-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -544,7 +571,8 @@
           "specs": "Waxed canvas \u00b7 full-grain leather strap \u00b7 antique brass rivets \u00b7 Brown/Green",
           "brand": "In-house UVDTF / embroidered patch",
           "why": "The ARTIFACT look at ~half price and buyable today \u2014 real leather + antique brass + waxed canvas in earthy brown/green.",
-          "img": "assets/img/tote-rec.jpg"
+          "img": "assets/img/tote-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -559,7 +587,8 @@
           "specs": "14.7oz waxed canvas \u00b7 full-grain veg-tan leather \u00b7 SOLID brass \u00b7 Tan/Olive/Charcoal",
           "brand": "In-house UVDTF / embroidered patch",
           "why": "Spec-for-spec the closest ARTIFACT clone and cheapest \u2014 solid brass, US-made, perfect palette. Caveat: colors were sold out (set a restock alert).",
-          "img": "assets/img/tote-alt1.jpg"
+          "img": "assets/img/tote-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -574,7 +603,8 @@
           "specs": "18oz waxed duck canvas \u00b7 full-grain leather grips \u00b7 Brown/Briquette",
           "brand": "In-house UVDTF / embroidered patch",
           "why": "The in-stock American-made step-up \u2014 heavyweight 18oz waxed canvas and full-grain leather; under the $140 ARTIFACT (no brass).",
-          "img": "assets/img/tote-alt2.jpg"
+          "img": "assets/img/tote-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -598,7 +628,8 @@
           "specs": "22\u00d722\u2033 100% cotton \u00b7 classic paisley + 10\u00d710 blank center \u00b7 khaki/olive/navy/rust/red/black",
           "brand": "Supplier screen-print into the center",
           "why": "Exactly your 'paisley with a blank spot for the logo' idea \u2014 traditional paisley, USA-made cotton, every earthy color, with clean 100-unit pricing.",
-          "img": "assets/img/bandana-rec.jpg"
+          "img": "assets/img/bandana-rec.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -613,7 +644,8 @@
           "specs": "100% cotton \u00b7 your seal printed INTO a full custom paisley \u00b7 US heritage maker",
           "brand": "Supplier full-custom screen-print",
           "why": "The true full-design route \u2014 they bake your seal into the paisley itself. Achievable at ~100 via their 50-pc screen minimum; call for the 100-unit total.",
-          "img": "assets/img/bandana-alt1.png"
+          "img": "assets/img/bandana-alt1.png",
+          "learn": null
         },
         {
           "tier": "value",
@@ -628,7 +660,8 @@
           "specs": "22\u00d722\u2033 100% cotton \u00b7 stock paisley, logo in a corner/side strip",
           "brand": "Supplier screen-print (corner)",
           "why": "Fully-verified turnkey 100-unit pricing and free shipping; the seal prints in a corner strip rather than centered.",
-          "img": "assets/img/bandana-alt2.jpg"
+          "img": "assets/img/bandana-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -653,7 +686,8 @@
           "specs": "True casebound \u2014 book cloth over rigid board \u00b7 burgundy/black/brown/green \u00b7 slip-in corners",
           "brand": "Supplier gold/silver foil or blind deboss",
           "why": "The closest match to your burgundy gold-foil 'In-Room Dining' menu \u2014 genuinely rigid, a real foil die, burgundy in stock, the lowest verified hardback minimum (15).",
-          "img": "assets/img/menucover-rec.jpg"
+          "img": "assets/img/menucover-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -668,7 +702,8 @@
           "specs": "True hardback casebound \u00b7 textured LINEN cloth \u00b7 many sizes \u00b7 corner/bar inserts",
           "brand": "Supplier foil-stamp or blind deboss",
           "why": "The actual linen/cloth hardcover at the lowest per-unit and most flexible quantity \u2014 best for a sage/tan linen welcome book with a blind-deboss + gold crest.",
-          "img": "assets/img/menucover-alt1.jpg"
+          "img": "assets/img/menucover-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -683,7 +718,8 @@
           "specs": "Rigid bookbinder's cloth over board \u00b7 14 colors \u00b7 screw-post & ring versions",
           "brand": "Supplier foil-stamp or blind deboss",
           "why": "Widest format range \u2014 including screw-post/ring casebound for an easily refreshable wine list \u2014 while still a true rigid hardcover with supplier foil.",
-          "img": "assets/img/menucover-alt2.png"
+          "img": "assets/img/menucover-alt2.png",
+          "learn": null
         }
       ]
     },
@@ -708,7 +744,8 @@
           "specs": "Bordered card \u00b7 raised-ink your crest/text \u00b7 white/ivory + red/navy/green border \u00b7 6.25\u00d74.5\u2033",
           "brand": "Supplier raised-ink print of your crest",
           "why": "Bordered hotel-style cards with your crest printed and matching envelopes included, at a low 25 minimum \u2014 the closest turnkey branded match to the Badrutt's set.",
-          "img": "assets/img/stationery-rec.jpg"
+          "img": "assets/img/stationery-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -723,7 +760,8 @@
           "specs": "Embossed raised border + personalization \u00b7 white/ivory \u00b7 envelopes included \u00b7 6.25\u00d74.5\u2033",
           "brand": "Supplier emboss + print",
           "why": "A true embossed border plus your printed crest at the lowest branded price \u2014 the most 'embossed' look of the three.",
-          "img": "assets/img/stationery-alt1.jpg"
+          "img": "assets/img/stationery-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -738,7 +776,8 @@
           "specs": "Blind-embossed panel border \u00b7 ecru \u00b7 80lb \u00b7 blank, laser/inkjet printable",
           "brand": "In-house: print/stamp your crest",
           "why": "The cheapest path \u2014 premium blind-embossed bordered blanks you run your own crest onto (or letterpress).",
-          "img": "assets/img/stationery-alt2.jpg"
+          "img": "assets/img/stationery-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -761,7 +800,8 @@
           "specs": "100% nitrile rubber, 3/16\u2033 thick \u00b7 up to 6\u00d78\u2032 \u00b7 logo molded in",
           "brand": "Supplier-molded full-color logo",
           "why": "A genuinely thick, heavy all-rubber scraper with the seal permanently molded in \u2014 survives Hill-Country sun, rain and boots.",
-          "img": "assets/img/mat-rec.jpg"
+          "img": "assets/img/mat-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -776,7 +816,8 @@
           "specs": "All-rubber scraper cleats \u00b7 HD 4-color print + PMS match",
           "brand": "Supplier-printed",
           "why": "Same all-rubber outdoor concept ~$50 cheaper at the small size, still qty 1.",
-          "img": "assets/img/mat-alt1.jpg"
+          "img": "assets/img/mat-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -791,7 +832,8 @@
           "specs": "Natural coir on thick vinyl base \u00b7 UV-printed \u00b7 made in USA",
           "brand": "Supplier UV-print (or blank for in-house)",
           "why": "Warmest 'ranch-porch' look \u2014 natural coir, US small-shop made, the cheapest of the three. Confirm made-to-order stock.",
-          "img": "assets/img/mat-alt2.png"
+          "img": "assets/img/mat-alt2.png",
+          "learn": null
         }
       ]
     },
@@ -815,7 +857,8 @@
           "specs": "Clean 23\u2033H \u00d7 9\u2033 cylinder \u00b7 satin brass on spun aluminum \u00b7 water tray",
           "brand": "In-house laser-engrave / UVDTF the face",
           "why": "The cleanest 'brass tube' silhouette available new \u2014 a plain polished cylinder, tarnish-proof so an engraved seal stays sharp, commercial-grade, under $200.",
-          "img": "assets/img/umbrellaholder-rec.jpg"
+          "img": "assets/img/umbrellaholder-rec.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -830,7 +873,8 @@
           "specs": "Larger 23\u2033H \u00d7 15\u2033 tube \u00b7 ~20 lb \u00b7 bigger branding face",
           "brand": "In-house laser-engrave / UVDTF",
           "why": "Same brand and clean-tube look but heavier (20 lb, won't tip) with a bigger face for the seal \u2014 for a high-traffic entry.",
-          "img": "assets/img/umbrellaholder-alt1.jpg"
+          "img": "assets/img/umbrellaholder-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -845,7 +889,8 @@
           "specs": "Genuine SOLID brass with natural patina \u00b7 24\u2033H \u00b7 Art Nouveau serpent rings",
           "brand": "UVDTF on the base (open form)",
           "why": "If you want truly solid brass, this is it \u2014 a real vintage piece. Trade-off: an open ring form (not a smooth tube), so engraving isn't practical.",
-          "img": "assets/img/umbrellaholder-alt2.jpg"
+          "img": "assets/img/umbrellaholder-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -868,7 +913,8 @@
           "specs": "Bamboo shaft + handle \u00b7 vented RPET canopy \u00b7 auto-open",
           "brand": "Supplier 4-color print included",
           "why": "Natural bamboo = the warm wood/canvas look, vented = windproof, and a full multi-color logo print is included with zero setup fee.",
-          "img": "assets/img/umbrella-rec.jpg"
+          "img": "assets/img/umbrella-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -883,7 +929,8 @@
           "specs": "Aluminum shaft \u00b7 wood grip \u00b7 nylon canopy \u00b7 khaki \u00b7 auto-open",
           "brand": "In-house UVDTF / engrave the handle",
           "why": "The qty-1, lowest-cost, brand-it-yourself play \u2014 khaki + wood handle nails the neutral palette.",
-          "img": "assets/img/umbrella-alt1.jpg"
+          "img": "assets/img/umbrella-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "premium",
@@ -898,7 +945,8 @@
           "specs": "54\u2033 arc \u00b7 dark wood crook handle with brass accents \u00b7 auto-open",
           "brand": "Supplier screen-print",
           "why": "The dressiest silhouette \u2014 full walking-stick with real wood crook + brass. Wood + brass = the Poco Loco material story.",
-          "img": "assets/img/umbrella-alt2.jpg"
+          "img": "assets/img/umbrella-alt2.jpg",
+          "learn": null
         }
       ]
     },
@@ -922,7 +970,8 @@
           "specs": "2 boards \u00b7 3/4\u2033 Baltic birch top + frame \u00b7 folding legs \u00b7 raw, no graphics",
           "brand": "In-house DTF/UVDTF (light seal first)",
           "why": "The only verified in-stock true 3/4\u2033 Baltic birch blank with no poly and no graphics \u2014 the smoothest, most premium DTF base, tournament-grade.",
-          "img": "assets/img/cornhole-rec.jpg"
+          "img": "assets/img/cornhole-rec.jpg",
+          "learn": null
         },
         {
           "tier": "value",
@@ -937,7 +986,8 @@
           "specs": "2 boards \u00b7 1/2\u2033 varnished cabinet-grade ply \u00b7 carry case (bags separate)",
           "brand": "In-house DTF (scuff-sand first)",
           "why": "Lowest-price in-stock set from a reputable brand; the light varnished top takes a DTF transfer well after a quick scuff-sand.",
-          "img": "assets/img/cornhole-alt1.jpg"
+          "img": "assets/img/cornhole-alt1.jpg",
+          "learn": null
         },
         {
           "tier": "alt",
@@ -952,7 +1002,8 @@
           "specs": "2 boards \u00b7 3/4\u2033 Baltic birch \u00b7 blank top, no clear coat \u2014 built for custom art",
           "brand": "In-house DTF/UVDTF",
           "why": "Purpose-built blank top for custom artwork (no clear coat to fight) \u2014 ideal for DTF. Was sold out at research; confirm restock.",
-          "img": "assets/img/cornhole-alt2.webp"
+          "img": "assets/img/cornhole-alt2.webp",
+          "learn": null
         }
       ]
     }
