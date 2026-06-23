@@ -23,8 +23,8 @@ W_IN, H_IN = 22, 24
 W, H      = W_IN * DPI, H_IN * DPI            # 6600 x 7200
 MARGIN    = int(0.30 * DPI)                   # keep art >=0.3" from edges
 GAP_X     = int(0.22 * DPI)                   # gap between items on a shelf
-GAP_Y     = int(0.28 * DPI)                   # gap between shelves in a band
-BAND_GAP  = int(0.45 * DPI)                   # gap between asset bands
+GAP_Y     = int((0.22 if not LABELS else 0.28) * DPI)   # gap between shelves in a band
+BAND_GAP  = int((0.30 if not LABELS else 0.45) * DPI)   # gap between bands (tighter in production to fit the fill)
 USABLE_W  = W - 2 * MARGIN
 BLACK     = (17, 17, 17, 255)                 # near-black ink
 GRAY      = (120, 120, 120, 255)             # annotation gray
@@ -165,6 +165,11 @@ hardlaw = [item(scaled_w(HARDLAW_H, 4.5), 'HARD LAW 4.5"'),
            item(scaled_w(HARDLAW_S, 2.5), 'HARD LAW 2.5"')]
 y = band("RANCH HOUSE LINE ART  ·  HARD LAW LOGOS (added)",
          [item(scaled_w(HOUSE, s), f'{s}"') for s in (6,4,2.5)] + hardlaw, y)
+
+# PRODUCTION only: fill the leftover sheet with usable 3.5" transfers
+if not LABELS:
+    y = band("", [item(scaled_w(HARDLAW_S, 3.5), '') for _ in range(5)], y)
+    y = band("", [item(scaled_w(SELLER,   3.5), '') for _ in range(5)], y)
 
 print(f"content bottom y = {y}px ({y/DPI:.2f}in) of {H}px ({H_IN}in)")
 assert y <= H - MARGIN, "OVERFLOW: content exceeds canvas height"

@@ -6,7 +6,7 @@ best physical size for each can be chosen before a production run.
 
 **Deliverables:**
 - [`poco-loco-gangsheet-22x24.png`](poco-loco-gangsheet-22x24.png) — labeled size-test proof
-- [`poco-loco-gangsheet-22x24-PRODUCTION.png`](poco-loco-gangsheet-22x24-PRODUCTION.png) — **label-free, print-ready** (no title, headings, or size labels; art only)
+- [`poco-loco-gangsheet-22x24-PRODUCTION.png`](poco-loco-gangsheet-22x24-PRODUCTION.png) — **label-free, print-ready** (no title, headings, or size labels; art only). The leftover space is filled with **5× Hard Law (3.5″, stacked)** + **5× CELLARS (3.5″)** usable transfers.
 
 ## Built to spec
 
