@@ -49,6 +49,9 @@ WINDMILL = trimmed("windmill.webp")        # windmill (tall)
 SEAL     = trimmed("seal.webp")            # circular seal
 HOUSE    = trimmed("house.webp")           # ranch-house line drawing (wide)
 PLAQUE   = trimmed("historic-plaque.png")  # black plaque, white text, transparent bg
+HARDLAW_H = trimmed("hardlaw-horizontal.webp")  # Hard Law lockup (wide)
+HARDLAW_S = trimmed("hardlaw-stacked.png")      # Hard Law emblem + wordmark (stacked)
+SELLER    = trimmed("seller-pomegranate.webp")  # seller's pomegranate + CELLARS mark (color; white wordmark)
 
 def scaled_w(img, inches):
     w = int(round(inches * DPI)); h = int(round(w * img.height / img.width))
@@ -144,10 +147,15 @@ y = band("ENTRANCE GATE  (width)",
 # windmill (by height) + plaque (by height) share a band to save space
 wm = [item(scaled_h(WINDMILL, s), f'{s}" tall') for s in (4,3,2.25,1.5)]
 pl = [item(scaled_h(PLAQUE, s),   f'{s}" tall') for s in (3.5,2.75,2)]
-y = band("WINDMILL  &  HISTORIC-SITE PLAQUE  (height)", wm + pl, y)
+seller = [item(scaled_w(SELLER, 3.5),  'SELLER 3.5" (glass)'),
+          item(scaled_w(SELLER, 3.5),  'SELLER 3.5" (glass)'),
+          item(scaled_w(SELLER, 2.25), 'SELLER 2.25"')]
+y = band("WINDMILL  ·  PLAQUE  ·  SELLER LOGO  (sized 3.5\" for a soda-can glass, x2)", wm + pl + seller, y)
 
-y = band("RANCH HOUSE LINE ART  (width)",
-         [item(scaled_w(HOUSE, s), f'{s}"') for s in (6,4,2.5)], y)
+hardlaw = [item(scaled_w(HARDLAW_H, 4.5), 'HARD LAW 4.5"'),
+           item(scaled_w(HARDLAW_S, 2.5), 'HARD LAW 2.5"')]
+y = band("RANCH HOUSE LINE ART  ·  HARD LAW LOGOS (added)",
+         [item(scaled_w(HOUSE, s), f'{s}"') for s in (6,4,2.5)] + hardlaw, y)
 
 print(f"content bottom y = {y}px ({y/DPI:.2f}in) of {H}px ({H_IN}in)")
 assert y <= H - MARGIN, "OVERFLOW: content exceeds canvas height"

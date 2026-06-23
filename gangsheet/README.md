@@ -15,7 +15,7 @@ best physical size for each can be chosen before a production run.
 | **Transparent background** PNG | RGBA, transparent |
 | Color: Adobe RGB (1998) recommended | art is pure black / white (profile-independent) |
 | Min feature ≥ 0.02″ (0.5 mm) | see note on the 1″ seal below |
-| Max file size 50 MB | ~7.6 MB |
+| Max file size 50 MB | ~8.1 MB |
 
 ## What's on the sheet
 
@@ -26,6 +26,12 @@ best physical size for each can be chosen before a production run.
 - **Windmill** — 4″ → 1.5″ tall (transparent)
 - **Historic-site plaque** — 3.5″ → 2″ tall
 - **Ranch house line art** — 6″ → 2.5″ (transparent)
+- **Seller logo — CELLARS pomegranate** (full color) — **3.5″ ×2 sized for a
+  soda-can glass** + a 2.25″ reference; the "CELLARS" wordmark is white ink
+- **Hard Law logos** — horizontal lockup 4.5″ and stacked mark 2.5″
+
+The two added brands (seller + Hard Law) sit in the open space beside the
+plaque and house rows.
 
 Small gray labels/headings are **guides for the size test** — strip them for a
 production sheet (or ask for a label-free version).
