@@ -13,6 +13,10 @@ from the originals the client supplied (brand-assets/raw_*.*).
 Run:  python3 gangsheet/build_gangsheet.py
 """
 from PIL import Image, ImageDraw, ImageFont
+import sys
+
+# Label-free PRODUCTION mode:  python3 gangsheet/build_gangsheet.py production
+LABELS = not any(a in ("production", "--production", "--no-labels") for a in sys.argv[1:])
 
 DPI       = 300
 W_IN, H_IN = 22, 24
@@ -25,7 +29,8 @@ USABLE_W  = W - 2 * MARGIN
 BLACK     = (17, 17, 17, 255)                 # near-black ink
 GRAY      = (120, 120, 120, 255)             # annotation gray
 ASSET_DIR = "gangsheet/source"
-OUT       = "gangsheet/poco-loco-gangsheet-22x24.png"
+OUT       = ("gangsheet/poco-loco-gangsheet-22x24.png" if LABELS
+             else "gangsheet/poco-loco-gangsheet-22x24-PRODUCTION.png")
 FONT      = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 def font(px):
@@ -86,7 +91,9 @@ def label(text):
     return im
 
 def item(img, text):
-    """art with a centered size label beneath it."""
+    """art with a centered size label beneath it (no label in production mode)."""
+    if not LABELS:
+        return img
     lab = label(text)
     gap = int(0.07 * DPI)
     w = max(img.width, lab.width); h = img.height + gap + lab.height
@@ -110,8 +117,9 @@ def shelves(items):
     return out
 
 def band(title, items, y):
-    draw.text((MARGIN, y), title, font=F_HEAD, fill=GRAY)
-    y += F_HEAD.getbbox(title)[3] + int(0.10 * DPI)
+    if LABELS:
+        draw.text((MARGIN, y), title, font=F_HEAD, fill=GRAY)
+        y += F_HEAD.getbbox(title)[3] + int(0.10 * DPI)
     for shelf in shelves(items):
         sh = max(it.height for it in shelf)
         x = MARGIN
@@ -121,11 +129,12 @@ def band(title, items, y):
         y += sh + GAP_Y
     return y + BAND_GAP - GAP_Y
 
-# title
-draw.text((MARGIN, MARGIN - int(0.04*DPI)),
-          'POCO LOCO RANCH  —  BRAND ASSET SIZE TEST  (+ SEAL WHITE-BACKING)  —  22" x 24" UV DTF GANG SHEET  —  300 DPI',
-          font=F_TITLE, fill=GRAY)
-y = MARGIN + int(0.45 * DPI)
+# title (omitted in production mode)
+if LABELS:
+    draw.text((MARGIN, MARGIN - int(0.04*DPI)),
+              'POCO LOCO RANCH  —  BRAND ASSET SIZE TEST  (+ SEAL WHITE-BACKING)  —  22" x 24" UV DTF GANG SHEET  —  300 DPI',
+              font=F_TITLE, fill=GRAY)
+y = MARGIN + (int(0.45 * DPI) if LABELS else 0)
 
 def paired(art, sizes, backing):
     """alternate a transparent + a white-backed copy of one mark at each size."""
@@ -164,6 +173,7 @@ canvas.save(OUT, dpi=(DPI, DPI))
 # downscaled preview for quick visual check
 prev = canvas.copy()
 bg = Image.new("RGBA", prev.size, (199,199,199,255))   # mid gray so white backing is visible
-Image.alpha_composite(bg, prev).convert("RGB").resize((W//6, H//6), Image.LANCZOS).save("/tmp/gangsheet_preview.jpg", quality=88)
+_pv = "/tmp/gangsheet_preview.jpg" if LABELS else "/tmp/gangsheet_preview_production.jpg"
+Image.alpha_composite(bg, prev).convert("RGB").resize((W//6, H//6), Image.LANCZOS).save(_pv, quality=88)
 import os
 print("saved", OUT, f"{os.path.getsize(OUT)/1e6:.2f} MB", canvas.size)

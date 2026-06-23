@@ -4,7 +4,9 @@ A print-ready **22″ × 24″ (2 ft)** gang sheet built to **Ninja Transfers' U
 PermaSticker™** spec, laying out every brand asset at a range of sizes so the
 best physical size for each can be chosen before a production run.
 
-**Deliverable:** [`poco-loco-gangsheet-22x24.png`](poco-loco-gangsheet-22x24.png)
+**Deliverables:**
+- [`poco-loco-gangsheet-22x24.png`](poco-loco-gangsheet-22x24.png) — labeled size-test proof
+- [`poco-loco-gangsheet-22x24-PRODUCTION.png`](poco-loco-gangsheet-22x24-PRODUCTION.png) — **label-free, print-ready** (no title, headings, or size labels; art only)
 
 ## Built to spec
 
@@ -58,7 +60,8 @@ is transparent.
 
 ```bash
 pip install Pillow
-python3 gangsheet/build_gangsheet.py      # run from the repo root
+python3 gangsheet/build_gangsheet.py             # labeled size-test proof
+python3 gangsheet/build_gangsheet.py production   # label-free, print-ready file
 ```
 
 Edit the size tuples near the bottom of `build_gangsheet.py` to change which
