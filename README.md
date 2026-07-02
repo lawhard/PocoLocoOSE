@@ -4,12 +4,13 @@ Low-volume, brandable, luxury-feel guest supplies for the **Poco Loco Ranch** (B
 inspired by the OS&E at **Badrutt's Palace**. Branding is done **in-house** (laser engraving,
 embroidery, and UVDTF) — or via supplier customization where noted.
 
-**22 items · 85 vetted options · plus a dedicated bandana vendor subpage (`bandana.html`) · lowest minimum order: 1**
+**23 items · 91 vetted options · plus a dedicated bandana vendor subpage (`bandana.html`) · lowest minimum order: 1**
 
-> **2026-07-02 boutique re-source:** ten items re-vetted to a "really nice boutique hotel" bar at
-> low volume — pens (solid brass, qty 1), umbrellas (doorman-grade), throws (heritage mills),
-> bottle openers (patina brass), leather coasters (English bridle), foil napkins, low-MOQ coffee
-> cups & sewing kits, mid-tier shoehorns, and Texas boot jacks replacing the valet-block dead end.
+> **2026-07-02 boutique re-source + client steer pass:** re-vetted to a "really nice boutique
+> hotel" bar at low volume, then tuned per client: white-cup/black-lid coffee cups, plain dark
+> $22–30 throws, truly brandable sewing kits, ~$5–10 quality pens (brass heroes kept), a solid-
+> black cornhole set, $1–3 stainless punch openers beside the brass, doorman-grade umbrellas,
+> Texas boot jacks, and a new entry boot-tray item.
 
 ## How to view
 
@@ -38,7 +39,7 @@ Edit the `DATA` list in `build.py`, drop the product photo(s) in `assets/img/`, 
 - **Bar & Table** — Bottle opener · Linen cocktail napkins · Leather coasters · Branded coffee cups
 - **Bedroom & Comfort** — Guest throw blankets · Sewing kit
 - **Welcome & Desk** — Nice thick pens · Canvas tote bags · Bandana
-- **Entry & Outdoor** — Thick branded outdoor rubber mat · Umbrella holder/stand · Long umbrellas · Poco Loco cornhole
+- **Entry & Outdoor** — Thick branded outdoor rubber mat · Entry boot tray · Umbrella holder/stand · Long umbrellas · Poco Loco cornhole · Branded straw hats
 
 Each item lists a **Recommended** pick plus two alternatives, with real photos, per-unit price,
 supplier, minimum-order terms, specs, and the branding method.
