@@ -206,7 +206,7 @@ DATA = [
          badge="Porch & firepit tier"),
    ]),
  dict(id="sewing", cat="bedroom", name="Disposable Sewing Kit", tag="Paper / fabric — no plastic",
-   note="Re-sourced to true low MOQs (the old picks needed 250–500). All non-plastic. Runner-ups verified: World Amenities pillow-box via HospitalityEmporium ($0.29, min 500), Hotel Emporium kraft eco-sachet ($0.136, 500/case), Merveyl (EU) plain-kraft box at qty 1. Dead leads confirmed so you don't chase them: Nomkin and Sunrise Amenities (domains dead), Appearus and Amenity Services (no sewing kits), Hunter and Gilchrist & Soames (plastic packaging).",
+   note="Re-sourced to true low MOQs (the old picks needed 250–500). All non-plastic. Runner-ups verified: World Amenities KRAFT SACHET grooming kit — plastic-free, sewing kit inside, $0.54/kit at 100 on Amazon ($0.35 direct at 300, custom-brand runs offered); Luxe Comfort white paper-box kits ($0.165 at 100, but pre-printed with their own gold logo); Hotel Emporium kraft eco-sachet ($0.136, 500/case); Merveyl (EU) plain-kraft box at qty 1. Buyer beware, image-confirmed: Amazon's cheap '100-pack hotel sewing kits' (Tatuo, Honbay, safycaby) are bare thread-cards in CLEAR PLASTIC cello bags. Dead leads: Nomkin and Sunrise Amenities (domains dead), Appearus and Amenity Services (no sewing kits), Hunter and Gilchrist & Soames (plastic packaging).",
    options=[
      opt("recommended","Paper Matchbook Sewing Kit (100/case)","Hotel Supplies USA","https://www.hotelsuppliesusa.com/product/sewing-kit-matchbook-100-cs/",
          "$0.60","/ kit","$60 / case of 100","min 100","True paper matchbook · needles, threads, buttons, safety pin · flat stampable cover","In-house stamp / UVDTF over the cover",
