@@ -4,7 +4,12 @@ Low-volume, brandable, luxury-feel guest supplies for the **Poco Loco Ranch** (B
 inspired by the OS&E at **Badrutt's Palace**. Branding is done **in-house** (laser engraving,
 embroidery, and UVDTF) — or via supplier customization where noted.
 
-**22 items · 73 vetted options · plus a dedicated bandana vendor subpage (`bandana.html`) · lowest minimum order: 1**
+**22 items · 85 vetted options · plus a dedicated bandana vendor subpage (`bandana.html`) · lowest minimum order: 1**
+
+> **2026-07-02 boutique re-source:** ten items re-vetted to a "really nice boutique hotel" bar at
+> low volume — pens (solid brass, qty 1), umbrellas (doorman-grade), throws (heritage mills),
+> bottle openers (patina brass), leather coasters (English bridle), foil napkins, low-MOQ coffee
+> cups & sewing kits, mid-tier shoehorns, and Texas boot jacks replacing the valet-block dead end.
 
 ## How to view
 
@@ -28,10 +33,10 @@ Edit the `DATA` list in `build.py`, drop the product photo(s) in `assets/img/`, 
 
 ## Items by room
 
-- **Closet & Dressing** — Engraveable wood hanger · Long-handled shoehorn · Standing shoehorn / valet block
+- **Closet & Dressing** — Engraveable wood hanger · Long-handled shoehorn · Standing shoehorn / boot jack
 - **Bath** — Shower-mounted refillable bottles
-- **Bar & Table** — Bottle opener · Linen cocktail napkins
-- **Bedroom & Comfort** — Small individual blankets · Sewing kit
+- **Bar & Table** — Bottle opener · Linen cocktail napkins · Leather coasters · Branded coffee cups
+- **Bedroom & Comfort** — Guest throw blankets · Sewing kit
 - **Welcome & Desk** — Nice thick pens · Canvas tote bags · Bandana
 - **Entry & Outdoor** — Thick branded outdoor rubber mat · Umbrella holder/stand · Long umbrellas · Poco Loco cornhole
 
